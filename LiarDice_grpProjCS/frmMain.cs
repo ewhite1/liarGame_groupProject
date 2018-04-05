@@ -25,6 +25,9 @@ namespace LiarDice_grpProjCS
         private void btnInstructions_Click(object sender, EventArgs e)
         {
             //form Launch- explaining rules
+            Instruction frmInstruction = new Instruction();
+            this.Hide();
+            frmInstruction.Show();
         }
 
         private void btnNewGame_Click(object sender, EventArgs e)
