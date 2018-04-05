@@ -49,7 +49,7 @@
             // 
             // lblCreators
             // 
-            this.lblCreators.Font = new System.Drawing.Font("Arial", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCreators.Font = new System.Drawing.Font("Arial Narrow", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCreators.ForeColor = System.Drawing.Color.DimGray;
             this.lblCreators.Location = new System.Drawing.Point(237, 352);
             this.lblCreators.Name = "lblCreators";
