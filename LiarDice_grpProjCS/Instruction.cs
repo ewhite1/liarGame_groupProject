@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace LiarDice_grpProjCS
 {
-    public partial class Form1 : Form
+    public partial class Instruction : Form
     {
-        public Form1()
+        public Instruction()
         {
             InitializeComponent();
         }

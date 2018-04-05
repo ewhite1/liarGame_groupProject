@@ -1,6 +1,6 @@
 ﻿namespace LiarDice_grpProjCS
 {
-    partial class Form1
+    partial class Instruction
     {
         /// <summary>
         /// Required designer variable.
@@ -28,13 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // Instruction
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            this.ClientSize = new System.Drawing.Size(983, 494);
+            this.Name = "Instruction";
+            this.Text = "Instruction";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
     }
 }
-
