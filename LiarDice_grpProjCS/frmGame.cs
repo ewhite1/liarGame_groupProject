@@ -255,6 +255,94 @@ namespace LiarDice_grpProjCS
 
             
         }
+        private void CountDice()
+        {
+            /* 
+             If (player1.D1 = 1) Then
+            totNumD1 = totNumD1 + 1
+        ElseIf (player1.D1 = 2) Then
+            totNumD2 = totNumD2 + 1
+        ElseIf (player1.D1 = 3) Then
+            totNumD3 = totNumD3 + 1
+        ElseIf (player1.D1 = 4) Then
+            totNumD4 = totNumD4 + 1
+        ElseIf (player1.D1 = 5) Then
+            totNumD5 = totNumD5 + 1
+        ElseIf (player1.D1 = 6) Then
+            totNumD6 = totNumD6 + 1
+        End If
+        'player1 Die2
+        If (player1.D2 = 1) Then
+            totNumD1 = totNumD1 + 1
+        ElseIf (player1.D2 = 2) Then
+            totNumD2 = totNumD2 + 1
+        ElseIf (player1.D2 = 3) Then
+            totNumD3 = totNumD3 + 1
+        ElseIf (player1.D2 = 4) Then
+            totNumD4 = totNumD4 + 1
+        ElseIf (player1.D2 = 5) Then
+            totNumD5 = totNumD5 + 1
+        ElseIf (player1.D2 = 6) Then
+            totNumD6 = totNumD6 + 1
+        End If
+        'player1 Die3
+        If (player1.D3 = 1) Then
+            totNumD1 = totNumD1 + 1
+        ElseIf (player1.D3 = 2) Then
+            totNumD2 = totNumD2 + 1
+        ElseIf (player1.D3 = 3) Then
+            totNumD3 = totNumD3 + 1
+        ElseIf (player1.D3 = 4) Then
+            totNumD4 = totNumD4 + 1
+        ElseIf (player1.D3 = 5) Then
+            totNumD5 = totNumD5 + 1
+        ElseIf (player1.D3 = 6) Then
+            totNumD6 = totNumD6 + 1
+        End If
+        'player1 Die4
+        If (player1.D4 = 1) Then
+            totNumD1 = totNumD1 + 1
+        ElseIf (player1.D4 = 2) Then
+            totNumD2 = totNumD2 + 1
+        ElseIf (player1.D4 = 3) Then
+            totNumD3 = totNumD3 + 1
+        ElseIf (player1.D4 = 4) Then
+            totNumD4 = totNumD4 + 1
+        ElseIf (player1.D4 = 5) Then
+            totNumD5 = totNumD5 + 1
+        ElseIf (player1.D4 = 6) Then
+            totNumD6 = totNumD6 + 1
+        End If
+        'player1 Die5
+        If (player1.D5 = 1) Then
+            totNumD1 = totNumD1 + 1
+        ElseIf (player1.D5 = 2) Then
+            totNumD2 = totNumD2 + 1
+        ElseIf (player1.D5 = 3) Then
+            totNumD3 = totNumD3 + 1
+        ElseIf (player1.D5 = 4) Then
+            totNumD4 = totNumD4 + 1
+        ElseIf (player1.D5 = 5) Then
+            totNumD5 = totNumD5 + 1
+        ElseIf (player1.D5 = 6) Then
+            totNumD6 = totNumD6 + 1
+        End If
+        'player1 Die6
+        If (player1.D6 = 1) Then
+            totNumD1 = totNumD1 + 1
+        ElseIf (player1.D6 = 2) Then
+            totNumD2 = totNumD2 + 1
+        ElseIf (player1.D6 = 3) Then
+            totNumD3 = totNumD3 + 1
+        ElseIf (player1.D6 = 4) Then
+            totNumD4 = totNumD4 + 1
+        ElseIf (player1.D6 = 5) Then
+            totNumD5 = totNumD5 + 1
+        ElseIf (player1.D6 = 6) Then
+            totNumD6 = totNumD6 + 1
+        End If
+             */
+        }
         private int GenerateChoice(/*ref Player com*/)
         {
             Random rand = new Random();
