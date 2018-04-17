@@ -10,16 +10,21 @@ using System.Windows.Forms;
 
 namespace LiarDice_grpProjCS
 {
-    public partial class Instruction : Form
+    public partial class frmWin : Form
     {
-        public Instruction()
+        public frmWin()
         {
             InitializeComponent();
         }
 
-        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        private void backToGameToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            this.Close();
+        }
 
+        private void backToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
