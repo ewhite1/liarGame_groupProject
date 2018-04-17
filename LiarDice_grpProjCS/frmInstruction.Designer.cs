@@ -1,6 +1,6 @@
 ﻿namespace LiarDice_grpProjCS
 {
-    partial class Instruction
+    partial class frmInstruction
     {
         /// <summary>
         /// Required designer variable.
@@ -28,50 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.backToGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.label1 = new System.Windows.Forms.Label();
             this.listBox1 = new System.Windows.Forms.ListBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.backToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnClose = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.backToGameToolStripMenuItem,
-            this.exitToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(528, 24);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // backToGameToolStripMenuItem
-            // 
-            this.backToGameToolStripMenuItem.Name = "backToGameToolStripMenuItem";
-            this.backToGameToolStripMenuItem.Size = new System.Drawing.Size(92, 20);
-            this.backToGameToolStripMenuItem.Text = "&Back to Game";
-            // 
-            // exitToolStripMenuItem
-            // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
-            this.exitToolStripMenuItem.Text = "E&xit";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(9, 50);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(88, 18);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "How to Play";
             // 
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 25;
             this.listBox1.Items.AddRange(new object[] {
             "Each player starts with 5 dice and something to hide their dice (usually a cup). " +
                 " ",
@@ -103,25 +71,68 @@
             "The loser of the challenge starts the next round of play. ",
             " When a player loses all their dice, they are out of the game.  ",
             "A player wins when they are the last one with dice."});
-            this.listBox1.Location = new System.Drawing.Point(12, 90);
+            this.listBox1.Location = new System.Drawing.Point(112, 138);
+            this.listBox1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.listBox1.Name = "listBox1";
             this.listBox1.ScrollAlwaysVisible = true;
-            this.listBox1.Size = new System.Drawing.Size(504, 199);
-            this.listBox1.TabIndex = 3;
+            this.listBox1.Size = new System.Drawing.Size(1004, 429);
+            this.listBox1.TabIndex = 5;
             // 
-            // Instruction
+            // label1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(24, 69);
+            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(174, 36);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "How to Play";
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.backToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(12, 4, 0, 4);
+            this.menuStrip1.Size = new System.Drawing.Size(1234, 44);
+            this.menuStrip1.TabIndex = 6;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // backToolStripMenuItem
+            // 
+            this.backToolStripMenuItem.Name = "backToolStripMenuItem";
+            this.backToolStripMenuItem.Size = new System.Drawing.Size(76, 36);
+            this.backToolStripMenuItem.Text = "&Back";
+            this.backToolStripMenuItem.Click += new System.EventHandler(this.backToolStripMenuItem_Click);
+            // 
+            // btnClose
+            // 
+            this.btnClose.Font = new System.Drawing.Font("Broadway", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.Location = new System.Drawing.Point(507, 626);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(187, 83);
+            this.btnClose.TabIndex = 7;
+            this.btnClose.Text = "Back";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // frmInstruction
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Goldenrod;
-            this.ClientSize = new System.Drawing.Size(528, 350);
+            this.ClientSize = new System.Drawing.Size(1234, 767);
+            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.Name = "Instruction";
-            this.Text = "Instruction";
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Name = "frmInstruction";
+            this.Text = "Instructions";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -131,10 +142,10 @@
 
         #endregion
 
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem backToGameToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem backToolStripMenuItem;
+        private System.Windows.Forms.Button btnClose;
     }
 }
