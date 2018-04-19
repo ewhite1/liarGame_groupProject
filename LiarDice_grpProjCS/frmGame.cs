@@ -20,11 +20,21 @@ namespace LiarDice_grpProjCS
         int previousDiceAmount;
         int previousDiceValue;
         int choice = 0;
+        int totNumD1;
+        int totNumD2;
+        int totNumD3;
+        int totNumD4;
+        int totNumD5;
+        int totNumD6;
         public frmGame()
         {
             InitializeComponent();
             //roll all dice whe game starts
             DiceRollAll();
+            player1.DiceCountLeft = 6;
+            computer1.DiceCountLeft = 6;
+            computer2.DiceCountLeft = 6;
+            computer3.DiceCountLeft = 6;
         }
         //gets the die
         private void pbxDie1_Click(object sender, EventArgs e)
@@ -159,10 +169,7 @@ namespace LiarDice_grpProjCS
             frmWin winnersForm = new frmWin();
             winnersForm.ShowDialog();
         }
-
-
         
-
         private void btnBet_Click(object sender, EventArgs e)
         {
             GetDieNum();
@@ -178,11 +185,13 @@ namespace LiarDice_grpProjCS
             GenerateChoice();
             if(previousDiceValue >= 5)
             {
-               //use challenge function here
+               //use challenge function here maybe not
                 computer1.BetNumOfDice = previousDiceAmount + choice;
             }
-            else if(previousDiceAmount >= 13)
+            else if(previousDiceAmount >= 12)
             {
+
+                Challenge();
                 computer1.BetNumOfDice = choice;
                 computer1.BetDieValue = previousDiceValue + 1;
             }
@@ -204,6 +213,7 @@ namespace LiarDice_grpProjCS
             }
             else if (previousDiceAmount >= 11)
             {
+                Challenge();
                 computer2.BetNumOfDice = choice;
                 computer2.BetDieValue = previousDiceValue + 1;
             }
@@ -223,8 +233,9 @@ namespace LiarDice_grpProjCS
                 computer3.BetDieValue = choice;
                 computer3.BetNumOfDice = previousDiceAmount + choice;
             }
-            else if (previousDiceAmount >= 13)
+            else if (previousDiceAmount >= 10)
             {
+                Challenge();
                 computer3.BetNumOfDice = choice;
                 computer3.BetDieValue = previousDiceValue + 1;
             }
@@ -237,111 +248,556 @@ namespace LiarDice_grpProjCS
             lblComputer3BetValue.Text = computer3.BetDieValue.ToString();
             previousDiceAmount = computer3.BetNumOfDice;
             previousDiceValue = computer3.BetDieValue;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            
         }
         private void CountDice()
         {
-            /* 
-             If (player1.D1 = 1) Then
-            totNumD1 = totNumD1 + 1
-        ElseIf (player1.D1 = 2) Then
-            totNumD2 = totNumD2 + 1
-        ElseIf (player1.D1 = 3) Then
-            totNumD3 = totNumD3 + 1
-        ElseIf (player1.D1 = 4) Then
-            totNumD4 = totNumD4 + 1
-        ElseIf (player1.D1 = 5) Then
-            totNumD5 = totNumD5 + 1
-        ElseIf (player1.D1 = 6) Then
-            totNumD6 = totNumD6 + 1
-        End If
-        'player1 Die2
-        If (player1.D2 = 1) Then
-            totNumD1 = totNumD1 + 1
-        ElseIf (player1.D2 = 2) Then
-            totNumD2 = totNumD2 + 1
-        ElseIf (player1.D2 = 3) Then
-            totNumD3 = totNumD3 + 1
-        ElseIf (player1.D2 = 4) Then
-            totNumD4 = totNumD4 + 1
-        ElseIf (player1.D2 = 5) Then
-            totNumD5 = totNumD5 + 1
-        ElseIf (player1.D2 = 6) Then
-            totNumD6 = totNumD6 + 1
-        End If
-        'player1 Die3
-        If (player1.D3 = 1) Then
-            totNumD1 = totNumD1 + 1
-        ElseIf (player1.D3 = 2) Then
-            totNumD2 = totNumD2 + 1
-        ElseIf (player1.D3 = 3) Then
-            totNumD3 = totNumD3 + 1
-        ElseIf (player1.D3 = 4) Then
-            totNumD4 = totNumD4 + 1
-        ElseIf (player1.D3 = 5) Then
-            totNumD5 = totNumD5 + 1
-        ElseIf (player1.D3 = 6) Then
-            totNumD6 = totNumD6 + 1
-        End If
-        'player1 Die4
-        If (player1.D4 = 1) Then
-            totNumD1 = totNumD1 + 1
-        ElseIf (player1.D4 = 2) Then
-            totNumD2 = totNumD2 + 1
-        ElseIf (player1.D4 = 3) Then
-            totNumD3 = totNumD3 + 1
-        ElseIf (player1.D4 = 4) Then
-            totNumD4 = totNumD4 + 1
-        ElseIf (player1.D4 = 5) Then
-            totNumD5 = totNumD5 + 1
-        ElseIf (player1.D4 = 6) Then
-            totNumD6 = totNumD6 + 1
-        End If
-        'player1 Die5
-        If (player1.D5 = 1) Then
-            totNumD1 = totNumD1 + 1
-        ElseIf (player1.D5 = 2) Then
-            totNumD2 = totNumD2 + 1
-        ElseIf (player1.D5 = 3) Then
-            totNumD3 = totNumD3 + 1
-        ElseIf (player1.D5 = 4) Then
-            totNumD4 = totNumD4 + 1
-        ElseIf (player1.D5 = 5) Then
-            totNumD5 = totNumD5 + 1
-        ElseIf (player1.D5 = 6) Then
-            totNumD6 = totNumD6 + 1
-        End If
-        'player1 Die6
-        If (player1.D6 = 1) Then
-            totNumD1 = totNumD1 + 1
-        ElseIf (player1.D6 = 2) Then
-            totNumD2 = totNumD2 + 1
-        ElseIf (player1.D6 = 3) Then
-            totNumD3 = totNumD3 + 1
-        ElseIf (player1.D6 = 4) Then
-            totNumD4 = totNumD4 + 1
-        ElseIf (player1.D6 = 5) Then
-            totNumD5 = totNumD5 + 1
-        ElseIf (player1.D6 = 6) Then
-            totNumD6 = totNumD6 + 1
-        End If
-             */
+            switch (player1.D1)
+            {
+                // player one dice
+                case 1:
+                    totNumD1 += 1;
+                    break;
+                case 2:
+                    totNumD2 += 1;
+                    break;
+                case 3:
+                    totNumD3 += 1;
+                    break;
+                case 4:
+                    totNumD4 += 1;
+                    break;
+                case 5:
+                    totNumD5 += 1;
+                    break;
+                case 6:
+                    totNumD6 += 1;
+                    break;
+            }
+            switch (player1.D2)
+            {
+                // player one dice 2
+                case 1:
+                    totNumD1 += 1;
+                    break;
+                case 2:
+                    totNumD2 += 1;
+                    break;
+                case 3:
+                    totNumD3 += 1;
+                    break;
+                case 4:
+                    totNumD4 += 1;
+                    break;
+                case 5:
+                    totNumD5 += 1;
+                    break;
+                case 6:
+                    totNumD6 += 1;
+                    break;
+            }
+            switch (player1.D3)
+            {
+                // player one dice 3
+                case 1:
+                    totNumD1 += 1;
+                    break;
+                case 2:
+                    totNumD2 += 1;
+                    break;
+                case 3:
+                    totNumD3 += 1;
+                    break;
+                case 4:
+                    totNumD4 += 1;
+                    break;
+                case 5:
+                    totNumD5 += 1;
+                    break;
+                case 6:
+                    totNumD6 += 1;
+                    break;
+            }
+            switch (player1.D4)
+            {
+                // player one dice 4
+                case 1:
+                    totNumD1 += 1;
+                    break;
+                case 2:
+                    totNumD2 += 1;
+                    break;
+                case 3:
+                    totNumD3 += 1;
+                    break;
+                case 4:
+                    totNumD4 += 1;
+                    break;
+                case 5:
+                    totNumD5 += 1;
+                    break;
+                case 6:
+                    totNumD6 += 1;
+                    break;
+            }
+            switch (player1.D5)
+            {
+                // player one dice 5
+                case 1:
+                    totNumD1 += 1;
+                    break;
+                case 2:
+                    totNumD2 += 1;
+                    break;
+                case 3:
+                    totNumD3 += 1;
+                    break;
+                case 4:
+                    totNumD4 += 1;
+                    break;
+                case 5:
+                    totNumD5 += 1;
+                    break;
+                case 6:
+                    totNumD6 += 1;
+                    break;
+            }
+            switch (player1.D6)
+            {
+                // player one dice 6
+                case 1:
+                    totNumD1 += 1;
+                    break;
+                case 2:
+                    totNumD2 += 1;
+                    break;
+                case 3:
+                    totNumD3 += 1;
+                    break;
+                case 4:
+                    totNumD4 += 1;
+                    break;
+                case 5:
+                    totNumD5 += 1;
+                    break;
+                case 6:
+                    totNumD6 += 1;
+                    break;
+            }
+            //computer 1
+            switch (computer1.D1)
+            {
+                // computer one dice
+                case 1:
+                    totNumD1 += 1;
+                    break;
+                case 2:
+                    totNumD2 += 1;
+                    break;
+                case 3:
+                    totNumD3 += 1;
+                    break;
+                case 4:
+                    totNumD4 += 1;
+                    break;
+                case 5:
+                    totNumD5 += 1;
+                    break;
+                case 6:
+                    totNumD6 += 1;
+                    break;
+            }
+            switch (computer1.D2)
+            {
+                // computer one dice 2
+                case 1:
+                    totNumD1 += 1;
+                    break;
+                case 2:
+                    totNumD2 += 1;
+                    break;
+                case 3:
+                    totNumD3 += 1;
+                    break;
+                case 4:
+                    totNumD4 += 1;
+                    break;
+                case 5:
+                    totNumD5 += 1;
+                    break;
+                case 6:
+                    totNumD6 += 1;
+                    break;
+            }
+            switch (computer1.D3)
+            {
+                // computer one dice 3
+                case 1:
+                    totNumD1 += 1;
+                    break;
+                case 2:
+                    totNumD2 += 1;
+                    break;
+                case 3:
+                    totNumD3 += 1;
+                    break;
+                case 4:
+                    totNumD4 += 1;
+                    break;
+                case 5:
+                    totNumD5 += 1;
+                    break;
+                case 6:
+                    totNumD6 += 1;
+                    break;
+            }
+            switch (computer1.D4)
+            {
+                // computer one dice 4
+                case 1:
+                    totNumD1 += 1;
+                    break;
+                case 2:
+                    totNumD2 += 1;
+                    break;
+                case 3:
+                    totNumD3 += 1;
+                    break;
+                case 4:
+                    totNumD4 += 1;
+                    break;
+                case 5:
+                    totNumD5 += 1;
+                    break;
+                case 6:
+                    totNumD6 += 1;
+                    break;
+            }
+            switch (computer1.D5)
+            {
+                // computer one dice 5
+                case 1:
+                    totNumD1 += 1;
+                    break;
+                case 2:
+                    totNumD2 += 1;
+                    break;
+                case 3:
+                    totNumD3 += 1;
+                    break;
+                case 4:
+                    totNumD4 += 1;
+                    break;
+                case 5:
+                    totNumD5 += 1;
+                    break;
+                case 6:
+                    totNumD6 += 1;
+                    break;
+            }
+            switch (computer1.D6)
+            {
+                // computer one dice 6
+                case 1:
+                    totNumD1 += 1;
+                    break;
+                case 2:
+                    totNumD2 += 1;
+                    break;
+                case 3:
+                    totNumD3 += 1;
+                    break;
+                case 4:
+                    totNumD4 += 1;
+                    break;
+                case 5:
+                    totNumD5 += 1;
+                    break;
+                case 6:
+                    totNumD6 += 1;
+                    break;
+            }
+            //computer 2
+            switch (computer2.D1)
+            {
+                // computer one dice
+                case 1:
+                    totNumD1 += 1;
+                    break;
+                case 2:
+                    totNumD2 += 1;
+                    break;
+                case 3:
+                    totNumD3 += 1;
+                    break;
+                case 4:
+                    totNumD4 += 1;
+                    break;
+                case 5:
+                    totNumD5 += 1;
+                    break;
+                case 6:
+                    totNumD6 += 1;
+                    break;
+            }
+            switch (computer2.D2)
+            {
+                // computer one dice 2
+                case 1:
+                    totNumD1 += 1;
+                    break;
+                case 2:
+                    totNumD2 += 1;
+                    break;
+                case 3:
+                    totNumD3 += 1;
+                    break;
+                case 4:
+                    totNumD4 += 1;
+                    break;
+                case 5:
+                    totNumD5 += 1;
+                    break;
+                case 6:
+                    totNumD6 += 1;
+                    break;
+            }
+            switch (computer2.D3)
+            {
+                // computer one dice 3
+                case 1:
+                    totNumD1 += 1;
+                    break;
+                case 2:
+                    totNumD2 += 1;
+                    break;
+                case 3:
+                    totNumD3 += 1;
+                    break;
+                case 4:
+                    totNumD4 += 1;
+                    break;
+                case 5:
+                    totNumD5 += 1;
+                    break;
+                case 6:
+                    totNumD6 += 1;
+                    break;
+            }
+            switch (computer2.D4)
+            {
+                // computer one dice 4
+                case 1:
+                    totNumD1 += 1;
+                    break;
+                case 2:
+                    totNumD2 += 1;
+                    break;
+                case 3:
+                    totNumD3 += 1;
+                    break;
+                case 4:
+                    totNumD4 += 1;
+                    break;
+                case 5:
+                    totNumD5 += 1;
+                    break;
+                case 6:
+                    totNumD6 += 1;
+                    break;
+            }
+            switch (computer2.D5)
+            {
+                // computer one dice 5
+                case 1:
+                    totNumD1 += 1;
+                    break;
+                case 2:
+                    totNumD2 += 1;
+                    break;
+                case 3:
+                    totNumD3 += 1;
+                    break;
+                case 4:
+                    totNumD4 += 1;
+                    break;
+                case 5:
+                    totNumD5 += 1;
+                    break;
+                case 6:
+                    totNumD6 += 1;
+                    break;
+            }
+            switch (computer2.D6)
+            {
+                // computer one dice 6
+                case 1:
+                    totNumD1 += 1;
+                    break;
+                case 2:
+                    totNumD2 += 1;
+                    break;
+                case 3:
+                    totNumD3 += 1;
+                    break;
+                case 4:
+                    totNumD4 += 1;
+                    break;
+                case 5:
+                    totNumD5 += 1;
+                    break;
+                case 6:
+                    totNumD6 += 1;
+                    break;
+            }
+            //computer 3
+            switch (computer3.D1)
+            {
+                // computer one dice
+                case 1:
+                    totNumD1 += 1;
+                    break;
+                case 2:
+                    totNumD2 += 1;
+                    break;
+                case 3:
+                    totNumD3 += 1;
+                    break;
+                case 4:
+                    totNumD4 += 1;
+                    break;
+                case 5:
+                    totNumD5 += 1;
+                    break;
+                case 6:
+                    totNumD6 += 1;
+                    break;
+            }
+            switch (computer3.D2)
+            {
+                // computer one dice 2
+                case 1:
+                    totNumD1 += 1;
+                    break;
+                case 2:
+                    totNumD2 += 1;
+                    break;
+                case 3:
+                    totNumD3 += 1;
+                    break;
+                case 4:
+                    totNumD4 += 1;
+                    break;
+                case 5:
+                    totNumD5 += 1;
+                    break;
+                case 6:
+                    totNumD6 += 1;
+                    break;
+            }
+            switch (computer3.D3)
+            {
+                // computer one dice 3
+                case 1:
+                    totNumD1 += 1;
+                    break;
+                case 2:
+                    totNumD2 += 1;
+                    break;
+                case 3:
+                    totNumD3 += 1;
+                    break;
+                case 4:
+                    totNumD4 += 1;
+                    break;
+                case 5:
+                    totNumD5 += 1;
+                    break;
+                case 6:
+                    totNumD6 += 1;
+                    break;
+            }
+            switch (computer3.D4)
+            {
+                // computer one dice 4
+                case 1:
+                    totNumD1 += 1;
+                    break;
+                case 2:
+                    totNumD2 += 1;
+                    break;
+                case 3:
+                    totNumD3 += 1;
+                    break;
+                case 4:
+                    totNumD4 += 1;
+                    break;
+                case 5:
+                    totNumD5 += 1;
+                    break;
+                case 6:
+                    totNumD6 += 1;
+                    break;
+            }
+            switch (computer3.D5)
+            {
+                // computer one dice 5
+                case 1:
+                    totNumD1 += 1;
+                    break;
+                case 2:
+                    totNumD2 += 1;
+                    break;
+                case 3:
+                    totNumD3 += 1;
+                    break;
+                case 4:
+                    totNumD4 += 1;
+                    break;
+                case 5:
+                    totNumD5 += 1;
+                    break;
+                case 6:
+                    totNumD6 += 1;
+                    break;
+            }
+            switch (computer3.D6)
+            {
+                // computer one dice 6
+                case 1:
+                    totNumD1 += 1;
+                    break;
+                case 2:
+                    totNumD2 += 1;
+                    break;
+                case 3:
+                    totNumD3 += 1;
+                    break;
+                case 4:
+                    totNumD4 += 1;
+                    break;
+                case 5:
+                    totNumD5 += 1;
+                    break;
+                case 6:
+                    totNumD6 += 1;
+                    break;
+            }
+        }
+        private void Challenge()
+        {
+         CountDice();
+            if(previousDiceAmount <= totNumD1 || previousDiceAmount <=totNumD2 || previousDiceAmount <= totNumD3 || previousDiceAmount <= totNumD4 || previousDiceAmount <= totNumD5 || previousDiceAmount<= totNumD6)
+            {
+                MessageBox.Show("Challenger lost!");
+                computer1.DiceCountLeft = 5;
+                computer1.D6On = false;
+            }
+            else
+            {
+                MessageBox.Show("Player being challenged lost!");
+                player1.DiceCountLeft = 5;
+                player1.D1On = false;
+            }
         }
         private int GenerateChoice(/*ref Player com*/)
         {
@@ -355,6 +811,31 @@ namespace LiarDice_grpProjCS
         private void DiceRollAll()
         {
             Random rand = new Random();
+            //set all dice values to true. still able to use the dice in the game
+            player1.D1On = true;
+            player1.D2On = true;
+            player1.D3On = true;
+            player1.D4On = true;
+            player1.D5On = true;
+            player1.D6On = true;
+            computer1.D1On = true;
+            computer1.D2On = true;
+            computer1.D3On = true;
+            computer1.D4On = true;
+            computer1.D5On = true;
+            computer1.D6On = true;
+            computer2.D1On = true;
+            computer2.D2On = true;
+            computer2.D3On = true;
+            computer2.D4On = true;
+            computer2.D5On = true;
+            computer1.D6On = true;
+            computer3.D1On = true;
+            computer3.D2On = true;
+            computer3.D3On = true;
+            computer3.D4On = true;
+            computer3.D5On = true;
+            computer3.D6On = true;
 
             //roll player 1 dice
             player1.D1 = rand.Next(6) + 1;
