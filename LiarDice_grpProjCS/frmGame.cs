@@ -257,91 +257,186 @@ namespace LiarDice_grpProjCS
         }
         private void CountDice()
         {
+            //was this supposed to take in a player and then generate a count for each player?
+            // if thats the case, change it to:
             /* 
-             If (player1.D1 = 1) Then
-            totNumD1 = totNumD1 + 1
-        ElseIf (player1.D1 = 2) Then
-            totNumD2 = totNumD2 + 1
-        ElseIf (player1.D1 = 3) Then
-            totNumD3 = totNumD3 + 1
-        ElseIf (player1.D1 = 4) Then
-            totNumD4 = totNumD4 + 1
-        ElseIf (player1.D1 = 5) Then
-            totNumD5 = totNumD5 + 1
-        ElseIf (player1.D1 = 6) Then
-            totNumD6 = totNumD6 + 1
-        End If
-        'player1 Die2
-        If (player1.D2 = 1) Then
-            totNumD1 = totNumD1 + 1
-        ElseIf (player1.D2 = 2) Then
-            totNumD2 = totNumD2 + 1
-        ElseIf (player1.D2 = 3) Then
-            totNumD3 = totNumD3 + 1
-        ElseIf (player1.D2 = 4) Then
-            totNumD4 = totNumD4 + 1
-        ElseIf (player1.D2 = 5) Then
-            totNumD5 = totNumD5 + 1
-        ElseIf (player1.D2 = 6) Then
-            totNumD6 = totNumD6 + 1
-        End If
-        'player1 Die3
-        If (player1.D3 = 1) Then
-            totNumD1 = totNumD1 + 1
-        ElseIf (player1.D3 = 2) Then
-            totNumD2 = totNumD2 + 1
-        ElseIf (player1.D3 = 3) Then
-            totNumD3 = totNumD3 + 1
-        ElseIf (player1.D3 = 4) Then
-            totNumD4 = totNumD4 + 1
-        ElseIf (player1.D3 = 5) Then
-            totNumD5 = totNumD5 + 1
-        ElseIf (player1.D3 = 6) Then
-            totNumD6 = totNumD6 + 1
-        End If
-        'player1 Die4
-        If (player1.D4 = 1) Then
-            totNumD1 = totNumD1 + 1
-        ElseIf (player1.D4 = 2) Then
-            totNumD2 = totNumD2 + 1
-        ElseIf (player1.D4 = 3) Then
-            totNumD3 = totNumD3 + 1
-        ElseIf (player1.D4 = 4) Then
-            totNumD4 = totNumD4 + 1
-        ElseIf (player1.D4 = 5) Then
-            totNumD5 = totNumD5 + 1
-        ElseIf (player1.D4 = 6) Then
-            totNumD6 = totNumD6 + 1
-        End If
-        'player1 Die5
-        If (player1.D5 = 1) Then
-            totNumD1 = totNumD1 + 1
-        ElseIf (player1.D5 = 2) Then
-            totNumD2 = totNumD2 + 1
-        ElseIf (player1.D5 = 3) Then
-            totNumD3 = totNumD3 + 1
-        ElseIf (player1.D5 = 4) Then
-            totNumD4 = totNumD4 + 1
-        ElseIf (player1.D5 = 5) Then
-            totNumD5 = totNumD5 + 1
-        ElseIf (player1.D5 = 6) Then
-            totNumD6 = totNumD6 + 1
-        End If
-        'player1 Die6
-        If (player1.D6 = 1) Then
-            totNumD1 = totNumD1 + 1
-        ElseIf (player1.D6 = 2) Then
-            totNumD2 = totNumD2 + 1
-        ElseIf (player1.D6 = 3) Then
-            totNumD3 = totNumD3 + 1
-        ElseIf (player1.D6 = 4) Then
-            totNumD4 = totNumD4 + 1
-        ElseIf (player1.D6 = 5) Then
-            totNumD5 = totNumD5 + 1
-        ElseIf (player1.D6 = 6) Then
-            totNumD6 = totNumD6 + 1
-        End If
-             */
+                private (int, int, int, int, int, int) CountDice(Player countPlayer)
+              
+                
+              Then instead of player1.d1, it would be countPlayer.d1, countPlayer.d2, etc.
+
+              At the end:
+                 Tuple totalNumDiceValues = new Tuple<int, int, int, int, int, int>(totNumD1, totNumD2, totNumD3..);
+              
+                 return totalNumDiceValues; 
+              
+            Or without generating the totalNumDiceValues:
+
+                return (totNumD1, TotNumD2..etc);
+                
+            Then of course, the count has to be recived somewhere, and parsed back out. Into, well another tuple, that can be parsed out.
+            There another option without using a tuple, and just do out statements in the top, but Im not a huge fan 
+            of cluttering up parameter statements, it makes things ugly, and possibly unreadable logic wise.
+            But then again, possibly are tuples are too. 
+                -Edward
+            */
+
+            //leaving this here if the switch is creating errors
+            //if (player1.D1 == 1 )
+            //{
+
+            //    totNumD1 += 1;
+            //}
+            //else if (player1.D1 == 2)
+            //{
+            // totNumD2 += 1;
+            //}
+            //what is totnumD1?? I don't see it generated or activated anywhere. Creating locally. Edward
+
+            int totNumD1 = 0;
+            int totNumD2 = 0;
+            int totNumD3 = 0;
+            int totNumD4 = 0;
+            int totNumD5 = 0;
+            int totNumD6 = 0;
+            
+            switch (player1.D1)
+            {
+                // player one dice
+                case 1:
+                    totNumD1 += 1;
+                    break;
+                case 2:
+                    totNumD2 += 1;
+                    break;
+                case 3:
+                    totNumD3 += 1;
+                    break;
+                case 4:
+                    totNumD4 += 1;
+                    break;
+                case 5:
+                    totNumD5 += 1;
+                    break;
+                case 6:
+                    totNumD6 += 1;
+                    break;
+            }
+            switch (player1.D2)
+            {
+                // player one dice 2
+                case 1:
+                    totNumD1 += 1;
+                    break;
+                case 2:
+                    totNumD2 += 1;
+                    break;
+                case 3:
+                    totNumD3 += 1;
+                    break;
+                case 4:
+                    totNumD4 += 1;
+                    break;
+                case 5:
+                    totNumD5 += 1;
+                    break;
+                case 6:
+                    totNumD6 += 1;
+                    break;
+            }
+            switch (player1.D3)
+            {
+                // player one dice 3
+                case 1:
+                    totNumD1 += 1;
+                    break;
+                case 2:
+                    totNumD2 += 1;
+                    break;
+                case 3:
+                    totNumD3 += 1;
+                    break;
+                case 4:
+                    totNumD4 += 1;
+                    break;
+                case 5:
+                    totNumD5 += 1;
+                    break;
+                case 6:
+                    totNumD6 += 1;
+                    break;
+            }
+            switch (player1.D4)
+            {
+                // player one dice 4
+                case 1:
+                    totNumD1 += 1;
+                    break;
+                case 2:
+                    totNumD2 += 1;
+                    break;
+                case 3:
+                    totNumD3 += 1;
+                    break;
+                case 4:
+                    totNumD4 += 1;
+                    break;
+                case 5:
+                    totNumD5 += 1;
+                    break;
+                case 6:
+                    totNumD6 += 1;
+                    break;
+            }
+            switch (player1.D5)
+            {
+                 // player one dice 5
+                case 1:
+                    totNumD1 += 1;
+                    break;
+                case 2:
+                    totNumD2 += 1;
+                    break;
+                case 3:
+                    totNumD3 += 1;
+                    break;
+                case 4:
+                    totNumD4 += 1;
+                    break;
+                case 5:
+                    totNumD5 += 1;
+                    break;
+                case 6:
+                    totNumD6 += 1;
+                    break;
+            }
+            switch (player1.D6)
+            {
+                // player one dice 6
+                case 1:
+                    totNumD1 += 1;
+                    break;
+                case 2:
+                    totNumD2 += 1;
+                    break;
+                case 3:
+                    totNumD3 += 1;
+                    break;
+                case 4:
+                    totNumD4 += 1;
+                    break;
+                case 5:
+                    totNumD5 += 1;
+                    break;
+                case 6:
+                    totNumD6 += 1;
+                    break;
+            }
+            
+        //send out total counts..to somewhere
+            //total toNumD1 etc;
+            //or return totNumD1, totNumD2, etc
+  
         }
         private int GenerateChoice(/*ref Player com*/)
         {
