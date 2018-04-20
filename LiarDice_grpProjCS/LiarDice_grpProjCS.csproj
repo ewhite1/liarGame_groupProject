@@ -45,31 +45,53 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmGame.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGame.Designer.cs">
+      <DependentUpon>frmGame.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmInstruction.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInstruction.Designer.cs">
+      <DependentUpon>frmInstruction.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="Instruction.cs">
+    <Compile Include="frmWin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Instruction.Designer.cs">
-      <DependentUpon>Instruction.cs</DependentUpon>
+    <Compile Include="frmWin.Designer.cs">
+      <DependentUpon>frmWin.cs</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="NewGame.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="NewGame.Designer.cs">
       <DependentUpon>NewGame.cs</DependentUpon>
     </Compile>
+=======
+    <Compile Include="Player.cs" />
+>>>>>>> ScoreBoard
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmGame.resx">
+      <DependentUpon>frmGame.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInstruction.resx">
+      <DependentUpon>frmInstruction.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Instruction.resx">
-      <DependentUpon>Instruction.cs</DependentUpon>
+    <EmbeddedResource Include="frmWin.resx">
+      <DependentUpon>frmWin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NewGame.resx">
       <DependentUpon>NewGame.cs</DependentUpon>
@@ -82,6 +104,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -95,6 +118,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Die1.BMP" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Die2.BMP" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Die3.BMP" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Die4.BMP" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Die5.BMP" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Die6.BMP" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="s-l1000.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
