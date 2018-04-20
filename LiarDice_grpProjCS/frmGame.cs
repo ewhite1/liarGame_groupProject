@@ -29,13 +29,73 @@ namespace LiarDice_grpProjCS
         public frmGame()
         {
             InitializeComponent();
+        }
+        private void frmGame_Load(object sender, EventArgs e)
+        {
             //roll all dice whe game starts
             DiceRollAll();
+            //display all dice
+            //player1
+            lblDie1Out.Text = player1.D1.ToString();
+            lblDie2Out.Text = player1.D2.ToString();
+            lblDie3Out.Text = player1.D3.ToString();
+            lblDie4Out.Text = player1.D4.ToString();
+            lblDie5Out.Text = player1.D5.ToString();
+            lblDie6Out.Text = player1.D6.ToString();
+            //computer1
+            lblComputer1D1.Text = computer1.D1.ToString();
+            lblComputer1D2.Text = computer1.D2.ToString();
+            lblComputer1D3.Text = computer1.D3.ToString();
+            lblComputer1D4.Text = computer1.D4.ToString();
+            lblComputer1D5.Text = computer1.D5.ToString();
+            lblComputer1D6.Text = computer1.D6.ToString();
+            //computer2
+            lblComputer2D1.Text = computer2.D1.ToString();
+            lblComputer2D2.Text = computer2.D2.ToString();
+            lblComputer2D3.Text = computer2.D3.ToString();
+            lblComputer2D4.Text = computer2.D4.ToString();
+            lblComputer2D5.Text = computer2.D5.ToString();
+            lblComputer2D6.Text = computer2.D6.ToString();
+            //computer3
+            lblComputer3D1.Text = computer3.D1.ToString();
+            lblComputer3D2.Text = computer3.D2.ToString();
+            lblComputer3D3.Text = computer3.D3.ToString();
+            lblComputer3D4.Text = computer3.D4.ToString();
+            lblComputer3D5.Text = computer3.D5.ToString();
+            lblComputer3D6.Text = computer3.D6.ToString();
+
             player1.DiceCountLeft = 6;
             computer1.DiceCountLeft = 6;
             computer2.DiceCountLeft = 6;
             computer3.DiceCountLeft = 6;
+
+            //set all dice values to true. still able to use the dice in the game
+            player1.D1On = true;
+            player1.D2On = true;
+            player1.D3On = true;
+            player1.D4On = true;
+            player1.D5On = true;
+            player1.D6On = true;
+            computer1.D1On = true;
+            computer1.D2On = true;
+            computer1.D3On = true;
+            computer1.D4On = true;
+            computer1.D5On = true;
+            computer1.D6On = true;
+            computer2.D1On = true;
+            computer2.D2On = true;
+            computer2.D3On = true;
+            computer2.D4On = true;
+            computer2.D5On = true;
+            computer2.D6On = true;
+            computer3.D1On = true;
+            computer3.D2On = true;
+            computer3.D3On = true;
+            computer3.D4On = true;
+            computer3.D5On = true;
+            computer3.D6On = true;
         }
+
         //gets the die
         private void pbxDie1_Click(object sender, EventArgs e)
         {
@@ -175,7 +235,6 @@ namespace LiarDice_grpProjCS
             GetDieNum();
             ComputerBet();
         }
-
         private void ComputerBet()
         {
             previousDiceAmount = player1.BetNumOfDice;
@@ -183,17 +242,24 @@ namespace LiarDice_grpProjCS
 
             //computer1 bet
             GenerateChoice();
-            if(previousDiceValue >= 5)
+            if (previousDiceValue >= 5 && previousDiceAmount < 7)
             {
-               //use challenge function here maybe not
-                computer1.BetNumOfDice = previousDiceAmount + choice;
+                computer1.BetDieValue = previousDiceValue;
+                computer1.BetNumOfDice = (previousDiceAmount +choice);
             }
-            else if(previousDiceAmount >= 12)
+            else if (previousDiceAmount >= 7)
             {
 
-                Challenge();
+                Computer1Challenge();
                 computer1.BetNumOfDice = choice;
-                computer1.BetDieValue = previousDiceValue + 1;
+                if (choice == 2)
+                {
+                    computer1.BetDieValue = previousDiceValue;
+                }
+                else
+                {
+                    computer1.BetDieValue = previousDiceValue + 1;
+                }
             }
             else
             {
@@ -206,16 +272,23 @@ namespace LiarDice_grpProjCS
             previousDiceValue = computer1.BetDieValue;
             //computer2
             GenerateChoice();
-            if (previousDiceValue >= 5)
+            if (previousDiceValue >= 5 && previousDiceAmount < 6)
             {
-                computer2.BetDieValue = choice;
-                computer2.BetNumOfDice = previousDiceAmount + choice;
+                computer2.BetDieValue = previousDiceValue;
+                computer2.BetNumOfDice = (previousDiceAmount + choice);
             }
-            else if (previousDiceAmount >= 11)
+            else if (previousDiceAmount >= 6)
             {
-                Challenge();
+                Computer2Challenge();
                 computer2.BetNumOfDice = choice;
-                computer2.BetDieValue = previousDiceValue + 1;
+                if (choice == 2)
+                {
+                    computer2.BetDieValue = previousDiceValue;
+                }
+                else
+                {
+                    computer2.BetDieValue = previousDiceValue + 1;
+                }
             }
             else
             {
@@ -228,16 +301,23 @@ namespace LiarDice_grpProjCS
             previousDiceValue = computer2.BetDieValue;
             //computer3
             GenerateChoice();
-            if (previousDiceValue >= 5)
+            if (previousDiceValue >= 5 && previousDiceAmount < 8)
             {
-                computer3.BetDieValue = choice;
-                computer3.BetNumOfDice = previousDiceAmount + choice;
+                computer3.BetDieValue = previousDiceValue;
+                computer3.BetNumOfDice = (previousDiceAmount + choice);
             }
-            else if (previousDiceAmount >= 10)
+            else if (previousDiceAmount >= 8)
             {
-                Challenge();
+                Computer3Challenge();
                 computer3.BetNumOfDice = choice;
-                computer3.BetDieValue = previousDiceValue + 1;
+                if (choice == 2)
+                {
+                    computer3.BetDieValue = previousDiceValue;
+                }
+                else
+                {
+                    computer3.BetDieValue = previousDiceValue + 1;
+                }
             }
             else
             {
@@ -251,6 +331,14 @@ namespace LiarDice_grpProjCS
         }
         private void CountDice()
         {
+            //reset totals
+            totNumD1 = 0;
+            totNumD2 = 0;
+            totNumD3 = 0;
+            totNumD4 = 0;
+            totNumD5 = 0;
+            totNumD6 = 0;
+
             switch (player1.D1)
             {
                 // player one dice
@@ -782,22 +870,368 @@ namespace LiarDice_grpProjCS
                     totNumD6 += 1;
                     break;
             }
+            lblDie1Count.Text = totNumD1.ToString();
+            lblDie2Count.Text = totNumD2.ToString();
+            lblDie3Count.Text = totNumD3.ToString();
+            lblDie4Count.Text = totNumD4.ToString();
+            lblDie5Count.Text = totNumD5.ToString();
+            lblDie6Count.Text = totNumD6.ToString();
         }
-        private void Challenge()
+        private void btnPlayer1Challenge_Click(object sender, EventArgs e)
         {
-         CountDice();
-            if(previousDiceAmount <= totNumD1 || previousDiceAmount <=totNumD2 || previousDiceAmount <= totNumD3 || previousDiceAmount <= totNumD4 || previousDiceAmount <= totNumD5 || previousDiceAmount<= totNumD6)
+            CountDice();
+            MessageBox.Show("Player1 challenged Computer 3");
+            //player1 challenge
+            if (previousDiceAmount > totNumD1 || previousDiceAmount > totNumD2 || previousDiceAmount > totNumD3 || previousDiceAmount > totNumD4 || previousDiceAmount > totNumD5 || previousDiceAmount > totNumD6)
             {
-                MessageBox.Show("Challenger lost!");
-                computer1.DiceCountLeft = 5;
-                computer1.D6On = false;
+                MessageBox.Show("You lost the challenge!");
+                if (player1.DiceCountLeft == 6)
+                {
+                    player1.DiceCountLeft = 5;
+                    player1.D6On = false;
+                    MessageBox.Show("You have 5 dice remaining");
+                }
+                else if (player1.DiceCountLeft == 5)
+                {
+                    player1.DiceCountLeft = 4;
+                    player1.D5On = false;
+                    MessageBox.Show("You have 4 dice remaining");
+                }
+                else if (player1.DiceCountLeft == 4)
+                {
+                    player1.DiceCountLeft = 3;
+                    player1.D4On = false;
+                    MessageBox.Show("You have 3 dice remaining");
+                }
+                else if (player1.DiceCountLeft == 3)
+                {
+                    player1.DiceCountLeft = 2;
+                    player1.D3On = false;
+                    MessageBox.Show("You have 2 dice remaining");
+                }
+                else if (player1.DiceCountLeft == 2)
+                {
+                    player1.DiceCountLeft = 1;
+                    player1.D2On = false;
+                    MessageBox.Show("You have 1 die remaining");
+                }
+                else if (player1.DiceCountLeft == 1)
+                {
+                    player1.DiceCountLeft = 0;
+                    player1.D1On = false;
+                    MessageBox.Show("You are out of dice");
+                }
             }
             else
             {
-                MessageBox.Show("Player being challenged lost!");
-                player1.DiceCountLeft = 5;
-                player1.D1On = false;
+                MessageBox.Show("Computer 3 lost the challenge!");
+                if (computer3.DiceCountLeft == 6)
+                {
+                    computer3.DiceCountLeft = 5;
+                    computer3.D6On = false;
+                    MessageBox.Show("Computer 3 has 5 dice remaining");
+                }
+                else if (computer3.DiceCountLeft == 5)
+                {
+                    computer3.DiceCountLeft = 4;
+                    computer3.D5On = false;
+                    MessageBox.Show("Computer 3 has 4 dice remaining");
+                }
+                else if (computer3.DiceCountLeft == 4)
+                {
+                    computer3.DiceCountLeft = 3;
+                    computer3.D4On = false;
+                    MessageBox.Show("Computer 3 has 3 dice remaining");
+                }
+                else if (computer3.DiceCountLeft == 3)
+                {
+                    computer3.DiceCountLeft = 2;
+                    computer3.D3On = false;
+                    MessageBox.Show("Computer 3 has 2 dice remaining");
+                }
+                else if (computer3.DiceCountLeft == 2)
+                {
+                    computer3.DiceCountLeft = 1;
+                    computer3.D2On = false;
+                    MessageBox.Show("Computer 3 has 1 die remaining");
+                }
+                else if (computer3.DiceCountLeft == 1)
+                {
+                    computer3.DiceCountLeft = 0;
+                    computer3.D1On = false;
+                    MessageBox.Show("Computer 3 is out of dice");
+                }
             }
+            DiceRollAll();
+            previousDiceAmount = 0;
+            previousDiceValue = 0;
+        }
+        private void Computer1Challenge()
+        {
+         CountDice();
+            MessageBox.Show("Computer 1 challenged Player 1");
+            if(previousDiceAmount <= totNumD1 || previousDiceAmount <= totNumD2 || previousDiceAmount <= totNumD3 || previousDiceAmount <= totNumD4 || previousDiceAmount <= totNumD5 || previousDiceAmount <= totNumD6)
+            {
+                MessageBox.Show("Computer 1 lost the challenge!");
+                if(computer1.DiceCountLeft == 6)
+                {
+                computer1.DiceCountLeft = 5;
+                computer1.D6On = false;
+                    MessageBox.Show("Computer 1 has 5 dice remaining");
+                }
+                else if(computer1.DiceCountLeft == 5)
+                {
+                    computer1.DiceCountLeft = 4;
+                    computer1.D5On = false;
+                    MessageBox.Show("Computer 1 has 4 dice remaining");
+                }
+                else if (computer1.DiceCountLeft == 4)
+                {
+                    computer1.DiceCountLeft = 3;
+                    computer1.D4On = false;
+                    MessageBox.Show("Computer 1 has 3 dice remaining");
+                }
+                else if (computer1.DiceCountLeft == 3)
+                {
+                    computer1.DiceCountLeft = 2;
+                    computer1.D3On = false;
+                    MessageBox.Show("Computer 1 has 2 dice remaining");
+                }
+                else if (computer1.DiceCountLeft == 2)
+                {
+                    computer1.DiceCountLeft = 1;
+                    computer1.D2On = false;
+                    MessageBox.Show("Computer 1 has 1 die remaining");
+                }
+                else if (computer1.DiceCountLeft == 1)
+                {
+                    computer1.DiceCountLeft = 0;
+                    computer1.D1On = false;
+                    MessageBox.Show("Computer 1 is out of dice");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Player 1 has lost the challenge!");
+                if (player1.DiceCountLeft == 6)
+                {
+                    player1.DiceCountLeft = 5;
+                    player1.D6On = false;
+                    MessageBox.Show("Player 1 has 5 dice remaining");
+                }
+                else if (player1.DiceCountLeft == 5)
+                {
+                    player1.DiceCountLeft = 4;
+                    player1.D5On = false;
+                    MessageBox.Show("Player 1 has 4 dice remaining");
+                }
+                else if (player1.DiceCountLeft == 4)
+                {
+                    player1.DiceCountLeft = 3;
+                    player1.D4On = false;
+                    MessageBox.Show("Player 1 has 3 dice remaining");
+                }
+                else if (player1.DiceCountLeft == 3)
+                {
+                    player1.DiceCountLeft = 2;
+                    player1.D3On = false;
+                    MessageBox.Show("Player 1 has 2 dice remaining");
+                }
+                else if (player1.DiceCountLeft == 2)
+                {
+                    player1.DiceCountLeft = 1;
+                    player1.D2On = false;
+                    MessageBox.Show("Player 1 has 1 die remaining");
+                }
+                else if (player1.DiceCountLeft == 1)
+                {
+                    player1.DiceCountLeft = 0;
+                    player1.D1On = false;
+                    MessageBox.Show("Player 1 is out of dice");
+                    //remove player from game
+                }
+            }
+            DiceRollAll();
+            previousDiceAmount = 0;
+            previousDiceValue = 0;
+        }
+        private void Computer2Challenge()
+        {
+            CountDice();
+            MessageBox.Show("Computer 2 challenged Computer 1");
+            if (previousDiceAmount <= totNumD1 || previousDiceAmount <= totNumD2 || previousDiceAmount <= totNumD3 || previousDiceAmount <= totNumD4 || previousDiceAmount <= totNumD5 || previousDiceAmount <= totNumD6)
+            {
+                MessageBox.Show("Computer 2 lost the challenge!");
+                if (computer2.DiceCountLeft == 6)
+                {
+                    computer2.DiceCountLeft = 5;
+                    computer2.D6On = false;
+                    MessageBox.Show("Computer 2 has 5 dice remaining");
+                }
+                else if (computer2.DiceCountLeft == 5)
+                {
+                    computer2.DiceCountLeft = 4;
+                    computer2.D5On = false;
+                    MessageBox.Show("Computer 2 has 4 dice remaining");
+                }
+                else if (computer2.DiceCountLeft == 4)
+                {
+                    computer2.DiceCountLeft = 3;
+                    computer2.D4On = false;
+                    MessageBox.Show("Computer 2 has 3 dice remaining");
+                }
+                else if (computer2.DiceCountLeft == 3)
+                {
+                    computer2.DiceCountLeft = 2;
+                    computer2.D3On = false;
+                    MessageBox.Show("Computer 2 has 2 dice remaining");
+                }
+                else if (computer2.DiceCountLeft == 2)
+                {
+                    computer2.DiceCountLeft = 1;
+                    computer2.D2On = false;
+                    MessageBox.Show("Computer 2 has 1 die remaining");
+                }
+                else if (computer2.DiceCountLeft == 1)
+                {
+                    computer2.DiceCountLeft = 0;
+                    computer2.D1On = false;
+                    MessageBox.Show("Computer 2 is out of dice");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Computer 1 has lost the challenge!");
+                if (computer1.DiceCountLeft == 6)
+                {
+                    computer1.DiceCountLeft = 5;
+                    computer1.D6On = false;
+                    MessageBox.Show("Computer 1 has 5 dice remaining");
+                }
+                else if (player1.DiceCountLeft == 5)
+                {
+                    computer1.DiceCountLeft = 4;
+                    computer1.D5On = false;
+                    MessageBox.Show("Computer 1 has 4 dice remaining");
+                }
+                else if (computer1.DiceCountLeft == 4)
+                {
+                    computer1.DiceCountLeft = 3;
+                    computer1.D4On = false;
+                    MessageBox.Show("Computer 1 has 3 dice remaining");
+                }
+                else if (computer1.DiceCountLeft == 3)
+                {
+                    computer1.DiceCountLeft = 2;
+                    computer1.D3On = false;
+                    MessageBox.Show("Computer 1 has 2 dice remaining");
+                }
+                else if (computer1.DiceCountLeft == 2)
+                {
+                    computer1.DiceCountLeft = 1;
+                    computer1.D2On = false;
+                    MessageBox.Show("Computer 1 has 1 die remaining");
+                }
+                else if (computer1.DiceCountLeft == 1)
+                {
+                    computer1.DiceCountLeft = 0;
+                    computer1.D1On = false;
+                    MessageBox.Show("Computer 1 is out of dice");
+                    //remove player from game
+                }
+            }
+            DiceRollAll();
+            previousDiceAmount = 0;
+            previousDiceValue = 0;
+        }
+        private void Computer3Challenge()
+        {
+            CountDice();
+            MessageBox.Show("Computer 3 challenged Computer 2");
+            if (previousDiceAmount <= totNumD1 || previousDiceAmount <= totNumD2 || previousDiceAmount <= totNumD3 || previousDiceAmount <= totNumD4 || previousDiceAmount <= totNumD5 || previousDiceAmount <= totNumD6)
+            {
+                MessageBox.Show("Computer 3 lost the challenge!");
+                if (computer3.DiceCountLeft == 6)
+                {
+                    computer3.DiceCountLeft = 5;
+                    computer3.D6On = false;
+                    MessageBox.Show("Computer 3 has 5 dice remaining");
+                }
+                else if (computer3.DiceCountLeft == 5)
+                {
+                    computer3.DiceCountLeft = 4;
+                    computer3.D5On = false;
+                    MessageBox.Show("Computer 3 has 4 dice remaining");
+                }
+                else if (computer3.DiceCountLeft == 4)
+                {
+                    computer3.DiceCountLeft = 3;
+                    computer3.D4On = false;
+                    MessageBox.Show("Computer 3 has 3 dice remaining");
+                }
+                else if (computer3.DiceCountLeft == 3)
+                {
+                    computer3.DiceCountLeft = 2;
+                    computer3.D3On = false;
+                    MessageBox.Show("Computer 3 has 2 dice remaining");
+                }
+                else if (computer3.DiceCountLeft == 2)
+                {
+                    computer3.DiceCountLeft = 1;
+                    computer3.D2On = false;
+                    MessageBox.Show("Computer 3 has 1 die remaining");
+                }
+                else if (computer3.DiceCountLeft == 1)
+                {
+                    computer3.DiceCountLeft = 0;
+                    computer3.D1On = false;
+                    MessageBox.Show("Computer 3 is out of dice");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Computer 2 has lost the challenge!");
+                if (computer2.DiceCountLeft == 6)
+                {
+                    computer2.DiceCountLeft = 5;
+                    computer2.D6On = false;
+                    MessageBox.Show("Computer 2 has 5 dice remaining");
+                }
+                else if (computer2.DiceCountLeft == 5)
+                {
+                    computer2.DiceCountLeft = 4;
+                    computer2.D5On = false;
+                    MessageBox.Show("Computer 2 has 4 dice remaining");
+                }
+                else if (computer2.DiceCountLeft == 4)
+                {
+                    computer2.DiceCountLeft = 3;
+                    computer2.D4On = false;
+                    MessageBox.Show("Computer 2 has 3 dice remaining");
+                }
+                else if (computer2.DiceCountLeft == 3)
+                {
+                    computer2.DiceCountLeft = 2;
+                    computer2.D3On = false;
+                    MessageBox.Show("Computer 2 has 2 dice remaining");
+                }
+                else if (computer2.DiceCountLeft == 2)
+                {
+                    computer2.DiceCountLeft = 1;
+                    computer2.D2On = false;
+                    MessageBox.Show("Computer 2 has 1 die remaining");
+                }
+                else if (computer2.DiceCountLeft == 1)
+                {
+                    computer2.DiceCountLeft = 0;
+                    computer2.D1On = false;
+                    MessageBox.Show("Computer 2 is out of dice");
+                    //remove player from game
+                }
+            }
+            DiceRollAll();
+            previousDiceAmount = 0;
+            previousDiceValue = 0;
         }
         private int GenerateChoice(/*ref Player com*/)
         {
@@ -805,38 +1239,12 @@ namespace LiarDice_grpProjCS
             choice = rand.Next(1,2);
             return choice;
         }
-       
-
         //roll all dice function
         private void DiceRollAll()
         {
             Random rand = new Random();
-            //set all dice values to true. still able to use the dice in the game
-            player1.D1On = true;
-            player1.D2On = true;
-            player1.D3On = true;
-            player1.D4On = true;
-            player1.D5On = true;
-            player1.D6On = true;
-            computer1.D1On = true;
-            computer1.D2On = true;
-            computer1.D3On = true;
-            computer1.D4On = true;
-            computer1.D5On = true;
-            computer1.D6On = true;
-            computer2.D1On = true;
-            computer2.D2On = true;
-            computer2.D3On = true;
-            computer2.D4On = true;
-            computer2.D5On = true;
-            computer1.D6On = true;
-            computer3.D1On = true;
-            computer3.D2On = true;
-            computer3.D3On = true;
-            computer3.D4On = true;
-            computer3.D5On = true;
-            computer3.D6On = true;
 
+            //ACCOUNT FOR PLAYERS THAT HAVE LOST DICE
             //roll player 1 dice
             player1.D1 = rand.Next(6) + 1;
             player1.D2 = rand.Next(6) + 1;
@@ -865,18 +1273,42 @@ namespace LiarDice_grpProjCS
             computer3.D4 = rand.Next(6) + 1;
             computer3.D5 = rand.Next(6) + 1;
             computer3.D6 = rand.Next(6) + 1;
-        }
 
+            CountDice();
+            MessageBox.Show("All dice have been rolled");
+        }
         private void btnRoll_Click(object sender, EventArgs e)
         {
-            DiceRollAll();
+            //DiceRollAll();
+            //Display All Dice again
+            //player1
             lblDie1Out.Text = player1.D1.ToString();
             lblDie2Out.Text = player1.D2.ToString();
             lblDie3Out.Text = player1.D3.ToString();
             lblDie4Out.Text = player1.D4.ToString();
             lblDie5Out.Text = player1.D5.ToString();
             lblDie6Out.Text = player1.D6.ToString();
-
+            //computer1
+            lblComputer1D1.Text = computer1.D1.ToString();
+            lblComputer1D2.Text = computer1.D2.ToString();
+            lblComputer1D3.Text = computer1.D3.ToString();
+            lblComputer1D4.Text = computer1.D4.ToString();
+            lblComputer1D5.Text = computer1.D5.ToString();
+            lblComputer1D6.Text = computer1.D6.ToString();
+            //computer2
+            lblComputer2D1.Text = computer2.D1.ToString();
+            lblComputer2D2.Text = computer2.D2.ToString();
+            lblComputer2D3.Text = computer2.D3.ToString();
+            lblComputer2D4.Text = computer2.D4.ToString();
+            lblComputer2D5.Text = computer2.D5.ToString();
+            lblComputer2D6.Text = computer2.D6.ToString();
+            //computer3
+            lblComputer3D1.Text = computer3.D1.ToString();
+            lblComputer3D2.Text = computer3.D2.ToString();
+            lblComputer3D3.Text = computer3.D3.ToString();
+            lblComputer3D4.Text = computer3.D4.ToString();
+            lblComputer3D5.Text = computer3.D5.ToString();
+            lblComputer3D6.Text = computer3.D6.ToString();
         }
 
         

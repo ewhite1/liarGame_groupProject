@@ -123,6 +123,16 @@ namespace LiarDice_grpProjCS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap q02th {
+            get {
+                object obj = ResourceManager.GetObject("q02th", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap s_l1000 {
             get {
                 object obj = ResourceManager.GetObject("s-l1000", resourceCulture);

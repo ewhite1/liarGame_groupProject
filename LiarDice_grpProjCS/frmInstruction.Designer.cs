@@ -43,10 +43,12 @@
                 " ",
             "The dice are rolled and left hidden and the players can only see their own dice. " +
                 " ",
-            "Each person playing is given a turn to bet/bluff the total number of dice and the" +
+            "Each player playing is given a turn to bet/bluff the total number of dice and the" +
                 " value of the die",
-            "they think that everyone playing has.  ",
-            "The person is welcome to bet as low or high as they want to attempt to outsmart t" +
+            "they think that everyone playing has.",
+            "The player may bid a higher quantity of the same value or the same quantity of a " +
+                "higher value.",
+            "The player is welcome to bet as low or high as they want to attempt to outsmart t" +
                 "he opponent.  ",
             "The game becomes more difficult as each player has to bet/bluff either a higher d" +
                 "ie value or higher ",
@@ -102,7 +104,7 @@
             this.backToolStripMenuItem.Text = "&Back";
             this.backToolStripMenuItem.Click += new System.EventHandler(this.backToolStripMenuItem_Click);
             // 
-            // frmInstuction
+            // frmInstruction
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -112,7 +114,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "frmInstuction";
+            this.Name = "frmInstruction";
             this.Text = "Instructions";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
