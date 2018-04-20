@@ -17,43 +17,22 @@ namespace LiarDice_grpProjCS
             InitializeComponent();
         }
 
-        //Instruction frmInstruction = new Instruction();
-        
-        
         private void btnExit_Click(object sender, EventArgs e)
         {
-            frmGame gameForm = new frmGame();
-            frmWin winForm = new frmWin();
-            frmInstruction instructionForm = new frmInstruction();
             Application.Exit();
-            gameForm.Close();
-            winForm.Close();
-            instructionForm.Close();
         }
 
         private void btnInstructions_Click(object sender, EventArgs e)
         {
             //form Launch- explaining rules
-            frmInstruction instructionForm = new frmInstruction();
-            instructionForm.ShowDialog();
+            Instruction frmInstruction = new Instruction();
+            this.Hide();
+            frmInstruction.Show();
         }
 
         private void btnNewGame_Click(object sender, EventArgs e)
-        { 
-            //new form launch - new game settings
-            frmGame gameForm = new frmGame();
-            //get player name
-            //player1.Name
-          
-            this.Hide();
-            gameForm.Show();
-        }
-
-        private void btnWinners_Click(object sender, EventArgs e)
         {
-            frmWin winForm = new frmWin();
-            winForm.ShowDialog();
+            //new form launch - new game settings
         }
-
     }
 }
