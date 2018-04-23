@@ -34,10 +34,8 @@
             this.btnInstructions = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnWinners = new System.Windows.Forms.Button();
-            this.rdoEasy = new System.Windows.Forms.RadioButton();
-            this.rdoMedium = new System.Windows.Forms.RadioButton();
-            this.rdoHard = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
+            this.cbxSetting = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // lblTitle
@@ -46,7 +44,7 @@
             this.lblTitle.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblTitle.Font = new System.Drawing.Font("Broadway", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.Color.DimGray;
-            this.lblTitle.Location = new System.Drawing.Point(35, 64);
+            this.lblTitle.Location = new System.Drawing.Point(35, 86);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(576, 111);
             this.lblTitle.TabIndex = 0;
@@ -56,7 +54,7 @@
             // 
             this.lblCreators.Font = new System.Drawing.Font("Arial Narrow", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCreators.ForeColor = System.Drawing.Color.DimGray;
-            this.lblCreators.Location = new System.Drawing.Point(163, 187);
+            this.lblCreators.Location = new System.Drawing.Point(172, 244);
             this.lblCreators.Name = "lblCreators";
             this.lblCreators.Size = new System.Drawing.Size(308, 87);
             this.lblCreators.TabIndex = 1;
@@ -108,58 +106,28 @@
             this.btnWinners.UseVisualStyleBackColor = true;
             this.btnWinners.Click += new System.EventHandler(this.btnWinners_Click);
             // 
-            // rdoEasy
-            // 
-            this.rdoEasy.AutoSize = true;
-            this.rdoEasy.BackColor = System.Drawing.Color.Transparent;
-            this.rdoEasy.Font = new System.Drawing.Font("Broadway", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdoEasy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.rdoEasy.Location = new System.Drawing.Point(143, 318);
-            this.rdoEasy.Name = "rdoEasy";
-            this.rdoEasy.Size = new System.Drawing.Size(382, 58);
-            this.rdoEasy.TabIndex = 0;
-            this.rdoEasy.TabStop = true;
-            this.rdoEasy.Text = "Easy- Show everyone hand \r\nand dice Counts ";
-            this.rdoEasy.UseVisualStyleBackColor = false;
-            // 
-            // rdoMedium
-            // 
-            this.rdoMedium.AutoSize = true;
-            this.rdoMedium.BackColor = System.Drawing.Color.Transparent;
-            this.rdoMedium.Font = new System.Drawing.Font("Broadway", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdoMedium.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.rdoMedium.Location = new System.Drawing.Point(143, 398);
-            this.rdoMedium.Name = "rdoMedium";
-            this.rdoMedium.Size = new System.Drawing.Size(443, 31);
-            this.rdoMedium.TabIndex = 1;
-            this.rdoMedium.TabStop = true;
-            this.rdoMedium.Text = "Medium - Show dice Count Only";
-            this.rdoMedium.UseVisualStyleBackColor = false;
-            // 
-            // rdoHard
-            // 
-            this.rdoHard.AutoSize = true;
-            this.rdoHard.BackColor = System.Drawing.Color.Transparent;
-            this.rdoHard.Font = new System.Drawing.Font("Broadway", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdoHard.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.rdoHard.Location = new System.Drawing.Point(143, 467);
-            this.rdoHard.Name = "rdoHard";
-            this.rdoHard.Size = new System.Drawing.Size(387, 58);
-            this.rdoHard.TabIndex = 2;
-            this.rdoHard.TabStop = true;
-            this.rdoHard.Text = "Hard - Hide everyone hand \r\nand dice count";
-            this.rdoHard.UseVisualStyleBackColor = false;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DimGray;
-            this.label1.Location = new System.Drawing.Point(138, 274);
+            this.label1.Location = new System.Drawing.Point(55, 360);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(194, 26);
             this.label1.TabIndex = 9;
             this.label1.Text = "Select your Level:";
+            // 
+            // cbxSetting
+            // 
+            this.cbxSetting.FormattingEnabled = true;
+            this.cbxSetting.Items.AddRange(new object[] {
+            "Easy- All cpu dice are shown and the dice count",
+            "Medium - All Cpu Dices are hidden, but the dice count is shown",
+            "Hard - All Dice are Hidden, and the Dice Count(Realistic)"});
+            this.cbxSetting.Location = new System.Drawing.Point(57, 403);
+            this.cbxSetting.Name = "cbxSetting";
+            this.cbxSetting.Size = new System.Drawing.Size(539, 28);
+            this.cbxSetting.TabIndex = 10;
             // 
             // frmMain
             // 
@@ -167,10 +135,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Goldenrod;
             this.ClientSize = new System.Drawing.Size(653, 695);
+            this.Controls.Add(this.cbxSetting);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.rdoHard);
-            this.Controls.Add(this.rdoMedium);
-            this.Controls.Add(this.rdoEasy);
             this.Controls.Add(this.btnWinners);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnInstructions);
@@ -192,10 +158,8 @@
         private System.Windows.Forms.Button btnInstructions;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button btnWinners;
-        private System.Windows.Forms.RadioButton rdoEasy;
-        private System.Windows.Forms.RadioButton rdoMedium;
-        private System.Windows.Forms.RadioButton rdoHard;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cbxSetting;
     }
 }
 

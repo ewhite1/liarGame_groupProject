@@ -47,32 +47,33 @@ namespace LiarDice_grpProjCS
         private void btnNewGame_Click(object sender, EventArgs e)
         { 
             //new form launch - new game settings
-            
-            //set the settings
-            if (!rdoEasy.Checked && !rdoMedium.Checked && !rdoHard.Checked)
-            {
-                MessageBox.Show("Please Select a level level first before playing.");
-            }
-            else
-            {
-                if (rdoEasy.Checked)
-                {
-                    Settings = "easy";
-                }
-                else if (rdoMedium.Checked)
-                {
-                    Settings = "medium";
-                }
-                else if (rdoHard.Checked)
-                {
-                    Settings = "hard";
-                }
-                frmGame gameForm = new frmGame();
-                this.Hide();
-                gameForm.Show();
-            }
-          
            
+
+            ////set the settings
+                if (cbxSetting.SelectedIndex == -1)
+                {
+                    MessageBox.Show("Please Select a level setting first before playing.");
+                }
+                else
+                {
+                    if (cbxSetting.SelectedIndex == 1)
+                    {
+                        Settings = "easy";
+                    }
+                    else if (cbxSetting.SelectedIndex == 2)
+                    {
+                        Settings = "medium";
+                    }
+                    else if (cbxSetting.SelectedIndex == 3)
+                    {
+                        Settings = "hard";
+                    }
+                    frmGame gameForm = new frmGame();
+                    this.Hide();
+                    gameForm.Show();
+                }
+
+
         }
 
         private void btnWinners_Click(object sender, EventArgs e)
