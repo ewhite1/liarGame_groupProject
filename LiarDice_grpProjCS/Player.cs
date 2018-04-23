@@ -12,7 +12,7 @@ namespace LiarDice_grpProjCS
         //d1 stands for die one, d2 for die two, etc.
         private string _name;
         private int _d1, _d2, _d3, _d4, _d5, _d6, _betNumOfDice, _betDieVal, _diceCountLeft;
-        private bool _d1On, _d2On, _d3On, _d4On, _d5On, _d6On;
+        private bool _d1On, _d2On, _d3On, _d4On, _d5On, _d6On, _won, _lost;
 
         //constructor
         public Player()
@@ -102,6 +102,16 @@ namespace LiarDice_grpProjCS
         {
             get { return _d6On; }
             set { _d6On = value; }
+        }
+        public bool Lost
+        {
+            get { return _lost; }
+            set { _lost = value; }
+        }
+        public bool Won
+        {
+            get { return _won; }
+            set { _won = value; }
         }
     }
 }

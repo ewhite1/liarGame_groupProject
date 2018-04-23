@@ -83,6 +83,7 @@
             this.lblDie5Count = new System.Windows.Forms.Label();
             this.lblDie6Count = new System.Windows.Forms.Label();
             this.btnPlayer1Challenge = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxDie6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxDie5)).BeginInit();
@@ -270,64 +271,71 @@
             // 
             this.lblDie1Out.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.lblDie1Out.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblDie1Out.Location = new System.Drawing.Point(723, 679);
+            this.lblDie1Out.Location = new System.Drawing.Point(386, 546);
             this.lblDie1Out.Name = "lblDie1Out";
             this.lblDie1Out.Size = new System.Drawing.Size(54, 23);
             this.lblDie1Out.TabIndex = 15;
+            this.lblDie1Out.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblDie2Out
             // 
             this.lblDie2Out.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.lblDie2Out.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblDie2Out.Location = new System.Drawing.Point(783, 679);
+            this.lblDie2Out.Location = new System.Drawing.Point(446, 546);
             this.lblDie2Out.Name = "lblDie2Out";
             this.lblDie2Out.Size = new System.Drawing.Size(54, 23);
             this.lblDie2Out.TabIndex = 16;
+            this.lblDie2Out.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblDie3Out
             // 
             this.lblDie3Out.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.lblDie3Out.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblDie3Out.Location = new System.Drawing.Point(843, 679);
+            this.lblDie3Out.Location = new System.Drawing.Point(506, 546);
             this.lblDie3Out.Name = "lblDie3Out";
             this.lblDie3Out.Size = new System.Drawing.Size(54, 23);
             this.lblDie3Out.TabIndex = 17;
+            this.lblDie3Out.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblDie4Out
             // 
             this.lblDie4Out.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.lblDie4Out.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblDie4Out.Location = new System.Drawing.Point(903, 679);
+            this.lblDie4Out.Location = new System.Drawing.Point(566, 546);
             this.lblDie4Out.Name = "lblDie4Out";
             this.lblDie4Out.Size = new System.Drawing.Size(54, 23);
             this.lblDie4Out.TabIndex = 18;
+            this.lblDie4Out.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblDie5Out
             // 
             this.lblDie5Out.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.lblDie5Out.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblDie5Out.Location = new System.Drawing.Point(963, 679);
+            this.lblDie5Out.Location = new System.Drawing.Point(626, 546);
             this.lblDie5Out.Name = "lblDie5Out";
             this.lblDie5Out.Size = new System.Drawing.Size(54, 23);
             this.lblDie5Out.TabIndex = 19;
+            this.lblDie5Out.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblDie6Out
             // 
             this.lblDie6Out.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.lblDie6Out.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblDie6Out.Location = new System.Drawing.Point(1023, 679);
+            this.lblDie6Out.Location = new System.Drawing.Point(686, 546);
             this.lblDie6Out.Name = "lblDie6Out";
             this.lblDie6Out.Size = new System.Drawing.Size(54, 23);
             this.lblDie6Out.TabIndex = 20;
+            this.lblDie6Out.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnRoll
             // 
-            this.btnRoll.Location = new System.Drawing.Point(855, 718);
+            this.btnRoll.Location = new System.Drawing.Point(1020, 718);
             this.btnRoll.Name = "btnRoll";
             this.btnRoll.Size = new System.Drawing.Size(75, 23);
             this.btnRoll.TabIndex = 21;
             this.btnRoll.Text = "&ShowDice";
             this.btnRoll.UseVisualStyleBackColor = true;
+            this.btnRoll.Visible = false;
             this.btnRoll.Click += new System.EventHandler(this.btnRoll_Click);
             // 
             // lblComputer1BetNum
@@ -610,6 +618,15 @@
             this.btnPlayer1Challenge.UseVisualStyleBackColor = true;
             this.btnPlayer1Challenge.Click += new System.EventHandler(this.btnPlayer1Challenge_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(536, 519);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(54, 13);
+            this.label2.TabIndex = 53;
+            this.label2.Text = "Your Dice";
+            // 
             // frmGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -617,6 +634,7 @@
             this.BackColor = System.Drawing.Color.Goldenrod;
             this.BackgroundImage = global::LiarDice_grpProjCS.Properties.Resources.q02th;
             this.ClientSize = new System.Drawing.Size(1126, 753);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.btnPlayer1Challenge);
             this.Controls.Add(this.lblDie6Count);
             this.Controls.Add(this.lblDie5Count);
@@ -738,5 +756,6 @@
         private System.Windows.Forms.Label lblDie5Count;
         private System.Windows.Forms.Label lblDie6Count;
         private System.Windows.Forms.Button btnPlayer1Challenge;
+        private System.Windows.Forms.Label label2;
     }
 }

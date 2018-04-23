@@ -32,8 +32,32 @@ namespace LiarDice_grpProjCS
         }
         private void frmGame_Load(object sender, EventArgs e)
         {
-            //roll all dice whe game starts
-            DiceRollAll();
+            //set all dice values to true. still able to use the dice in the game
+            player1.D1On = true;
+            player1.D2On = true;
+            player1.D3On = true;
+            player1.D4On = true;
+            player1.D5On = true;
+            player1.D6On = true;
+            computer1.D1On = true;
+            computer1.D2On = true;
+            computer1.D3On = true;
+            computer1.D4On = true;
+            computer1.D5On = true;
+            computer1.D6On = true;
+            computer2.D1On = true;
+            computer2.D2On = true;
+            computer2.D3On = true;
+            computer2.D4On = true;
+            computer2.D5On = true;
+            computer2.D6On = true;
+            computer3.D1On = true;
+            computer3.D2On = true;
+            computer3.D3On = true;
+            computer3.D4On = true;
+            computer3.D5On = true;
+            computer3.D6On = true;
+            
             //display all dice
             //player1
             lblDie1Out.Text = player1.D1.ToString();
@@ -69,31 +93,14 @@ namespace LiarDice_grpProjCS
             computer2.DiceCountLeft = 6;
             computer3.DiceCountLeft = 6;
 
-            //set all dice values to true. still able to use the dice in the game
-            player1.D1On = true;
-            player1.D2On = true;
-            player1.D3On = true;
-            player1.D4On = true;
-            player1.D5On = true;
-            player1.D6On = true;
-            computer1.D1On = true;
-            computer1.D2On = true;
-            computer1.D3On = true;
-            computer1.D4On = true;
-            computer1.D5On = true;
-            computer1.D6On = true;
-            computer2.D1On = true;
-            computer2.D2On = true;
-            computer2.D3On = true;
-            computer2.D4On = true;
-            computer2.D5On = true;
-            computer2.D6On = true;
-            computer3.D1On = true;
-            computer3.D2On = true;
-            computer3.D3On = true;
-            computer3.D4On = true;
-            computer3.D5On = true;
-            computer3.D6On = true;
+            lblComputer1BetNum.Text = "X";
+            lblComputer1BetValue.Text = "X";
+            lblComputer2BetNum.Text = "X";
+            lblComputer2BetValue.Text = "X";
+            lblComputer3BetNum.Text = "X";
+            lblComputer3BetValue.Text = "X";
+            //roll all dice whe game starts
+            DiceRollAll();
         }
 
         //gets the die
@@ -204,7 +211,6 @@ namespace LiarDice_grpProjCS
                 player1.BetNumOfDice = 20;
             }
         }
-       
         
         private void instructionsToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -232,6 +238,13 @@ namespace LiarDice_grpProjCS
         
         private void btnBet_Click(object sender, EventArgs e)
         {
+            lblComputer1BetNum.Text = "X";
+            lblComputer1BetValue.Text = "X";
+            lblComputer2BetNum.Text = "X";
+            lblComputer2BetValue.Text = "X";
+            lblComputer3BetNum.Text = "X";
+            lblComputer3BetValue.Text = "X";
+            CountDice();
             GetDieNum();
             ComputerBet();
         }
@@ -339,537 +352,1912 @@ namespace LiarDice_grpProjCS
             totNumD5 = 0;
             totNumD6 = 0;
 
-            switch (player1.D1)
+            //player1
+            if(player1.DiceCountLeft == 6)
             {
-                // player one dice
-                case 1:
-                    totNumD1 += 1;
-                    break;
-                case 2:
-                    totNumD2 += 1;
-                    break;
-                case 3:
-                    totNumD3 += 1;
-                    break;
-                case 4:
-                    totNumD4 += 1;
-                    break;
-                case 5:
-                    totNumD5 += 1;
-                    break;
-                case 6:
-                    totNumD6 += 1;
-                    break;
+                switch (player1.D1)
+                {
+                    // player one dice
+                    case 1:
+                        totNumD1 += 1;
+                        break;
+                    case 2:
+                        totNumD2 += 1;
+                        break;
+                    case 3:
+                        totNumD3 += 1;
+                        break;
+                    case 4:
+                        totNumD4 += 1;
+                        break;
+                    case 5:
+                        totNumD5 += 1;
+                        break;
+                    case 6:
+                        totNumD6 += 1;
+                        break;
+                }
+                switch (player1.D2)
+                {
+                    // player one dice
+                    case 1:
+                        totNumD1 += 1;
+                        break;
+                    case 2:
+                        totNumD2 += 1;
+                        break;
+                    case 3:
+                        totNumD3 += 1;
+                        break;
+                    case 4:
+                        totNumD4 += 1;
+                        break;
+                    case 5:
+                        totNumD5 += 1;
+                        break;
+                    case 6:
+                        totNumD6 += 1;
+                        break;
+                }
+                switch (player1.D3)
+                {
+                    // player one dice
+                    case 1:
+                        totNumD1 += 1;
+                        break;
+                    case 2:
+                        totNumD2 += 1;
+                        break;
+                    case 3:
+                        totNumD3 += 1;
+                        break;
+                    case 4:
+                        totNumD4 += 1;
+                        break;
+                    case 5:
+                        totNumD5 += 1;
+                        break;
+                    case 6:
+                        totNumD6 += 1;
+                        break;
+                }
+                switch (player1.D4)
+                {
+                    // player one dice
+                    case 1:
+                        totNumD1 += 1;
+                        break;
+                    case 2:
+                        totNumD2 += 1;
+                        break;
+                    case 3:
+                        totNumD3 += 1;
+                        break;
+                    case 4:
+                        totNumD4 += 1;
+                        break;
+                    case 5:
+                        totNumD5 += 1;
+                        break;
+                    case 6:
+                        totNumD6 += 1;
+                        break;
+                }
+                switch (player1.D5)
+                {
+                    // player one dice
+                    case 1:
+                        totNumD1 += 1;
+                        break;
+                    case 2:
+                        totNumD2 += 1;
+                        break;
+                    case 3:
+                        totNumD3 += 1;
+                        break;
+                    case 4:
+                        totNumD4 += 1;
+                        break;
+                    case 5:
+                        totNumD5 += 1;
+                        break;
+                    case 6:
+                        totNumD6 += 1;
+                        break;
+                }
+                switch (player1.D6)
+                {
+                    // player one dice
+                    case 1:
+                        totNumD1 += 1;
+                        break;
+                    case 2:
+                        totNumD2 += 1;
+                        break;
+                    case 3:
+                        totNumD3 += 1;
+                        break;
+                    case 4:
+                        totNumD4 += 1;
+                        break;
+                    case 5:
+                        totNumD5 += 1;
+                        break;
+                    case 6:
+                        totNumD6 += 1;
+                        break;
+                }
             }
-            switch (player1.D2)
+            else if(player1.DiceCountLeft == 5)
             {
-                // player one dice 2
-                case 1:
-                    totNumD1 += 1;
-                    break;
-                case 2:
-                    totNumD2 += 1;
-                    break;
-                case 3:
-                    totNumD3 += 1;
-                    break;
-                case 4:
-                    totNumD4 += 1;
-                    break;
-                case 5:
-                    totNumD5 += 1;
-                    break;
-                case 6:
-                    totNumD6 += 1;
-                    break;
+                switch (player1.D1)
+                {
+                    // player one dice
+                    case 1:
+                        totNumD1 += 1;
+                        break;
+                    case 2:
+                        totNumD2 += 1;
+                        break;
+                    case 3:
+                        totNumD3 += 1;
+                        break;
+                    case 4:
+                        totNumD4 += 1;
+                        break;
+                    case 5:
+                        totNumD5 += 1;
+                        break;
+                    case 6:
+                        totNumD6 += 1;
+                        break;
+                }
+                switch (player1.D2)
+                {
+                    // player one dice
+                    case 1:
+                        totNumD1 += 1;
+                        break;
+                    case 2:
+                        totNumD2 += 1;
+                        break;
+                    case 3:
+                        totNumD3 += 1;
+                        break;
+                    case 4:
+                        totNumD4 += 1;
+                        break;
+                    case 5:
+                        totNumD5 += 1;
+                        break;
+                    case 6:
+                        totNumD6 += 1;
+                        break;
+                }
+                switch (player1.D3)
+                {
+                    // player one dice
+                    case 1:
+                        totNumD1 += 1;
+                        break;
+                    case 2:
+                        totNumD2 += 1;
+                        break;
+                    case 3:
+                        totNumD3 += 1;
+                        break;
+                    case 4:
+                        totNumD4 += 1;
+                        break;
+                    case 5:
+                        totNumD5 += 1;
+                        break;
+                    case 6:
+                        totNumD6 += 1;
+                        break;
+                }
+                switch (player1.D4)
+                {
+                    // player one dice
+                    case 1:
+                        totNumD1 += 1;
+                        break;
+                    case 2:
+                        totNumD2 += 1;
+                        break;
+                    case 3:
+                        totNumD3 += 1;
+                        break;
+                    case 4:
+                        totNumD4 += 1;
+                        break;
+                    case 5:
+                        totNumD5 += 1;
+                        break;
+                    case 6:
+                        totNumD6 += 1;
+                        break;
+                }
+                switch (player1.D5)
+                {
+                    // player one dice
+                    case 1:
+                        totNumD1 += 1;
+                        break;
+                    case 2:
+                        totNumD2 += 1;
+                        break;
+                    case 3:
+                        totNumD3 += 1;
+                        break;
+                    case 4:
+                        totNumD4 += 1;
+                        break;
+                    case 5:
+                        totNumD5 += 1;
+                        break;
+                    case 6:
+                        totNumD6 += 1;
+                        break;
+                }
             }
-            switch (player1.D3)
+            else if(player1.DiceCountLeft == 4)
             {
-                // player one dice 3
-                case 1:
-                    totNumD1 += 1;
-                    break;
-                case 2:
-                    totNumD2 += 1;
-                    break;
-                case 3:
-                    totNumD3 += 1;
-                    break;
-                case 4:
-                    totNumD4 += 1;
-                    break;
-                case 5:
-                    totNumD5 += 1;
-                    break;
-                case 6:
-                    totNumD6 += 1;
-                    break;
+                switch (player1.D1)
+                {
+                    // player one dice
+                    case 1:
+                        totNumD1 += 1;
+                        break;
+                    case 2:
+                        totNumD2 += 1;
+                        break;
+                    case 3:
+                        totNumD3 += 1;
+                        break;
+                    case 4:
+                        totNumD4 += 1;
+                        break;
+                    case 5:
+                        totNumD5 += 1;
+                        break;
+                    case 6:
+                        totNumD6 += 1;
+                        break;
+                }
+                switch (player1.D2)
+                {
+                    // player one dice
+                    case 1:
+                        totNumD1 += 1;
+                        break;
+                    case 2:
+                        totNumD2 += 1;
+                        break;
+                    case 3:
+                        totNumD3 += 1;
+                        break;
+                    case 4:
+                        totNumD4 += 1;
+                        break;
+                    case 5:
+                        totNumD5 += 1;
+                        break;
+                    case 6:
+                        totNumD6 += 1;
+                        break;
+                }
+                switch (player1.D3)
+                {
+                    // player one dice
+                    case 1:
+                        totNumD1 += 1;
+                        break;
+                    case 2:
+                        totNumD2 += 1;
+                        break;
+                    case 3:
+                        totNumD3 += 1;
+                        break;
+                    case 4:
+                        totNumD4 += 1;
+                        break;
+                    case 5:
+                        totNumD5 += 1;
+                        break;
+                    case 6:
+                        totNumD6 += 1;
+                        break;
+                }
+                switch (player1.D4)
+                {
+                    // player one dice
+                    case 1:
+                        totNumD1 += 1;
+                        break;
+                    case 2:
+                        totNumD2 += 1;
+                        break;
+                    case 3:
+                        totNumD3 += 1;
+                        break;
+                    case 4:
+                        totNumD4 += 1;
+                        break;
+                    case 5:
+                        totNumD5 += 1;
+                        break;
+                    case 6:
+                        totNumD6 += 1;
+                        break;
+                }
             }
-            switch (player1.D4)
+            else if(player1.DiceCountLeft == 3)
             {
-                // player one dice 4
-                case 1:
-                    totNumD1 += 1;
-                    break;
-                case 2:
-                    totNumD2 += 1;
-                    break;
-                case 3:
-                    totNumD3 += 1;
-                    break;
-                case 4:
-                    totNumD4 += 1;
-                    break;
-                case 5:
-                    totNumD5 += 1;
-                    break;
-                case 6:
-                    totNumD6 += 1;
-                    break;
+                switch (player1.D1)
+                {
+                    // player one dice
+                    case 1:
+                        totNumD1 += 1;
+                        break;
+                    case 2:
+                        totNumD2 += 1;
+                        break;
+                    case 3:
+                        totNumD3 += 1;
+                        break;
+                    case 4:
+                        totNumD4 += 1;
+                        break;
+                    case 5:
+                        totNumD5 += 1;
+                        break;
+                    case 6:
+                        totNumD6 += 1;
+                        break;
+                }
+                switch (player1.D2)
+                {
+                    // player one dice
+                    case 1:
+                        totNumD1 += 1;
+                        break;
+                    case 2:
+                        totNumD2 += 1;
+                        break;
+                    case 3:
+                        totNumD3 += 1;
+                        break;
+                    case 4:
+                        totNumD4 += 1;
+                        break;
+                    case 5:
+                        totNumD5 += 1;
+                        break;
+                    case 6:
+                        totNumD6 += 1;
+                        break;
+                }
+                switch (player1.D3)
+                {
+                    // player one dice
+                    case 1:
+                        totNumD1 += 1;
+                        break;
+                    case 2:
+                        totNumD2 += 1;
+                        break;
+                    case 3:
+                        totNumD3 += 1;
+                        break;
+                    case 4:
+                        totNumD4 += 1;
+                        break;
+                    case 5:
+                        totNumD5 += 1;
+                        break;
+                    case 6:
+                        totNumD6 += 1;
+                        break;
+                }
             }
-            switch (player1.D5)
+            else if(player1.DiceCountLeft == 2)
             {
-                // player one dice 5
-                case 1:
-                    totNumD1 += 1;
-                    break;
-                case 2:
-                    totNumD2 += 1;
-                    break;
-                case 3:
-                    totNumD3 += 1;
-                    break;
-                case 4:
-                    totNumD4 += 1;
-                    break;
-                case 5:
-                    totNumD5 += 1;
-                    break;
-                case 6:
-                    totNumD6 += 1;
-                    break;
+                switch (player1.D1)
+                {
+                    // player one dice
+                    case 1:
+                        totNumD1 += 1;
+                        break;
+                    case 2:
+                        totNumD2 += 1;
+                        break;
+                    case 3:
+                        totNumD3 += 1;
+                        break;
+                    case 4:
+                        totNumD4 += 1;
+                        break;
+                    case 5:
+                        totNumD5 += 1;
+                        break;
+                    case 6:
+                        totNumD6 += 1;
+                        break;
+                }
+                switch (player1.D2)
+                {
+                    // player one dice
+                    case 1:
+                        totNumD1 += 1;
+                        break;
+                    case 2:
+                        totNumD2 += 1;
+                        break;
+                    case 3:
+                        totNumD3 += 1;
+                        break;
+                    case 4:
+                        totNumD4 += 1;
+                        break;
+                    case 5:
+                        totNumD5 += 1;
+                        break;
+                    case 6:
+                        totNumD6 += 1;
+                        break;
+                }
             }
-            switch (player1.D6)
+            else if(player1.DiceCountLeft == 1)
             {
-                // player one dice 6
-                case 1:
-                    totNumD1 += 1;
-                    break;
-                case 2:
-                    totNumD2 += 1;
-                    break;
-                case 3:
-                    totNumD3 += 1;
-                    break;
-                case 4:
-                    totNumD4 += 1;
-                    break;
-                case 5:
-                    totNumD5 += 1;
-                    break;
-                case 6:
-                    totNumD6 += 1;
-                    break;
+                switch (player1.D1)
+                {
+                    // player one dice
+                    case 1:
+                        totNumD1 += 1;
+                        break;
+                    case 2:
+                        totNumD2 += 1;
+                        break;
+                    case 3:
+                        totNumD3 += 1;
+                        break;
+                    case 4:
+                        totNumD4 += 1;
+                        break;
+                    case 5:
+                        totNumD5 += 1;
+                        break;
+                    case 6:
+                        totNumD6 += 1;
+                        break;
+                }
             }
-            //computer 1
-            switch (computer1.D1)
+            //computer1
+            if(computer1.DiceCountLeft == 6)
             {
-                // computer one dice
-                case 1:
-                    totNumD1 += 1;
-                    break;
-                case 2:
-                    totNumD2 += 1;
-                    break;
-                case 3:
-                    totNumD3 += 1;
-                    break;
-                case 4:
-                    totNumD4 += 1;
-                    break;
-                case 5:
-                    totNumD5 += 1;
-                    break;
-                case 6:
-                    totNumD6 += 1;
-                    break;
+                switch (computer1.D1)
+                {
+                    case 1:
+                        totNumD1 += 1;
+                        break;
+                    case 2:
+                        totNumD2 += 1;
+                        break;
+                    case 3:
+                        totNumD3 += 1;
+                        break;
+                    case 4:
+                        totNumD4 += 1;
+                        break;
+                    case 5:
+                        totNumD5 += 1;
+                        break;
+                    case 6:
+                        totNumD6 += 1;
+                        break;
+                }
+                switch (computer1.D2)
+                {
+                    case 1:
+                        totNumD1 += 1;
+                        break;
+                    case 2:
+                        totNumD2 += 1;
+                        break;
+                    case 3:
+                        totNumD3 += 1;
+                        break;
+                    case 4:
+                        totNumD4 += 1;
+                        break;
+                    case 5:
+                        totNumD5 += 1;
+                        break;
+                    case 6:
+                        totNumD6 += 1;
+                        break;
+                }
+                switch (computer1.D3)
+                {
+                    case 1:
+                        totNumD1 += 1;
+                        break;
+                    case 2:
+                        totNumD2 += 1;
+                        break;
+                    case 3:
+                        totNumD3 += 1;
+                        break;
+                    case 4:
+                        totNumD4 += 1;
+                        break;
+                    case 5:
+                        totNumD5 += 1;
+                        break;
+                    case 6:
+                        totNumD6 += 1;
+                        break;
+                }
+                switch (computer1.D4)
+                {
+                    case 1:
+                        totNumD1 += 1;
+                        break;
+                    case 2:
+                        totNumD2 += 1;
+                        break;
+                    case 3:
+                        totNumD3 += 1;
+                        break;
+                    case 4:
+                        totNumD4 += 1;
+                        break;
+                    case 5:
+                        totNumD5 += 1;
+                        break;
+                    case 6:
+                        totNumD6 += 1;
+                        break;
+                }
+                switch (computer1.D5)
+                {
+                    case 1:
+                        totNumD1 += 1;
+                        break;
+                    case 2:
+                        totNumD2 += 1;
+                        break;
+                    case 3:
+                        totNumD3 += 1;
+                        break;
+                    case 4:
+                        totNumD4 += 1;
+                        break;
+                    case 5:
+                        totNumD5 += 1;
+                        break;
+                    case 6:
+                        totNumD6 += 1;
+                        break;
+                }
+                switch (computer1.D6)
+                {
+                    case 1:
+                        totNumD1 += 1;
+                        break;
+                    case 2:
+                        totNumD2 += 1;
+                        break;
+                    case 3:
+                        totNumD3 += 1;
+                        break;
+                    case 4:
+                        totNumD4 += 1;
+                        break;
+                    case 5:
+                        totNumD5 += 1;
+                        break;
+                    case 6:
+                        totNumD6 += 1;
+                        break;
+                }
             }
-            switch (computer1.D2)
+            else if(computer1.DiceCountLeft == 5)
             {
-                // computer one dice 2
-                case 1:
-                    totNumD1 += 1;
-                    break;
-                case 2:
-                    totNumD2 += 1;
-                    break;
-                case 3:
-                    totNumD3 += 1;
-                    break;
-                case 4:
-                    totNumD4 += 1;
-                    break;
-                case 5:
-                    totNumD5 += 1;
-                    break;
-                case 6:
-                    totNumD6 += 1;
-                    break;
+                switch (computer1.D1)
+                {
+                    case 1:
+                        totNumD1 += 1;
+                        break;
+                    case 2:
+                        totNumD2 += 1;
+                        break;
+                    case 3:
+                        totNumD3 += 1;
+                        break;
+                    case 4:
+                        totNumD4 += 1;
+                        break;
+                    case 5:
+                        totNumD5 += 1;
+                        break;
+                    case 6:
+                        totNumD6 += 1;
+                        break;
+                }
+                switch (computer1.D2)
+                {
+                    case 1:
+                        totNumD1 += 1;
+                        break;
+                    case 2:
+                        totNumD2 += 1;
+                        break;
+                    case 3:
+                        totNumD3 += 1;
+                        break;
+                    case 4:
+                        totNumD4 += 1;
+                        break;
+                    case 5:
+                        totNumD5 += 1;
+                        break;
+                    case 6:
+                        totNumD6 += 1;
+                        break;
+                }
+                switch (computer1.D3)
+                {
+                    case 1:
+                        totNumD1 += 1;
+                        break;
+                    case 2:
+                        totNumD2 += 1;
+                        break;
+                    case 3:
+                        totNumD3 += 1;
+                        break;
+                    case 4:
+                        totNumD4 += 1;
+                        break;
+                    case 5:
+                        totNumD5 += 1;
+                        break;
+                    case 6:
+                        totNumD6 += 1;
+                        break;
+                }
+                switch (computer1.D4)
+                {
+                    case 1:
+                        totNumD1 += 1;
+                        break;
+                    case 2:
+                        totNumD2 += 1;
+                        break;
+                    case 3:
+                        totNumD3 += 1;
+                        break;
+                    case 4:
+                        totNumD4 += 1;
+                        break;
+                    case 5:
+                        totNumD5 += 1;
+                        break;
+                    case 6:
+                        totNumD6 += 1;
+                        break;
+                }
+                switch (computer1.D5)
+                {
+                    case 1:
+                        totNumD1 += 1;
+                        break;
+                    case 2:
+                        totNumD2 += 1;
+                        break;
+                    case 3:
+                        totNumD3 += 1;
+                        break;
+                    case 4:
+                        totNumD4 += 1;
+                        break;
+                    case 5:
+                        totNumD5 += 1;
+                        break;
+                    case 6:
+                        totNumD6 += 1;
+                        break;
+                }
             }
-            switch (computer1.D3)
+            else if(computer1.DiceCountLeft == 4)
             {
-                // computer one dice 3
-                case 1:
-                    totNumD1 += 1;
-                    break;
-                case 2:
-                    totNumD2 += 1;
-                    break;
-                case 3:
-                    totNumD3 += 1;
-                    break;
-                case 4:
-                    totNumD4 += 1;
-                    break;
-                case 5:
-                    totNumD5 += 1;
-                    break;
-                case 6:
-                    totNumD6 += 1;
-                    break;
+                switch (computer1.D1)
+                {
+                    case 1:
+                        totNumD1 += 1;
+                        break;
+                    case 2:
+                        totNumD2 += 1;
+                        break;
+                    case 3:
+                        totNumD3 += 1;
+                        break;
+                    case 4:
+                        totNumD4 += 1;
+                        break;
+                    case 5:
+                        totNumD5 += 1;
+                        break;
+                    case 6:
+                        totNumD6 += 1;
+                        break;
+                }
+                switch (computer1.D2)
+                {
+                    case 1:
+                        totNumD1 += 1;
+                        break;
+                    case 2:
+                        totNumD2 += 1;
+                        break;
+                    case 3:
+                        totNumD3 += 1;
+                        break;
+                    case 4:
+                        totNumD4 += 1;
+                        break;
+                    case 5:
+                        totNumD5 += 1;
+                        break;
+                    case 6:
+                        totNumD6 += 1;
+                        break;
+                }
+                switch (computer1.D3)
+                {
+                    case 1:
+                        totNumD1 += 1;
+                        break;
+                    case 2:
+                        totNumD2 += 1;
+                        break;
+                    case 3:
+                        totNumD3 += 1;
+                        break;
+                    case 4:
+                        totNumD4 += 1;
+                        break;
+                    case 5:
+                        totNumD5 += 1;
+                        break;
+                    case 6:
+                        totNumD6 += 1;
+                        break;
+                }
+                switch (computer1.D4)
+                {
+                    case 1:
+                        totNumD1 += 1;
+                        break;
+                    case 2:
+                        totNumD2 += 1;
+                        break;
+                    case 3:
+                        totNumD3 += 1;
+                        break;
+                    case 4:
+                        totNumD4 += 1;
+                        break;
+                    case 5:
+                        totNumD5 += 1;
+                        break;
+                    case 6:
+                        totNumD6 += 1;
+                        break;
+                }
             }
-            switch (computer1.D4)
+            else if(computer1.DiceCountLeft == 3)
             {
-                // computer one dice 4
-                case 1:
-                    totNumD1 += 1;
-                    break;
-                case 2:
-                    totNumD2 += 1;
-                    break;
-                case 3:
-                    totNumD3 += 1;
-                    break;
-                case 4:
-                    totNumD4 += 1;
-                    break;
-                case 5:
-                    totNumD5 += 1;
-                    break;
-                case 6:
-                    totNumD6 += 1;
-                    break;
+                switch (computer1.D1)
+                {
+                    case 1:
+                        totNumD1 += 1;
+                        break;
+                    case 2:
+                        totNumD2 += 1;
+                        break;
+                    case 3:
+                        totNumD3 += 1;
+                        break;
+                    case 4:
+                        totNumD4 += 1;
+                        break;
+                    case 5:
+                        totNumD5 += 1;
+                        break;
+                    case 6:
+                        totNumD6 += 1;
+                        break;
+                }
+                switch (computer1.D2)
+                {
+                    case 1:
+                        totNumD1 += 1;
+                        break;
+                    case 2:
+                        totNumD2 += 1;
+                        break;
+                    case 3:
+                        totNumD3 += 1;
+                        break;
+                    case 4:
+                        totNumD4 += 1;
+                        break;
+                    case 5:
+                        totNumD5 += 1;
+                        break;
+                    case 6:
+                        totNumD6 += 1;
+                        break;
+                }
+                switch (computer1.D3)
+                {
+                    case 1:
+                        totNumD1 += 1;
+                        break;
+                    case 2:
+                        totNumD2 += 1;
+                        break;
+                    case 3:
+                        totNumD3 += 1;
+                        break;
+                    case 4:
+                        totNumD4 += 1;
+                        break;
+                    case 5:
+                        totNumD5 += 1;
+                        break;
+                    case 6:
+                        totNumD6 += 1;
+                        break;
+                }
             }
-            switch (computer1.D5)
+            else if(computer1.DiceCountLeft == 2)
             {
-                // computer one dice 5
-                case 1:
-                    totNumD1 += 1;
-                    break;
-                case 2:
-                    totNumD2 += 1;
-                    break;
-                case 3:
-                    totNumD3 += 1;
-                    break;
-                case 4:
-                    totNumD4 += 1;
-                    break;
-                case 5:
-                    totNumD5 += 1;
-                    break;
-                case 6:
-                    totNumD6 += 1;
-                    break;
+                switch (computer1.D1)
+                {
+                    case 1:
+                        totNumD1 += 1;
+                        break;
+                    case 2:
+                        totNumD2 += 1;
+                        break;
+                    case 3:
+                        totNumD3 += 1;
+                        break;
+                    case 4:
+                        totNumD4 += 1;
+                        break;
+                    case 5:
+                        totNumD5 += 1;
+                        break;
+                    case 6:
+                        totNumD6 += 1;
+                        break;
+                }
+                switch (computer1.D2)
+                {
+                    case 1:
+                        totNumD1 += 1;
+                        break;
+                    case 2:
+                        totNumD2 += 1;
+                        break;
+                    case 3:
+                        totNumD3 += 1;
+                        break;
+                    case 4:
+                        totNumD4 += 1;
+                        break;
+                    case 5:
+                        totNumD5 += 1;
+                        break;
+                    case 6:
+                        totNumD6 += 1;
+                        break;
+                }
             }
-            switch (computer1.D6)
+            else if(computer1.DiceCountLeft == 1)
             {
-                // computer one dice 6
-                case 1:
-                    totNumD1 += 1;
-                    break;
-                case 2:
-                    totNumD2 += 1;
-                    break;
-                case 3:
-                    totNumD3 += 1;
-                    break;
-                case 4:
-                    totNumD4 += 1;
-                    break;
-                case 5:
-                    totNumD5 += 1;
-                    break;
-                case 6:
-                    totNumD6 += 1;
-                    break;
+                switch (computer1.D1)
+                {
+                    case 1:
+                        totNumD1 += 1;
+                        break;
+                    case 2:
+                        totNumD2 += 1;
+                        break;
+                    case 3:
+                        totNumD3 += 1;
+                        break;
+                    case 4:
+                        totNumD4 += 1;
+                        break;
+                    case 5:
+                        totNumD5 += 1;
+                        break;
+                    case 6:
+                        totNumD6 += 1;
+                        break;
+                }
             }
-            //computer 2
-            switch (computer2.D1)
+            //computer 2 count dice
+            if(computer2.DiceCountLeft == 6)
             {
-                // computer one dice
-                case 1:
-                    totNumD1 += 1;
-                    break;
-                case 2:
-                    totNumD2 += 1;
-                    break;
-                case 3:
-                    totNumD3 += 1;
-                    break;
-                case 4:
-                    totNumD4 += 1;
-                    break;
-                case 5:
-                    totNumD5 += 1;
-                    break;
-                case 6:
-                    totNumD6 += 1;
-                    break;
+                switch (computer2.D1)
+                {
+                    // player one dice
+                    case 1:
+                        totNumD1 += 1;
+                        break;
+                    case 2:
+                        totNumD2 += 1;
+                        break;
+                    case 3:
+                        totNumD3 += 1;
+                        break;
+                    case 4:
+                        totNumD4 += 1;
+                        break;
+                    case 5:
+                        totNumD5 += 1;
+                        break;
+                    case 6:
+                        totNumD6 += 1;
+                        break;
+                }
+                switch (computer2.D1)
+                {
+                    case 1:
+                        totNumD1 += 1;
+                        break;
+                    case 2:
+                        totNumD2 += 1;
+                        break;
+                    case 3:
+                        totNumD3 += 1;
+                        break;
+                    case 4:
+                        totNumD4 += 1;
+                        break;
+                    case 5:
+                        totNumD5 += 1;
+                        break;
+                    case 6:
+                        totNumD6 += 1;
+                        break;
+                }
+                switch (computer2.D2)
+                {
+                    case 1:
+                        totNumD1 += 1;
+                        break;
+                    case 2:
+                        totNumD2 += 1;
+                        break;
+                    case 3:
+                        totNumD3 += 1;
+                        break;
+                    case 4:
+                        totNumD4 += 1;
+                        break;
+                    case 5:
+                        totNumD5 += 1;
+                        break;
+                    case 6:
+                        totNumD6 += 1;
+                        break;
+                }
+                switch (computer2.D3)
+                {
+                    case 1:
+                        totNumD1 += 1;
+                        break;
+                    case 2:
+                        totNumD2 += 1;
+                        break;
+                    case 3:
+                        totNumD3 += 1;
+                        break;
+                    case 4:
+                        totNumD4 += 1;
+                        break;
+                    case 5:
+                        totNumD5 += 1;
+                        break;
+                    case 6:
+                        totNumD6 += 1;
+                        break;
+                }
+                switch (computer2.D4)
+                {
+                    case 1:
+                        totNumD1 += 1;
+                        break;
+                    case 2:
+                        totNumD2 += 1;
+                        break;
+                    case 3:
+                        totNumD3 += 1;
+                        break;
+                    case 4:
+                        totNumD4 += 1;
+                        break;
+                    case 5:
+                        totNumD5 += 1;
+                        break;
+                    case 6:
+                        totNumD6 += 1;
+                        break;
+                }
+                switch (computer2.D5)
+                {
+                    case 1:
+                        totNumD1 += 1;
+                        break;
+                    case 2:
+                        totNumD2 += 1;
+                        break;
+                    case 3:
+                        totNumD3 += 1;
+                        break;
+                    case 4:
+                        totNumD4 += 1;
+                        break;
+                    case 5:
+                        totNumD5 += 1;
+                        break;
+                    case 6:
+                        totNumD6 += 1;
+                        break;
+                }
+                switch (computer2.D6)
+                {
+                    case 1:
+                        totNumD1 += 1;
+                        break;
+                    case 2:
+                        totNumD2 += 1;
+                        break;
+                    case 3:
+                        totNumD3 += 1;
+                        break;
+                    case 4:
+                        totNumD4 += 1;
+                        break;
+                    case 5:
+                        totNumD5 += 1;
+                        break;
+                    case 6:
+                        totNumD6 += 1;
+                        break;
+                }
             }
-            switch (computer2.D2)
+            else if(computer2.DiceCountLeft == 5)
             {
-                // computer one dice 2
-                case 1:
-                    totNumD1 += 1;
-                    break;
-                case 2:
-                    totNumD2 += 1;
-                    break;
-                case 3:
-                    totNumD3 += 1;
-                    break;
-                case 4:
-                    totNumD4 += 1;
-                    break;
-                case 5:
-                    totNumD5 += 1;
-                    break;
-                case 6:
-                    totNumD6 += 1;
-                    break;
+                switch (computer2.D1)
+                {
+                    case 1:
+                        totNumD1 += 1;
+                        break;
+                    case 2:
+                        totNumD2 += 1;
+                        break;
+                    case 3:
+                        totNumD3 += 1;
+                        break;
+                    case 4:
+                        totNumD4 += 1;
+                        break;
+                    case 5:
+                        totNumD5 += 1;
+                        break;
+                    case 6:
+                        totNumD6 += 1;
+                        break;
+                }
+                switch (computer2.D2)
+                {
+                    case 1:
+                        totNumD1 += 1;
+                        break;
+                    case 2:
+                        totNumD2 += 1;
+                        break;
+                    case 3:
+                        totNumD3 += 1;
+                        break;
+                    case 4:
+                        totNumD4 += 1;
+                        break;
+                    case 5:
+                        totNumD5 += 1;
+                        break;
+                    case 6:
+                        totNumD6 += 1;
+                        break;
+                }
+                switch (computer2.D3)
+                {
+                    case 1:
+                        totNumD1 += 1;
+                        break;
+                    case 2:
+                        totNumD2 += 1;
+                        break;
+                    case 3:
+                        totNumD3 += 1;
+                        break;
+                    case 4:
+                        totNumD4 += 1;
+                        break;
+                    case 5:
+                        totNumD5 += 1;
+                        break;
+                    case 6:
+                        totNumD6 += 1;
+                        break;
+                }
+                switch (computer2.D4)
+                {
+                    case 1:
+                        totNumD1 += 1;
+                        break;
+                    case 2:
+                        totNumD2 += 1;
+                        break;
+                    case 3:
+                        totNumD3 += 1;
+                        break;
+                    case 4:
+                        totNumD4 += 1;
+                        break;
+                    case 5:
+                        totNumD5 += 1;
+                        break;
+                    case 6:
+                        totNumD6 += 1;
+                        break;
+                }
+                switch (computer2.D5)
+                {
+                    case 1:
+                        totNumD1 += 1;
+                        break;
+                    case 2:
+                        totNumD2 += 1;
+                        break;
+                    case 3:
+                        totNumD3 += 1;
+                        break;
+                    case 4:
+                        totNumD4 += 1;
+                        break;
+                    case 5:
+                        totNumD5 += 1;
+                        break;
+                    case 6:
+                        totNumD6 += 1;
+                        break;
+                }
             }
-            switch (computer2.D3)
+            else if(computer2.DiceCountLeft == 4)
             {
-                // computer one dice 3
-                case 1:
-                    totNumD1 += 1;
-                    break;
-                case 2:
-                    totNumD2 += 1;
-                    break;
-                case 3:
-                    totNumD3 += 1;
-                    break;
-                case 4:
-                    totNumD4 += 1;
-                    break;
-                case 5:
-                    totNumD5 += 1;
-                    break;
-                case 6:
-                    totNumD6 += 1;
-                    break;
+                switch (computer2.D1)
+                {
+                    case 1:
+                        totNumD1 += 1;
+                        break;
+                    case 2:
+                        totNumD2 += 1;
+                        break;
+                    case 3:
+                        totNumD3 += 1;
+                        break;
+                    case 4:
+                        totNumD4 += 1;
+                        break;
+                    case 5:
+                        totNumD5 += 1;
+                        break;
+                    case 6:
+                        totNumD6 += 1;
+                        break;
+                }
+                switch (computer2.D2)
+                {
+                    case 1:
+                        totNumD1 += 1;
+                        break;
+                    case 2:
+                        totNumD2 += 1;
+                        break;
+                    case 3:
+                        totNumD3 += 1;
+                        break;
+                    case 4:
+                        totNumD4 += 1;
+                        break;
+                    case 5:
+                        totNumD5 += 1;
+                        break;
+                    case 6:
+                        totNumD6 += 1;
+                        break;
+                }
+                switch (computer2.D3)
+                {
+                    case 1:
+                        totNumD1 += 1;
+                        break;
+                    case 2:
+                        totNumD2 += 1;
+                        break;
+                    case 3:
+                        totNumD3 += 1;
+                        break;
+                    case 4:
+                        totNumD4 += 1;
+                        break;
+                    case 5:
+                        totNumD5 += 1;
+                        break;
+                    case 6:
+                        totNumD6 += 1;
+                        break;
+                }
+                switch (computer2.D4)
+                {
+                    case 1:
+                        totNumD1 += 1;
+                        break;
+                    case 2:
+                        totNumD2 += 1;
+                        break;
+                    case 3:
+                        totNumD3 += 1;
+                        break;
+                    case 4:
+                        totNumD4 += 1;
+                        break;
+                    case 5:
+                        totNumD5 += 1;
+                        break;
+                    case 6:
+                        totNumD6 += 1;
+                        break;
+                }
             }
-            switch (computer2.D4)
+            else if(computer2.DiceCountLeft == 3)
             {
-                // computer one dice 4
-                case 1:
-                    totNumD1 += 1;
-                    break;
-                case 2:
-                    totNumD2 += 1;
-                    break;
-                case 3:
-                    totNumD3 += 1;
-                    break;
-                case 4:
-                    totNumD4 += 1;
-                    break;
-                case 5:
-                    totNumD5 += 1;
-                    break;
-                case 6:
-                    totNumD6 += 1;
-                    break;
+                switch (computer2.D1)
+                {
+                    case 1:
+                        totNumD1 += 1;
+                        break;
+                    case 2:
+                        totNumD2 += 1;
+                        break;
+                    case 3:
+                        totNumD3 += 1;
+                        break;
+                    case 4:
+                        totNumD4 += 1;
+                        break;
+                    case 5:
+                        totNumD5 += 1;
+                        break;
+                    case 6:
+                        totNumD6 += 1;
+                        break;
+                }
+                switch (computer2.D2)
+                {
+                    case 1:
+                        totNumD1 += 1;
+                        break;
+                    case 2:
+                        totNumD2 += 1;
+                        break;
+                    case 3:
+                        totNumD3 += 1;
+                        break;
+                    case 4:
+                        totNumD4 += 1;
+                        break;
+                    case 5:
+                        totNumD5 += 1;
+                        break;
+                    case 6:
+                        totNumD6 += 1;
+                        break;
+                }
+                switch (computer2.D3)
+                {
+                    case 1:
+                        totNumD1 += 1;
+                        break;
+                    case 2:
+                        totNumD2 += 1;
+                        break;
+                    case 3:
+                        totNumD3 += 1;
+                        break;
+                    case 4:
+                        totNumD4 += 1;
+                        break;
+                    case 5:
+                        totNumD5 += 1;
+                        break;
+                    case 6:
+                        totNumD6 += 1;
+                        break;
+                }
             }
-            switch (computer2.D5)
+            else if(computer2.DiceCountLeft == 2)
             {
-                // computer one dice 5
-                case 1:
-                    totNumD1 += 1;
-                    break;
-                case 2:
-                    totNumD2 += 1;
-                    break;
-                case 3:
-                    totNumD3 += 1;
-                    break;
-                case 4:
-                    totNumD4 += 1;
-                    break;
-                case 5:
-                    totNumD5 += 1;
-                    break;
-                case 6:
-                    totNumD6 += 1;
-                    break;
+                switch (computer2.D1)
+                {
+                    case 1:
+                        totNumD1 += 1;
+                        break;
+                    case 2:
+                        totNumD2 += 1;
+                        break;
+                    case 3:
+                        totNumD3 += 1;
+                        break;
+                    case 4:
+                        totNumD4 += 1;
+                        break;
+                    case 5:
+                        totNumD5 += 1;
+                        break;
+                    case 6:
+                        totNumD6 += 1;
+                        break;
+                }
+                switch (computer2.D2)
+                {
+                    case 1:
+                        totNumD1 += 1;
+                        break;
+                    case 2:
+                        totNumD2 += 1;
+                        break;
+                    case 3:
+                        totNumD3 += 1;
+                        break;
+                    case 4:
+                        totNumD4 += 1;
+                        break;
+                    case 5:
+                        totNumD5 += 1;
+                        break;
+                    case 6:
+                        totNumD6 += 1;
+                        break;
+                }
             }
-            switch (computer2.D6)
+            else if(computer2.DiceCountLeft == 1)
             {
-                // computer one dice 6
-                case 1:
-                    totNumD1 += 1;
-                    break;
-                case 2:
-                    totNumD2 += 1;
-                    break;
-                case 3:
-                    totNumD3 += 1;
-                    break;
-                case 4:
-                    totNumD4 += 1;
-                    break;
-                case 5:
-                    totNumD5 += 1;
-                    break;
-                case 6:
-                    totNumD6 += 1;
-                    break;
+                switch (computer2.D1)
+                {
+                    case 1:
+                        totNumD1 += 1;
+                        break;
+                    case 2:
+                        totNumD2 += 1;
+                        break;
+                    case 3:
+                        totNumD3 += 1;
+                        break;
+                    case 4:
+                        totNumD4 += 1;
+                        break;
+                    case 5:
+                        totNumD5 += 1;
+                        break;
+                    case 6:
+                        totNumD6 += 1;
+                        break;
+                }
             }
-            //computer 3
-            switch (computer3.D1)
+            //computer3
+            if (computer3.DiceCountLeft == 6)
             {
-                // computer one dice
-                case 1:
-                    totNumD1 += 1;
-                    break;
-                case 2:
-                    totNumD2 += 1;
-                    break;
-                case 3:
-                    totNumD3 += 1;
-                    break;
-                case 4:
-                    totNumD4 += 1;
-                    break;
-                case 5:
-                    totNumD5 += 1;
-                    break;
-                case 6:
-                    totNumD6 += 1;
-                    break;
+                switch (computer3.D1)
+                {
+                    // player one dice
+                    case 1:
+                        totNumD1 += 1;
+                        break;
+                    case 2:
+                        totNumD2 += 1;
+                        break;
+                    case 3:
+                        totNumD3 += 1;
+                        break;
+                    case 4:
+                        totNumD4 += 1;
+                        break;
+                    case 5:
+                        totNumD5 += 1;
+                        break;
+                    case 6:
+                        totNumD6 += 1;
+                        break;
+                }
+                switch (computer3.D1)
+                {
+                    case 1:
+                        totNumD1 += 1;
+                        break;
+                    case 2:
+                        totNumD2 += 1;
+                        break;
+                    case 3:
+                        totNumD3 += 1;
+                        break;
+                    case 4:
+                        totNumD4 += 1;
+                        break;
+                    case 5:
+                        totNumD5 += 1;
+                        break;
+                    case 6:
+                        totNumD6 += 1;
+                        break;
+                }
+                switch (computer3.D2)
+                {
+                    case 1:
+                        totNumD1 += 1;
+                        break;
+                    case 2:
+                        totNumD2 += 1;
+                        break;
+                    case 3:
+                        totNumD3 += 1;
+                        break;
+                    case 4:
+                        totNumD4 += 1;
+                        break;
+                    case 5:
+                        totNumD5 += 1;
+                        break;
+                    case 6:
+                        totNumD6 += 1;
+                        break;
+                }
+                switch (computer3.D3)
+                {
+                    case 1:
+                        totNumD1 += 1;
+                        break;
+                    case 2:
+                        totNumD2 += 1;
+                        break;
+                    case 3:
+                        totNumD3 += 1;
+                        break;
+                    case 4:
+                        totNumD4 += 1;
+                        break;
+                    case 5:
+                        totNumD5 += 1;
+                        break;
+                    case 6:
+                        totNumD6 += 1;
+                        break;
+                }
+                switch (computer3.D4)
+                {
+                    case 1:
+                        totNumD1 += 1;
+                        break;
+                    case 2:
+                        totNumD2 += 1;
+                        break;
+                    case 3:
+                        totNumD3 += 1;
+                        break;
+                    case 4:
+                        totNumD4 += 1;
+                        break;
+                    case 5:
+                        totNumD5 += 1;
+                        break;
+                    case 6:
+                        totNumD6 += 1;
+                        break;
+                }
+                switch (computer3.D5)
+                {
+                    case 1:
+                        totNumD1 += 1;
+                        break;
+                    case 2:
+                        totNumD2 += 1;
+                        break;
+                    case 3:
+                        totNumD3 += 1;
+                        break;
+                    case 4:
+                        totNumD4 += 1;
+                        break;
+                    case 5:
+                        totNumD5 += 1;
+                        break;
+                    case 6:
+                        totNumD6 += 1;
+                        break;
+                }
+                switch (computer3.D6)
+                {
+                    case 1:
+                        totNumD1 += 1;
+                        break;
+                    case 2:
+                        totNumD2 += 1;
+                        break;
+                    case 3:
+                        totNumD3 += 1;
+                        break;
+                    case 4:
+                        totNumD4 += 1;
+                        break;
+                    case 5:
+                        totNumD5 += 1;
+                        break;
+                    case 6:
+                        totNumD6 += 1;
+                        break;
+                }
             }
-            switch (computer3.D2)
+            else if (computer3.DiceCountLeft == 5)
             {
-                // computer one dice 2
-                case 1:
-                    totNumD1 += 1;
-                    break;
-                case 2:
-                    totNumD2 += 1;
-                    break;
-                case 3:
-                    totNumD3 += 1;
-                    break;
-                case 4:
-                    totNumD4 += 1;
-                    break;
-                case 5:
-                    totNumD5 += 1;
-                    break;
-                case 6:
-                    totNumD6 += 1;
-                    break;
+                switch (computer3.D1)
+                {
+                    case 1:
+                        totNumD1 += 1;
+                        break;
+                    case 2:
+                        totNumD2 += 1;
+                        break;
+                    case 3:
+                        totNumD3 += 1;
+                        break;
+                    case 4:
+                        totNumD4 += 1;
+                        break;
+                    case 5:
+                        totNumD5 += 1;
+                        break;
+                    case 6:
+                        totNumD6 += 1;
+                        break;
+                }
+                switch (computer3.D2)
+                {
+                    case 1:
+                        totNumD1 += 1;
+                        break;
+                    case 2:
+                        totNumD2 += 1;
+                        break;
+                    case 3:
+                        totNumD3 += 1;
+                        break;
+                    case 4:
+                        totNumD4 += 1;
+                        break;
+                    case 5:
+                        totNumD5 += 1;
+                        break;
+                    case 6:
+                        totNumD6 += 1;
+                        break;
+                }
+                switch (computer3.D3)
+                {
+                    case 1:
+                        totNumD1 += 1;
+                        break;
+                    case 2:
+                        totNumD2 += 1;
+                        break;
+                    case 3:
+                        totNumD3 += 1;
+                        break;
+                    case 4:
+                        totNumD4 += 1;
+                        break;
+                    case 5:
+                        totNumD5 += 1;
+                        break;
+                    case 6:
+                        totNumD6 += 1;
+                        break;
+                }
+                switch (computer3.D4)
+                {
+                    case 1:
+                        totNumD1 += 1;
+                        break;
+                    case 2:
+                        totNumD2 += 1;
+                        break;
+                    case 3:
+                        totNumD3 += 1;
+                        break;
+                    case 4:
+                        totNumD4 += 1;
+                        break;
+                    case 5:
+                        totNumD5 += 1;
+                        break;
+                    case 6:
+                        totNumD6 += 1;
+                        break;
+                }
+                switch (computer3.D5)
+                {
+                    case 1:
+                        totNumD1 += 1;
+                        break;
+                    case 2:
+                        totNumD2 += 1;
+                        break;
+                    case 3:
+                        totNumD3 += 1;
+                        break;
+                    case 4:
+                        totNumD4 += 1;
+                        break;
+                    case 5:
+                        totNumD5 += 1;
+                        break;
+                    case 6:
+                        totNumD6 += 1;
+                        break;
+                }
             }
-            switch (computer3.D3)
+            else if (computer3.DiceCountLeft == 4)
             {
-                // computer one dice 3
-                case 1:
-                    totNumD1 += 1;
-                    break;
-                case 2:
-                    totNumD2 += 1;
-                    break;
-                case 3:
-                    totNumD3 += 1;
-                    break;
-                case 4:
-                    totNumD4 += 1;
-                    break;
-                case 5:
-                    totNumD5 += 1;
-                    break;
-                case 6:
-                    totNumD6 += 1;
-                    break;
+                switch (computer3.D1)
+                {
+                    case 1:
+                        totNumD1 += 1;
+                        break;
+                    case 2:
+                        totNumD2 += 1;
+                        break;
+                    case 3:
+                        totNumD3 += 1;
+                        break;
+                    case 4:
+                        totNumD4 += 1;
+                        break;
+                    case 5:
+                        totNumD5 += 1;
+                        break;
+                    case 6:
+                        totNumD6 += 1;
+                        break;
+                }
+                switch (computer3.D2)
+                {
+                    case 1:
+                        totNumD1 += 1;
+                        break;
+                    case 2:
+                        totNumD2 += 1;
+                        break;
+                    case 3:
+                        totNumD3 += 1;
+                        break;
+                    case 4:
+                        totNumD4 += 1;
+                        break;
+                    case 5:
+                        totNumD5 += 1;
+                        break;
+                    case 6:
+                        totNumD6 += 1;
+                        break;
+                }
+                switch (computer3.D3)
+                {
+                    case 1:
+                        totNumD1 += 1;
+                        break;
+                    case 2:
+                        totNumD2 += 1;
+                        break;
+                    case 3:
+                        totNumD3 += 1;
+                        break;
+                    case 4:
+                        totNumD4 += 1;
+                        break;
+                    case 5:
+                        totNumD5 += 1;
+                        break;
+                    case 6:
+                        totNumD6 += 1;
+                        break;
+                }
+                switch (computer3.D4)
+                {
+                    case 1:
+                        totNumD1 += 1;
+                        break;
+                    case 2:
+                        totNumD2 += 1;
+                        break;
+                    case 3:
+                        totNumD3 += 1;
+                        break;
+                    case 4:
+                        totNumD4 += 1;
+                        break;
+                    case 5:
+                        totNumD5 += 1;
+                        break;
+                    case 6:
+                        totNumD6 += 1;
+                        break;
+                }
             }
-            switch (computer3.D4)
+            else if (computer3.DiceCountLeft == 3)
             {
-                // computer one dice 4
-                case 1:
-                    totNumD1 += 1;
-                    break;
-                case 2:
-                    totNumD2 += 1;
-                    break;
-                case 3:
-                    totNumD3 += 1;
-                    break;
-                case 4:
-                    totNumD4 += 1;
-                    break;
-                case 5:
-                    totNumD5 += 1;
-                    break;
-                case 6:
-                    totNumD6 += 1;
-                    break;
+                switch (computer3.D1)
+                {
+                    case 1:
+                        totNumD1 += 1;
+                        break;
+                    case 2:
+                        totNumD2 += 1;
+                        break;
+                    case 3:
+                        totNumD3 += 1;
+                        break;
+                    case 4:
+                        totNumD4 += 1;
+                        break;
+                    case 5:
+                        totNumD5 += 1;
+                        break;
+                    case 6:
+                        totNumD6 += 1;
+                        break;
+                }
+                switch (computer3.D2)
+                {
+                    case 1:
+                        totNumD1 += 1;
+                        break;
+                    case 2:
+                        totNumD2 += 1;
+                        break;
+                    case 3:
+                        totNumD3 += 1;
+                        break;
+                    case 4:
+                        totNumD4 += 1;
+                        break;
+                    case 5:
+                        totNumD5 += 1;
+                        break;
+                    case 6:
+                        totNumD6 += 1;
+                        break;
+                }
+                switch (computer3.D3)
+                {
+                    case 1:
+                        totNumD1 += 1;
+                        break;
+                    case 2:
+                        totNumD2 += 1;
+                        break;
+                    case 3:
+                        totNumD3 += 1;
+                        break;
+                    case 4:
+                        totNumD4 += 1;
+                        break;
+                    case 5:
+                        totNumD5 += 1;
+                        break;
+                    case 6:
+                        totNumD6 += 1;
+                        break;
+                }
             }
-            switch (computer3.D5)
+            else if (computer3.DiceCountLeft == 2)
             {
-                // computer one dice 5
-                case 1:
-                    totNumD1 += 1;
-                    break;
-                case 2:
-                    totNumD2 += 1;
-                    break;
-                case 3:
-                    totNumD3 += 1;
-                    break;
-                case 4:
-                    totNumD4 += 1;
-                    break;
-                case 5:
-                    totNumD5 += 1;
-                    break;
-                case 6:
-                    totNumD6 += 1;
-                    break;
+                switch (computer3.D1)
+                {
+                    case 1:
+                        totNumD1 += 1;
+                        break;
+                    case 2:
+                        totNumD2 += 1;
+                        break;
+                    case 3:
+                        totNumD3 += 1;
+                        break;
+                    case 4:
+                        totNumD4 += 1;
+                        break;
+                    case 5:
+                        totNumD5 += 1;
+                        break;
+                    case 6:
+                        totNumD6 += 1;
+                        break;
+                }
+                switch (computer3.D2)
+                {
+                    case 1:
+                        totNumD1 += 1;
+                        break;
+                    case 2:
+                        totNumD2 += 1;
+                        break;
+                    case 3:
+                        totNumD3 += 1;
+                        break;
+                    case 4:
+                        totNumD4 += 1;
+                        break;
+                    case 5:
+                        totNumD5 += 1;
+                        break;
+                    case 6:
+                        totNumD6 += 1;
+                        break;
+                }
             }
-            switch (computer3.D6)
+            else if (computer3.DiceCountLeft == 1)
             {
-                // computer one dice 6
-                case 1:
-                    totNumD1 += 1;
-                    break;
-                case 2:
-                    totNumD2 += 1;
-                    break;
-                case 3:
-                    totNumD3 += 1;
-                    break;
-                case 4:
-                    totNumD4 += 1;
-                    break;
-                case 5:
-                    totNumD5 += 1;
-                    break;
-                case 6:
-                    totNumD6 += 1;
-                    break;
+                switch (computer3.D1)
+                {
+                    case 1:
+                        totNumD1 += 1;
+                        break;
+                    case 2:
+                        totNumD2 += 1;
+                        break;
+                    case 3:
+                        totNumD3 += 1;
+                        break;
+                    case 4:
+                        totNumD4 += 1;
+                        break;
+                    case 5:
+                        totNumD5 += 1;
+                        break;
+                    case 6:
+                        totNumD6 += 1;
+                        break;
+                }
             }
+            //display totals
             lblDie1Count.Text = totNumD1.ToString();
             lblDie2Count.Text = totNumD2.ToString();
             lblDie3Count.Text = totNumD3.ToString();
@@ -877,363 +2265,2147 @@ namespace LiarDice_grpProjCS
             lblDie5Count.Text = totNumD5.ToString();
             lblDie6Count.Text = totNumD6.ToString();
         }
-        private void btnPlayer1Challenge_Click(object sender, EventArgs e)
-        {
-            CountDice();
-            MessageBox.Show("Player1 challenged Computer 3");
-            //player1 challenge
-            if (previousDiceAmount > totNumD1 || previousDiceAmount > totNumD2 || previousDiceAmount > totNumD3 || previousDiceAmount > totNumD4 || previousDiceAmount > totNumD5 || previousDiceAmount > totNumD6)
-            {
-                MessageBox.Show("You lost the challenge!");
-                if (player1.DiceCountLeft == 6)
-                {
-                    player1.DiceCountLeft = 5;
-                    player1.D6On = false;
-                    MessageBox.Show("You have 5 dice remaining");
-                }
-                else if (player1.DiceCountLeft == 5)
-                {
-                    player1.DiceCountLeft = 4;
-                    player1.D5On = false;
-                    MessageBox.Show("You have 4 dice remaining");
-                }
-                else if (player1.DiceCountLeft == 4)
-                {
-                    player1.DiceCountLeft = 3;
-                    player1.D4On = false;
-                    MessageBox.Show("You have 3 dice remaining");
-                }
-                else if (player1.DiceCountLeft == 3)
-                {
-                    player1.DiceCountLeft = 2;
-                    player1.D3On = false;
-                    MessageBox.Show("You have 2 dice remaining");
-                }
-                else if (player1.DiceCountLeft == 2)
-                {
-                    player1.DiceCountLeft = 1;
-                    player1.D2On = false;
-                    MessageBox.Show("You have 1 die remaining");
-                }
-                else if (player1.DiceCountLeft == 1)
-                {
-                    player1.DiceCountLeft = 0;
-                    player1.D1On = false;
-                    MessageBox.Show("You are out of dice");
-                }
-            }
-            else
-            {
-                MessageBox.Show("Computer 3 lost the challenge!");
-                if (computer3.DiceCountLeft == 6)
-                {
-                    computer3.DiceCountLeft = 5;
-                    computer3.D6On = false;
-                    MessageBox.Show("Computer 3 has 5 dice remaining");
-                }
-                else if (computer3.DiceCountLeft == 5)
-                {
-                    computer3.DiceCountLeft = 4;
-                    computer3.D5On = false;
-                    MessageBox.Show("Computer 3 has 4 dice remaining");
-                }
-                else if (computer3.DiceCountLeft == 4)
-                {
-                    computer3.DiceCountLeft = 3;
-                    computer3.D4On = false;
-                    MessageBox.Show("Computer 3 has 3 dice remaining");
-                }
-                else if (computer3.DiceCountLeft == 3)
-                {
-                    computer3.DiceCountLeft = 2;
-                    computer3.D3On = false;
-                    MessageBox.Show("Computer 3 has 2 dice remaining");
-                }
-                else if (computer3.DiceCountLeft == 2)
-                {
-                    computer3.DiceCountLeft = 1;
-                    computer3.D2On = false;
-                    MessageBox.Show("Computer 3 has 1 die remaining");
-                }
-                else if (computer3.DiceCountLeft == 1)
-                {
-                    computer3.DiceCountLeft = 0;
-                    computer3.D1On = false;
-                    MessageBox.Show("Computer 3 is out of dice");
-                }
-            }
-            DiceRollAll();
-            previousDiceAmount = 0;
-            previousDiceValue = 0;
-        }
+        //challenges
         private void Computer1Challenge()
         {
-         CountDice();
-            MessageBox.Show("Computer 1 challenged Player 1");
-            if(previousDiceAmount <= totNumD1 || previousDiceAmount <= totNumD2 || previousDiceAmount <= totNumD3 || previousDiceAmount <= totNumD4 || previousDiceAmount <= totNumD5 || previousDiceAmount <= totNumD6)
+            //value for 1
+            if(previousDiceValue == 1)
             {
-                MessageBox.Show("Computer 1 lost the challenge!");
-                if(computer1.DiceCountLeft == 6)
+                MessageBox.Show("Computer 1 challenged Player 1");
+                if(previousDiceAmount <= totNumD1)
                 {
-                computer1.DiceCountLeft = 5;
-                computer1.D6On = false;
+                    MessageBox.Show("Computer 1 lost the challenge!");
+                    if(computer1.DiceCountLeft == 6)
+                    {
+                    computer1.DiceCountLeft = 5;
+                    computer1.D6On = false;
                     MessageBox.Show("Computer 1 has 5 dice remaining");
-                }
-                else if(computer1.DiceCountLeft == 5)
-                {
+                    }
+                    else if(computer1.DiceCountLeft == 5)
+                    {
                     computer1.DiceCountLeft = 4;
                     computer1.D5On = false;
                     MessageBox.Show("Computer 1 has 4 dice remaining");
-                }
-                else if (computer1.DiceCountLeft == 4)
-                {
+                    }
+                    else if (computer1.DiceCountLeft == 4)
+                    {
                     computer1.DiceCountLeft = 3;
                     computer1.D4On = false;
                     MessageBox.Show("Computer 1 has 3 dice remaining");
-                }
-                else if (computer1.DiceCountLeft == 3)
-                {
+                    }
+                    else if (computer1.DiceCountLeft == 3)
+                    {
                     computer1.DiceCountLeft = 2;
                     computer1.D3On = false;
                     MessageBox.Show("Computer 1 has 2 dice remaining");
-                }
-                else if (computer1.DiceCountLeft == 2)
-                {
+                    }
+                    else if (computer1.DiceCountLeft == 2)
+                    {
                     computer1.DiceCountLeft = 1;
                     computer1.D2On = false;
                     MessageBox.Show("Computer 1 has 1 die remaining");
-                }
-                else if (computer1.DiceCountLeft == 1)
-                {
+                    }
+                    else if (computer1.DiceCountLeft == 1)
+                    {
                     computer1.DiceCountLeft = 0;
                     computer1.D1On = false;
                     MessageBox.Show("Computer 1 is out of dice");
+                    }
                 }
-            }
-            else
-            {
-                MessageBox.Show("Player 1 has lost the challenge!");
-                if (player1.DiceCountLeft == 6)
+                else
                 {
+                    MessageBox.Show("Player 1 has lost the challenge!");
+                    if (player1.DiceCountLeft == 6)
+                    {
                     player1.DiceCountLeft = 5;
                     player1.D6On = false;
                     MessageBox.Show("Player 1 has 5 dice remaining");
-                }
-                else if (player1.DiceCountLeft == 5)
-                {
+                    }
+                    else if (player1.DiceCountLeft == 5)
+                    {
                     player1.DiceCountLeft = 4;
                     player1.D5On = false;
                     MessageBox.Show("Player 1 has 4 dice remaining");
-                }
-                else if (player1.DiceCountLeft == 4)
-                {
+                    }
+                    else if (player1.DiceCountLeft == 4)
+                    {
                     player1.DiceCountLeft = 3;
                     player1.D4On = false;
                     MessageBox.Show("Player 1 has 3 dice remaining");
-                }
-                else if (player1.DiceCountLeft == 3)
-                {
+                    }
+                    else if (player1.DiceCountLeft == 3)
+                    {
                     player1.DiceCountLeft = 2;
                     player1.D3On = false;
                     MessageBox.Show("Player 1 has 2 dice remaining");
-                }
-                else if (player1.DiceCountLeft == 2)
-                {
+                    }
+                    else if (player1.DiceCountLeft == 2)
+                    {
                     player1.DiceCountLeft = 1;
                     player1.D2On = false;
                     MessageBox.Show("Player 1 has 1 die remaining");
-                }
-                else if (player1.DiceCountLeft == 1)
-                {
+                    }
+                    else if (player1.DiceCountLeft == 1)
+                    {
                     player1.DiceCountLeft = 0;
                     player1.D1On = false;
                     MessageBox.Show("Player 1 is out of dice");
                     //remove player from game
+                    }   
+                }//end else
+                DiceRollAll();
+                previousDiceAmount = 0;
+                previousDiceValue = 0;
+            }//end if
+            //value for 2
+            else if(previousDiceValue == 2)
+            {
+                MessageBox.Show("Computer 1 challenged Player 1");
+                if (previousDiceAmount <= totNumD2)
+                {
+                    MessageBox.Show("Computer 1 lost the challenge!");
+                    if (computer1.DiceCountLeft == 6)
+                    {
+                        computer1.DiceCountLeft = 5;
+                        computer1.D6On = false;
+                        MessageBox.Show("Computer 1 has 5 dice remaining");
+                    }
+                    else if (computer1.DiceCountLeft == 5)
+                    {
+                        computer1.DiceCountLeft = 4;
+                        computer1.D5On = false;
+                        MessageBox.Show("Computer 1 has 4 dice remaining");
+                    }
+                    else if (computer1.DiceCountLeft == 4)
+                    {
+                        computer1.DiceCountLeft = 3;
+                        computer1.D4On = false;
+                        MessageBox.Show("Computer 1 has 3 dice remaining");
+                    }
+                    else if (computer1.DiceCountLeft == 3)
+                    {
+                        computer1.DiceCountLeft = 2;
+                        computer1.D3On = false;
+                        MessageBox.Show("Computer 1 has 2 dice remaining");
+                    }
+                    else if (computer1.DiceCountLeft == 2)
+                    {
+                        computer1.DiceCountLeft = 1;
+                        computer1.D2On = false;
+                        MessageBox.Show("Computer 1 has 1 die remaining");
+                    }
+                    else if (computer1.DiceCountLeft == 1)
+                    {
+                        computer1.DiceCountLeft = 0;
+                        computer1.D1On = false;
+                        MessageBox.Show("Computer 1 is out of dice");
+                    }
                 }
-            }
-            DiceRollAll();
-            previousDiceAmount = 0;
-            previousDiceValue = 0;
+                else
+                {
+                    MessageBox.Show("Player 1 has lost the challenge!");
+                    if (player1.DiceCountLeft == 6)
+                    {
+                        player1.DiceCountLeft = 5;
+                        player1.D6On = false;
+                        MessageBox.Show("Player 1 has 5 dice remaining");
+                    }
+                    else if (player1.DiceCountLeft == 5)
+                    {
+                        player1.DiceCountLeft = 4;
+                        player1.D5On = false;
+                        MessageBox.Show("Player 1 has 4 dice remaining");
+                    }
+                    else if (player1.DiceCountLeft == 4)
+                    {
+                        player1.DiceCountLeft = 3;
+                        player1.D4On = false;
+                        MessageBox.Show("Player 1 has 3 dice remaining");
+                    }
+                    else if (player1.DiceCountLeft == 3)
+                    {
+                        player1.DiceCountLeft = 2;
+                        player1.D3On = false;
+                        MessageBox.Show("Player 1 has 2 dice remaining");
+                    }
+                    else if (player1.DiceCountLeft == 2)
+                    {
+                        player1.DiceCountLeft = 1;
+                        player1.D2On = false;
+                        MessageBox.Show("Player 1 has 1 die remaining");
+                    }
+                    else if (player1.DiceCountLeft == 1)
+                    {
+                        player1.DiceCountLeft = 0;
+                        player1.D1On = false;
+                        MessageBox.Show("Player 1 is out of dice");
+                        //remove player from game
+                    }
+                }//end else
+                DiceRollAll();
+                previousDiceAmount = 0;
+                previousDiceValue = 0;
+            }//end else if
+            //value for 3
+            else if(previousDiceValue == 3)
+            {
+                MessageBox.Show("Computer 1 challenged Player 1");
+                if (previousDiceAmount <= totNumD3)
+                {
+                    MessageBox.Show("Computer 1 lost the challenge!");
+                    if (computer1.DiceCountLeft == 6)
+                    {
+                        computer1.DiceCountLeft = 5;
+                        computer1.D6On = false;
+                        MessageBox.Show("Computer 1 has 5 dice remaining");
+                    }
+                    else if (computer1.DiceCountLeft == 5)
+                    {
+                        computer1.DiceCountLeft = 4;
+                        computer1.D5On = false;
+                        MessageBox.Show("Computer 1 has 4 dice remaining");
+                    }
+                    else if (computer1.DiceCountLeft == 4)
+                    {
+                        computer1.DiceCountLeft = 3;
+                        computer1.D4On = false;
+                        MessageBox.Show("Computer 1 has 3 dice remaining");
+                    }
+                    else if (computer1.DiceCountLeft == 3)
+                    {
+                        computer1.DiceCountLeft = 2;
+                        computer1.D3On = false;
+                        MessageBox.Show("Computer 1 has 2 dice remaining");
+                    }
+                    else if (computer1.DiceCountLeft == 2)
+                    {
+                        computer1.DiceCountLeft = 1;
+                        computer1.D2On = false;
+                        MessageBox.Show("Computer 1 has 1 die remaining");
+                    }
+                    else if (computer1.DiceCountLeft == 1)
+                    {
+                        computer1.DiceCountLeft = 0;
+                        computer1.D1On = false;
+                        MessageBox.Show("Computer 1 is out of dice");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Player 1 has lost the challenge!");
+                    if (player1.DiceCountLeft == 6)
+                    {
+                        player1.DiceCountLeft = 5;
+                        player1.D6On = false;
+                        MessageBox.Show("Player 1 has 5 dice remaining");
+                    }
+                    else if (player1.DiceCountLeft == 5)
+                    {
+                        player1.DiceCountLeft = 4;
+                        player1.D5On = false;
+                        MessageBox.Show("Player 1 has 4 dice remaining");
+                    }
+                    else if (player1.DiceCountLeft == 4)
+                    {
+                        player1.DiceCountLeft = 3;
+                        player1.D4On = false;
+                        MessageBox.Show("Player 1 has 3 dice remaining");
+                    }
+                    else if (player1.DiceCountLeft == 3)
+                    {
+                        player1.DiceCountLeft = 2;
+                        player1.D3On = false;
+                        MessageBox.Show("Player 1 has 2 dice remaining");
+                    }
+                    else if (player1.DiceCountLeft == 2)
+                    {
+                        player1.DiceCountLeft = 1;
+                        player1.D2On = false;
+                        MessageBox.Show("Player 1 has 1 die remaining");
+                    }
+                    else if (player1.DiceCountLeft == 1)
+                    {
+                        player1.DiceCountLeft = 0;
+                        player1.D1On = false;
+                        MessageBox.Show("Player 1 is out of dice");
+                        //remove player from game
+                    }
+                }//end else
+                DiceRollAll();
+                previousDiceAmount = 0;
+                previousDiceValue = 0;
+            }//end else if
+            //value for 4
+            else if(previousDiceValue == 4)
+            {
+                MessageBox.Show("Computer 1 challenged Player 1");
+                if (previousDiceAmount <= totNumD4)
+                {
+                    MessageBox.Show("Computer 1 lost the challenge!");
+                    if (computer1.DiceCountLeft == 6)
+                    {
+                        computer1.DiceCountLeft = 5;
+                        computer1.D6On = false;
+                        MessageBox.Show("Computer 1 has 5 dice remaining");
+                    }
+                    else if (computer1.DiceCountLeft == 5)
+                    {
+                        computer1.DiceCountLeft = 4;
+                        computer1.D5On = false;
+                        MessageBox.Show("Computer 1 has 4 dice remaining");
+                    }
+                    else if (computer1.DiceCountLeft == 4)
+                    {
+                        computer1.DiceCountLeft = 3;
+                        computer1.D4On = false;
+                        MessageBox.Show("Computer 1 has 3 dice remaining");
+                    }
+                    else if (computer1.DiceCountLeft == 3)
+                    {
+                        computer1.DiceCountLeft = 2;
+                        computer1.D3On = false;
+                        MessageBox.Show("Computer 1 has 2 dice remaining");
+                    }
+                    else if (computer1.DiceCountLeft == 2)
+                    {
+                        computer1.DiceCountLeft = 1;
+                        computer1.D2On = false;
+                        MessageBox.Show("Computer 1 has 1 die remaining");
+                    }
+                    else if (computer1.DiceCountLeft == 1)
+                    {
+                        computer1.DiceCountLeft = 0;
+                        computer1.D1On = false;
+                        MessageBox.Show("Computer 1 is out of dice");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Player 1 has lost the challenge!");
+                    if (player1.DiceCountLeft == 6)
+                    {
+                        player1.DiceCountLeft = 5;
+                        player1.D6On = false;
+                        MessageBox.Show("Player 1 has 5 dice remaining");
+                    }
+                    else if (player1.DiceCountLeft == 5)
+                    {
+                        player1.DiceCountLeft = 4;
+                        player1.D5On = false;
+                        MessageBox.Show("Player 1 has 4 dice remaining");
+                    }
+                    else if (player1.DiceCountLeft == 4)
+                    {
+                        player1.DiceCountLeft = 3;
+                        player1.D4On = false;
+                        MessageBox.Show("Player 1 has 3 dice remaining");
+                    }
+                    else if (player1.DiceCountLeft == 3)
+                    {
+                        player1.DiceCountLeft = 2;
+                        player1.D3On = false;
+                        MessageBox.Show("Player 1 has 2 dice remaining");
+                    }
+                    else if (player1.DiceCountLeft == 2)
+                    {
+                        player1.DiceCountLeft = 1;
+                        player1.D2On = false;
+                        MessageBox.Show("Player 1 has 1 die remaining");
+                    }
+                    else if (player1.DiceCountLeft == 1)
+                    {
+                        player1.DiceCountLeft = 0;
+                        player1.D1On = false;
+                        MessageBox.Show("Player 1 is out of dice");
+                        //remove player from game
+                    }
+                }//end else
+                DiceRollAll();
+                previousDiceAmount = 0;
+                previousDiceValue = 0;
+            }//end else if
+            //value for 5
+            else if(previousDiceValue == 5)
+            {
+                MessageBox.Show("Computer 1 challenged Player 1");
+                if (previousDiceAmount <= totNumD5)
+                {
+                    MessageBox.Show("Computer 1 lost the challenge!");
+                    if (computer1.DiceCountLeft == 6)
+                    {
+                        computer1.DiceCountLeft = 5;
+                        computer1.D6On = false;
+                        MessageBox.Show("Computer 1 has 5 dice remaining");
+                    }
+                    else if (computer1.DiceCountLeft == 5)
+                    {
+                        computer1.DiceCountLeft = 4;
+                        computer1.D5On = false;
+                        MessageBox.Show("Computer 1 has 4 dice remaining");
+                    }
+                    else if (computer1.DiceCountLeft == 4)
+                    {
+                        computer1.DiceCountLeft = 3;
+                        computer1.D4On = false;
+                        MessageBox.Show("Computer 1 has 3 dice remaining");
+                    }
+                    else if (computer1.DiceCountLeft == 3)
+                    {
+                        computer1.DiceCountLeft = 2;
+                        computer1.D3On = false;
+                        MessageBox.Show("Computer 1 has 2 dice remaining");
+                    }
+                    else if (computer1.DiceCountLeft == 2)
+                    {
+                        computer1.DiceCountLeft = 1;
+                        computer1.D2On = false;
+                        MessageBox.Show("Computer 1 has 1 die remaining");
+                    }
+                    else if (computer1.DiceCountLeft == 1)
+                    {
+                        computer1.DiceCountLeft = 0;
+                        computer1.D1On = false;
+                        MessageBox.Show("Computer 1 is out of dice");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Player 1 has lost the challenge!");
+                    if (player1.DiceCountLeft == 6)
+                    {
+                        player1.DiceCountLeft = 5;
+                        player1.D6On = false;
+                        MessageBox.Show("Player 1 has 5 dice remaining");
+                    }
+                    else if (player1.DiceCountLeft == 5)
+                    {
+                        player1.DiceCountLeft = 4;
+                        player1.D5On = false;
+                        MessageBox.Show("Player 1 has 4 dice remaining");
+                    }
+                    else if (player1.DiceCountLeft == 4)
+                    {
+                        player1.DiceCountLeft = 3;
+                        player1.D4On = false;
+                        MessageBox.Show("Player 1 has 3 dice remaining");
+                    }
+                    else if (player1.DiceCountLeft == 3)
+                    {
+                        player1.DiceCountLeft = 2;
+                        player1.D3On = false;
+                        MessageBox.Show("Player 1 has 2 dice remaining");
+                    }
+                    else if (player1.DiceCountLeft == 2)
+                    {
+                        player1.DiceCountLeft = 1;
+                        player1.D2On = false;
+                        MessageBox.Show("Player 1 has 1 die remaining");
+                    }
+                    else if (player1.DiceCountLeft == 1)
+                    {
+                        player1.DiceCountLeft = 0;
+                        player1.D1On = false;
+                        MessageBox.Show("Player 1 is out of dice");
+                        //remove player from game
+                    }
+                }//end else
+                DiceRollAll();
+                previousDiceAmount = 0;
+                previousDiceValue = 0;
+            }//end else if
+            //value for 6
+            else if(previousDiceValue == 6)
+            {
+                MessageBox.Show("Computer 1 challenged Player 1");
+                if (previousDiceAmount <= totNumD6)
+                {
+                    MessageBox.Show("Computer 1 lost the challenge!");
+                    if (computer1.DiceCountLeft == 6)
+                    {
+                        computer1.DiceCountLeft = 5;
+                        computer1.D6On = false;
+                        MessageBox.Show("Computer 1 has 5 dice remaining");
+                    }
+                    else if (computer1.DiceCountLeft == 5)
+                    {
+                        computer1.DiceCountLeft = 4;
+                        computer1.D5On = false;
+                        MessageBox.Show("Computer 1 has 4 dice remaining");
+                    }
+                    else if (computer1.DiceCountLeft == 4)
+                    {
+                        computer1.DiceCountLeft = 3;
+                        computer1.D4On = false;
+                        MessageBox.Show("Computer 1 has 3 dice remaining");
+                    }
+                    else if (computer1.DiceCountLeft == 3)
+                    {
+                        computer1.DiceCountLeft = 2;
+                        computer1.D3On = false;
+                        MessageBox.Show("Computer 1 has 2 dice remaining");
+                    }
+                    else if (computer1.DiceCountLeft == 2)
+                    {
+                        computer1.DiceCountLeft = 1;
+                        computer1.D2On = false;
+                        MessageBox.Show("Computer 1 has 1 die remaining");
+                    }
+                    else if (computer1.DiceCountLeft == 1)
+                    {
+                        computer1.DiceCountLeft = 0;
+                        computer1.D1On = false;
+                        MessageBox.Show("Computer 1 is out of dice");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Player 1 has lost the challenge!");
+                    if (player1.DiceCountLeft == 6)
+                    {
+                        player1.DiceCountLeft = 5;
+                        player1.D6On = false;
+                        MessageBox.Show("Player 1 has 5 dice remaining");
+                    }
+                    else if (player1.DiceCountLeft == 5)
+                    {
+                        player1.DiceCountLeft = 4;
+                        player1.D5On = false;
+                        MessageBox.Show("Player 1 has 4 dice remaining");
+                    }
+                    else if (player1.DiceCountLeft == 4)
+                    {
+                        player1.DiceCountLeft = 3;
+                        player1.D4On = false;
+                        MessageBox.Show("Player 1 has 3 dice remaining");
+                    }
+                    else if (player1.DiceCountLeft == 3)
+                    {
+                        player1.DiceCountLeft = 2;
+                        player1.D3On = false;
+                        MessageBox.Show("Player 1 has 2 dice remaining");
+                    }
+                    else if (player1.DiceCountLeft == 2)
+                    {
+                        player1.DiceCountLeft = 1;
+                        player1.D2On = false;
+                        MessageBox.Show("Player 1 has 1 die remaining");
+                    }
+                    else if (player1.DiceCountLeft == 1)
+                    {
+                        player1.DiceCountLeft = 0;
+                        player1.D1On = false;
+                        MessageBox.Show("Player 1 is out of dice");
+                        //remove player from game
+                    }
+                }//end else
+                DiceRollAll();
+                previousDiceAmount = 0;
+                previousDiceValue = 0;
+            }//end else if
         }
         private void Computer2Challenge()
         {
-            CountDice();
-            MessageBox.Show("Computer 2 challenged Computer 1");
-            if (previousDiceAmount <= totNumD1 || previousDiceAmount <= totNumD2 || previousDiceAmount <= totNumD3 || previousDiceAmount <= totNumD4 || previousDiceAmount <= totNumD5 || previousDiceAmount <= totNumD6)
+            //value for 1
+            if (previousDiceValue == 1)
             {
-                MessageBox.Show("Computer 2 lost the challenge!");
-                if (computer2.DiceCountLeft == 6)
+                MessageBox.Show("Computer 2 challenged Computer 1");
+                if (previousDiceAmount <= totNumD1)
                 {
-                    computer2.DiceCountLeft = 5;
-                    computer2.D6On = false;
-                    MessageBox.Show("Computer 2 has 5 dice remaining");
+                    MessageBox.Show("Computer 2 lost the challenge!");
+                    if (computer2.DiceCountLeft == 6)
+                    {
+                        computer2.DiceCountLeft = 5;
+                        computer2.D6On = false;
+                        MessageBox.Show("Computer 2 has 5 dice remaining");
+                    }
+                    else if (computer2.DiceCountLeft == 5)
+                    {
+                        computer2.DiceCountLeft = 4;
+                        computer2.D5On = false;
+                        MessageBox.Show("Computer 2 has 4 dice remaining");
+                    }
+                    else if (computer2.DiceCountLeft == 4)
+                    {
+                        computer2.DiceCountLeft = 3;
+                        computer2.D4On = false;
+                        MessageBox.Show("Computer 2 has 3 dice remaining");
+                    }
+                    else if (computer2.DiceCountLeft == 3)
+                    {
+                        computer2.DiceCountLeft = 2;
+                        computer2.D3On = false;
+                        MessageBox.Show("Computer 2 has 2 dice remaining");
+                    }
+                    else if (computer2.DiceCountLeft == 2)
+                    {
+                        computer2.DiceCountLeft = 1;
+                        computer2.D2On = false;
+                        MessageBox.Show("Computer 2 has 1 die remaining");
+                    }
+                    else if (computer2.DiceCountLeft == 1)
+                    {
+                        computer2.DiceCountLeft = 0;
+                        computer2.D1On = false;
+                        MessageBox.Show("Computer 2 is out of dice");
+                    }
                 }
-                else if (computer2.DiceCountLeft == 5)
+                else
                 {
-                    computer2.DiceCountLeft = 4;
-                    computer2.D5On = false;
-                    MessageBox.Show("Computer 2 has 4 dice remaining");
+                    MessageBox.Show("Computer 1 has lost the challenge!");
+                    if (computer1.DiceCountLeft == 6)
+                    {
+                        computer1.DiceCountLeft = 5;
+                        computer1.D6On = false;
+                        MessageBox.Show("Computer 1 has 5 dice remaining");
+                    }
+                    else if (player1.DiceCountLeft == 5)
+                    {
+                        computer1.DiceCountLeft = 4;
+                        computer1.D5On = false;
+                        MessageBox.Show("Computer 1 has 4 dice remaining");
+                    }
+                    else if (computer1.DiceCountLeft == 4)
+                    {
+                        computer1.DiceCountLeft = 3;
+                        computer1.D4On = false;
+                        MessageBox.Show("Computer 1 has 3 dice remaining");
+                    }
+                    else if (computer1.DiceCountLeft == 3)
+                    {
+                        computer1.DiceCountLeft = 2;
+                        computer1.D3On = false;
+                        MessageBox.Show("Computer 1 has 2 dice remaining");
+                    }
+                    else if (computer1.DiceCountLeft == 2)
+                    {
+                        computer1.DiceCountLeft = 1;
+                        computer1.D2On = false;
+                        MessageBox.Show("Computer 1 has 1 die remaining");
+                    }
+                    else if (computer1.DiceCountLeft == 1)
+                    {
+                        computer1.DiceCountLeft = 0;
+                        computer1.D1On = false;
+                        MessageBox.Show("Computer 1 is out of dice");
+                        //remove player from game
+                    }
                 }
-                else if (computer2.DiceCountLeft == 4)
-                {
-                    computer2.DiceCountLeft = 3;
-                    computer2.D4On = false;
-                    MessageBox.Show("Computer 2 has 3 dice remaining");
-                }
-                else if (computer2.DiceCountLeft == 3)
-                {
-                    computer2.DiceCountLeft = 2;
-                    computer2.D3On = false;
-                    MessageBox.Show("Computer 2 has 2 dice remaining");
-                }
-                else if (computer2.DiceCountLeft == 2)
-                {
-                    computer2.DiceCountLeft = 1;
-                    computer2.D2On = false;
-                    MessageBox.Show("Computer 2 has 1 die remaining");
-                }
-                else if (computer2.DiceCountLeft == 1)
-                {
-                    computer2.DiceCountLeft = 0;
-                    computer2.D1On = false;
-                    MessageBox.Show("Computer 2 is out of dice");
-                }
-            }
-            else
+                DiceRollAll();
+                previousDiceAmount = 0;
+                previousDiceValue = 0;
+            }//end if
+            //value for 2
+            else if (previousDiceValue == 2)
             {
-                MessageBox.Show("Computer 1 has lost the challenge!");
-                if (computer1.DiceCountLeft == 6)
+                MessageBox.Show("Computer 2 challenged Computer 1");
+                if (previousDiceAmount <= totNumD2)
                 {
-                    computer1.DiceCountLeft = 5;
-                    computer1.D6On = false;
-                    MessageBox.Show("Computer 1 has 5 dice remaining");
+                    MessageBox.Show("Computer 2 lost the challenge!");
+                    if (computer2.DiceCountLeft == 6)
+                    {
+                        computer2.DiceCountLeft = 5;
+                        computer2.D6On = false;
+                        MessageBox.Show("Computer 2 has 5 dice remaining");
+                    }
+                    else if (computer2.DiceCountLeft == 5)
+                    {
+                        computer2.DiceCountLeft = 4;
+                        computer2.D5On = false;
+                        MessageBox.Show("Computer 2 has 4 dice remaining");
+                    }
+                    else if (computer2.DiceCountLeft == 4)
+                    {
+                        computer2.DiceCountLeft = 3;
+                        computer2.D4On = false;
+                        MessageBox.Show("Computer 2 has 3 dice remaining");
+                    }
+                    else if (computer2.DiceCountLeft == 3)
+                    {
+                        computer2.DiceCountLeft = 2;
+                        computer2.D3On = false;
+                        MessageBox.Show("Computer 2 has 2 dice remaining");
+                    }
+                    else if (computer2.DiceCountLeft == 2)
+                    {
+                        computer2.DiceCountLeft = 1;
+                        computer2.D2On = false;
+                        MessageBox.Show("Computer 2 has 1 die remaining");
+                    }
+                    else if (computer2.DiceCountLeft == 1)
+                    {
+                        computer2.DiceCountLeft = 0;
+                        computer2.D1On = false;
+                        MessageBox.Show("Computer 2 is out of dice");
+                    }
                 }
-                else if (player1.DiceCountLeft == 5)
+                else
                 {
-                    computer1.DiceCountLeft = 4;
-                    computer1.D5On = false;
-                    MessageBox.Show("Computer 1 has 4 dice remaining");
+                    MessageBox.Show("Computer 1 has lost the challenge!");
+                    if (computer1.DiceCountLeft == 6)
+                    {
+                        computer1.DiceCountLeft = 5;
+                        computer1.D6On = false;
+                        MessageBox.Show("Computer 1 has 5 dice remaining");
+                    }
+                    else if (player1.DiceCountLeft == 5)
+                    {
+                        computer1.DiceCountLeft = 4;
+                        computer1.D5On = false;
+                        MessageBox.Show("Computer 1 has 4 dice remaining");
+                    }
+                    else if (computer1.DiceCountLeft == 4)
+                    {
+                        computer1.DiceCountLeft = 3;
+                        computer1.D4On = false;
+                        MessageBox.Show("Computer 1 has 3 dice remaining");
+                    }
+                    else if (computer1.DiceCountLeft == 3)
+                    {
+                        computer1.DiceCountLeft = 2;
+                        computer1.D3On = false;
+                        MessageBox.Show("Computer 1 has 2 dice remaining");
+                    }
+                    else if (computer1.DiceCountLeft == 2)
+                    {
+                        computer1.DiceCountLeft = 1;
+                        computer1.D2On = false;
+                        MessageBox.Show("Computer 1 has 1 die remaining");
+                    }
+                    else if (computer1.DiceCountLeft == 1)
+                    {
+                        computer1.DiceCountLeft = 0;
+                        computer1.D1On = false;
+                        MessageBox.Show("Computer 1 is out of dice");
+                        //remove player from game
+                    }
                 }
-                else if (computer1.DiceCountLeft == 4)
+                DiceRollAll();
+                previousDiceAmount = 0;
+                previousDiceValue = 0;
+            }//end else if
+            //value for 3
+            else if (previousDiceValue == 3)
+            {
+                MessageBox.Show("Computer 2 challenged Computer 1");
+                if (previousDiceAmount <= totNumD3)
                 {
-                    computer1.DiceCountLeft = 3;
-                    computer1.D4On = false;
-                    MessageBox.Show("Computer 1 has 3 dice remaining");
+                    MessageBox.Show("Computer 2 lost the challenge!");
+                    if (computer2.DiceCountLeft == 6)
+                    {
+                        computer2.DiceCountLeft = 5;
+                        computer2.D6On = false;
+                        MessageBox.Show("Computer 2 has 5 dice remaining");
+                    }
+                    else if (computer2.DiceCountLeft == 5)
+                    {
+                        computer2.DiceCountLeft = 4;
+                        computer2.D5On = false;
+                        MessageBox.Show("Computer 2 has 4 dice remaining");
+                    }
+                    else if (computer2.DiceCountLeft == 4)
+                    {
+                        computer2.DiceCountLeft = 3;
+                        computer2.D4On = false;
+                        MessageBox.Show("Computer 2 has 3 dice remaining");
+                    }
+                    else if (computer2.DiceCountLeft == 3)
+                    {
+                        computer2.DiceCountLeft = 2;
+                        computer2.D3On = false;
+                        MessageBox.Show("Computer 2 has 2 dice remaining");
+                    }
+                    else if (computer2.DiceCountLeft == 2)
+                    {
+                        computer2.DiceCountLeft = 1;
+                        computer2.D2On = false;
+                        MessageBox.Show("Computer 2 has 1 die remaining");
+                    }
+                    else if (computer2.DiceCountLeft == 1)
+                    {
+                        computer2.DiceCountLeft = 0;
+                        computer2.D1On = false;
+                        MessageBox.Show("Computer 2 is out of dice");
+                    }
                 }
-                else if (computer1.DiceCountLeft == 3)
+                else
                 {
-                    computer1.DiceCountLeft = 2;
-                    computer1.D3On = false;
-                    MessageBox.Show("Computer 1 has 2 dice remaining");
+                    MessageBox.Show("Computer 1 has lost the challenge!");
+                    if (computer1.DiceCountLeft == 6)
+                    {
+                        computer1.DiceCountLeft = 5;
+                        computer1.D6On = false;
+                        MessageBox.Show("Computer 1 has 5 dice remaining");
+                    }
+                    else if (player1.DiceCountLeft == 5)
+                    {
+                        computer1.DiceCountLeft = 4;
+                        computer1.D5On = false;
+                        MessageBox.Show("Computer 1 has 4 dice remaining");
+                    }
+                    else if (computer1.DiceCountLeft == 4)
+                    {
+                        computer1.DiceCountLeft = 3;
+                        computer1.D4On = false;
+                        MessageBox.Show("Computer 1 has 3 dice remaining");
+                    }
+                    else if (computer1.DiceCountLeft == 3)
+                    {
+                        computer1.DiceCountLeft = 2;
+                        computer1.D3On = false;
+                        MessageBox.Show("Computer 1 has 2 dice remaining");
+                    }
+                    else if (computer1.DiceCountLeft == 2)
+                    {
+                        computer1.DiceCountLeft = 1;
+                        computer1.D2On = false;
+                        MessageBox.Show("Computer 1 has 1 die remaining");
+                    }
+                    else if (computer1.DiceCountLeft == 1)
+                    {
+                        computer1.DiceCountLeft = 0;
+                        computer1.D1On = false;
+                        MessageBox.Show("Computer 1 is out of dice");
+                        //remove player from game
+                    }
                 }
-                else if (computer1.DiceCountLeft == 2)
+                DiceRollAll();
+                previousDiceAmount = 0;
+                previousDiceValue = 0;
+            }//end else if
+            //value for 4
+            else if(previousDiceValue == 4)
+            {
+                MessageBox.Show("Computer 2 challenged Computer 1");
+                if (previousDiceAmount <= totNumD4)
                 {
-                    computer1.DiceCountLeft = 1;
-                    computer1.D2On = false;
-                    MessageBox.Show("Computer 1 has 1 die remaining");
+                    MessageBox.Show("Computer 2 lost the challenge!");
+                    if (computer2.DiceCountLeft == 6)
+                    {
+                        computer2.DiceCountLeft = 5;
+                        computer2.D6On = false;
+                        MessageBox.Show("Computer 2 has 5 dice remaining");
+                    }
+                    else if (computer2.DiceCountLeft == 5)
+                    {
+                        computer2.DiceCountLeft = 4;
+                        computer2.D5On = false;
+                        MessageBox.Show("Computer 2 has 4 dice remaining");
+                    }
+                    else if (computer2.DiceCountLeft == 4)
+                    {
+                        computer2.DiceCountLeft = 3;
+                        computer2.D4On = false;
+                        MessageBox.Show("Computer 2 has 3 dice remaining");
+                    }
+                    else if (computer2.DiceCountLeft == 3)
+                    {
+                        computer2.DiceCountLeft = 2;
+                        computer2.D3On = false;
+                        MessageBox.Show("Computer 2 has 2 dice remaining");
+                    }
+                    else if (computer2.DiceCountLeft == 2)
+                    {
+                        computer2.DiceCountLeft = 1;
+                        computer2.D2On = false;
+                        MessageBox.Show("Computer 2 has 1 die remaining");
+                    }
+                    else if (computer2.DiceCountLeft == 1)
+                    {
+                        computer2.DiceCountLeft = 0;
+                        computer2.D1On = false;
+                        MessageBox.Show("Computer 2 is out of dice");
+                    }
                 }
-                else if (computer1.DiceCountLeft == 1)
+                else
                 {
-                    computer1.DiceCountLeft = 0;
-                    computer1.D1On = false;
-                    MessageBox.Show("Computer 1 is out of dice");
-                    //remove player from game
+                    MessageBox.Show("Computer 1 has lost the challenge!");
+                    if (computer1.DiceCountLeft == 6)
+                    {
+                        computer1.DiceCountLeft = 5;
+                        computer1.D6On = false;
+                        MessageBox.Show("Computer 1 has 5 dice remaining");
+                    }
+                    else if (player1.DiceCountLeft == 5)
+                    {
+                        computer1.DiceCountLeft = 4;
+                        computer1.D5On = false;
+                        MessageBox.Show("Computer 1 has 4 dice remaining");
+                    }
+                    else if (computer1.DiceCountLeft == 4)
+                    {
+                        computer1.DiceCountLeft = 3;
+                        computer1.D4On = false;
+                        MessageBox.Show("Computer 1 has 3 dice remaining");
+                    }
+                    else if (computer1.DiceCountLeft == 3)
+                    {
+                        computer1.DiceCountLeft = 2;
+                        computer1.D3On = false;
+                        MessageBox.Show("Computer 1 has 2 dice remaining");
+                    }
+                    else if (computer1.DiceCountLeft == 2)
+                    {
+                        computer1.DiceCountLeft = 1;
+                        computer1.D2On = false;
+                        MessageBox.Show("Computer 1 has 1 die remaining");
+                    }
+                    else if (computer1.DiceCountLeft == 1)
+                    {
+                        computer1.DiceCountLeft = 0;
+                        computer1.D1On = false;
+                        MessageBox.Show("Computer 1 is out of dice");
+                        //remove player from game
+                    }
                 }
-            }
-            DiceRollAll();
-            previousDiceAmount = 0;
-            previousDiceValue = 0;
+                DiceRollAll();
+                previousDiceAmount = 0;
+                previousDiceValue = 0;
+            }//end else if
+            //value for 5
+            else if(previousDiceValue == 5)
+            {
+                MessageBox.Show("Computer 2 challenged Computer 1");
+                if (previousDiceAmount <= totNumD5)
+                {
+                    MessageBox.Show("Computer 2 lost the challenge!");
+                    if (computer2.DiceCountLeft == 6)
+                    {
+                        computer2.DiceCountLeft = 5;
+                        computer2.D6On = false;
+                        MessageBox.Show("Computer 2 has 5 dice remaining");
+                    }
+                    else if (computer2.DiceCountLeft == 5)
+                    {
+                        computer2.DiceCountLeft = 4;
+                        computer2.D5On = false;
+                        MessageBox.Show("Computer 2 has 4 dice remaining");
+                    }
+                    else if (computer2.DiceCountLeft == 4)
+                    {
+                        computer2.DiceCountLeft = 3;
+                        computer2.D4On = false;
+                        MessageBox.Show("Computer 2 has 3 dice remaining");
+                    }
+                    else if (computer2.DiceCountLeft == 3)
+                    {
+                        computer2.DiceCountLeft = 2;
+                        computer2.D3On = false;
+                        MessageBox.Show("Computer 2 has 2 dice remaining");
+                    }
+                    else if (computer2.DiceCountLeft == 2)
+                    {
+                        computer2.DiceCountLeft = 1;
+                        computer2.D2On = false;
+                        MessageBox.Show("Computer 2 has 1 die remaining");
+                    }
+                    else if (computer2.DiceCountLeft == 1)
+                    {
+                        computer2.DiceCountLeft = 0;
+                        computer2.D1On = false;
+                        MessageBox.Show("Computer 2 is out of dice");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Computer 1 has lost the challenge!");
+                    if (computer1.DiceCountLeft == 6)
+                    {
+                        computer1.DiceCountLeft = 5;
+                        computer1.D6On = false;
+                        MessageBox.Show("Computer 1 has 5 dice remaining");
+                    }
+                    else if (player1.DiceCountLeft == 5)
+                    {
+                        computer1.DiceCountLeft = 4;
+                        computer1.D5On = false;
+                        MessageBox.Show("Computer 1 has 4 dice remaining");
+                    }
+                    else if (computer1.DiceCountLeft == 4)
+                    {
+                        computer1.DiceCountLeft = 3;
+                        computer1.D4On = false;
+                        MessageBox.Show("Computer 1 has 3 dice remaining");
+                    }
+                    else if (computer1.DiceCountLeft == 3)
+                    {
+                        computer1.DiceCountLeft = 2;
+                        computer1.D3On = false;
+                        MessageBox.Show("Computer 1 has 2 dice remaining");
+                    }
+                    else if (computer1.DiceCountLeft == 2)
+                    {
+                        computer1.DiceCountLeft = 1;
+                        computer1.D2On = false;
+                        MessageBox.Show("Computer 1 has 1 die remaining");
+                    }
+                    else if (computer1.DiceCountLeft == 1)
+                    {
+                        computer1.DiceCountLeft = 0;
+                        computer1.D1On = false;
+                        MessageBox.Show("Computer 1 is out of dice");
+                        //remove player from game
+                    }
+                }
+                DiceRollAll();
+                previousDiceAmount = 0;
+                previousDiceValue = 0;
+            }//end else if
+            //value for 6
+            else if(previousDiceValue == 6)
+            {
+                MessageBox.Show("Computer 2 challenged Computer 1");
+                if (previousDiceAmount <= totNumD6)
+                {
+                    MessageBox.Show("Computer 2 lost the challenge!");
+                    if (computer2.DiceCountLeft == 6)
+                    {
+                        computer2.DiceCountLeft = 5;
+                        computer2.D6On = false;
+                        MessageBox.Show("Computer 2 has 5 dice remaining");
+                    }
+                    else if (computer2.DiceCountLeft == 5)
+                    {
+                        computer2.DiceCountLeft = 4;
+                        computer2.D5On = false;
+                        MessageBox.Show("Computer 2 has 4 dice remaining");
+                    }
+                    else if (computer2.DiceCountLeft == 4)
+                    {
+                        computer2.DiceCountLeft = 3;
+                        computer2.D4On = false;
+                        MessageBox.Show("Computer 2 has 3 dice remaining");
+                    }
+                    else if (computer2.DiceCountLeft == 3)
+                    {
+                        computer2.DiceCountLeft = 2;
+                        computer2.D3On = false;
+                        MessageBox.Show("Computer 2 has 2 dice remaining");
+                    }
+                    else if (computer2.DiceCountLeft == 2)
+                    {
+                        computer2.DiceCountLeft = 1;
+                        computer2.D2On = false;
+                        MessageBox.Show("Computer 2 has 1 die remaining");
+                    }
+                    else if (computer2.DiceCountLeft == 1)
+                    {
+                        computer2.DiceCountLeft = 0;
+                        computer2.D1On = false;
+                        MessageBox.Show("Computer 2 is out of dice");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Computer 1 has lost the challenge!");
+                    if (computer1.DiceCountLeft == 6)
+                    {
+                        computer1.DiceCountLeft = 5;
+                        computer1.D6On = false;
+                        MessageBox.Show("Computer 1 has 5 dice remaining");
+                    }
+                    else if (player1.DiceCountLeft == 5)
+                    {
+                        computer1.DiceCountLeft = 4;
+                        computer1.D5On = false;
+                        MessageBox.Show("Computer 1 has 4 dice remaining");
+                    }
+                    else if (computer1.DiceCountLeft == 4)
+                    {
+                        computer1.DiceCountLeft = 3;
+                        computer1.D4On = false;
+                        MessageBox.Show("Computer 1 has 3 dice remaining");
+                    }
+                    else if (computer1.DiceCountLeft == 3)
+                    {
+                        computer1.DiceCountLeft = 2;
+                        computer1.D3On = false;
+                        MessageBox.Show("Computer 1 has 2 dice remaining");
+                    }
+                    else if (computer1.DiceCountLeft == 2)
+                    {
+                        computer1.DiceCountLeft = 1;
+                        computer1.D2On = false;
+                        MessageBox.Show("Computer 1 has 1 die remaining");
+                    }
+                    else if (computer1.DiceCountLeft == 1)
+                    {
+                        computer1.DiceCountLeft = 0;
+                        computer1.D1On = false;
+                        MessageBox.Show("Computer 1 is out of dice");
+                        //remove player from game
+                    }
+                }
+                DiceRollAll();
+                previousDiceAmount = 0;
+                previousDiceValue = 0;
+            }//end else if
+
         }
         private void Computer3Challenge()
         {
-            CountDice();
-            MessageBox.Show("Computer 3 challenged Computer 2");
-            if (previousDiceAmount <= totNumD1 || previousDiceAmount <= totNumD2 || previousDiceAmount <= totNumD3 || previousDiceAmount <= totNumD4 || previousDiceAmount <= totNumD5 || previousDiceAmount <= totNumD6)
+            //value for 1
+            if(previousDiceValue == 1)
             {
-                MessageBox.Show("Computer 3 lost the challenge!");
-                if (computer3.DiceCountLeft == 6)
+                MessageBox.Show("Computer 3 challenged Computer 2");
+                if (previousDiceAmount <= totNumD1)
                 {
-                    computer3.DiceCountLeft = 5;
-                    computer3.D6On = false;
-                    MessageBox.Show("Computer 3 has 5 dice remaining");
+                    MessageBox.Show("Computer 3 lost the challenge!");
+                    if (computer3.DiceCountLeft == 6)
+                    {
+                        computer3.DiceCountLeft = 5;
+                        computer3.D6On = false;
+                        MessageBox.Show("Computer 3 has 5 dice remaining");
+                    }
+                    else if (computer3.DiceCountLeft == 5)
+                    {
+                        computer3.DiceCountLeft = 4;
+                        computer3.D5On = false;
+                        MessageBox.Show("Computer 3 has 4 dice remaining");
+                    }
+                    else if (computer3.DiceCountLeft == 4)
+                    {
+                        computer3.DiceCountLeft = 3;
+                        computer3.D4On = false;
+                        MessageBox.Show("Computer 3 has 3 dice remaining");
+                    }
+                    else if (computer3.DiceCountLeft == 3)
+                    {
+                        computer3.DiceCountLeft = 2;
+                        computer3.D3On = false;
+                        MessageBox.Show("Computer 3 has 2 dice remaining");
+                    }
+                    else if (computer3.DiceCountLeft == 2)
+                    {
+                        computer3.DiceCountLeft = 1;
+                        computer3.D2On = false;
+                        MessageBox.Show("Computer 3 has 1 die remaining");
+                    }
+                    else if (computer3.DiceCountLeft == 1)
+                    {
+                        computer3.DiceCountLeft = 0;
+                        computer3.D1On = false;
+                        MessageBox.Show("Computer 3 is out of dice");
+                    }
                 }
-                else if (computer3.DiceCountLeft == 5)
+                else
                 {
-                    computer3.DiceCountLeft = 4;
-                    computer3.D5On = false;
-                    MessageBox.Show("Computer 3 has 4 dice remaining");
+                    MessageBox.Show("Computer 2 has lost the challenge!");
+                    if (computer2.DiceCountLeft == 6)
+                    {
+                        computer2.DiceCountLeft = 5;
+                        computer2.D6On = false;
+                        MessageBox.Show("Computer 2 has 5 dice remaining");
+                    }
+                    else if (computer2.DiceCountLeft == 5)
+                    {
+                        computer2.DiceCountLeft = 4;
+                        computer2.D5On = false;
+                        MessageBox.Show("Computer 2 has 4 dice remaining");
+                    }
+                    else if (computer2.DiceCountLeft == 4)
+                    {
+                        computer2.DiceCountLeft = 3;
+                        computer2.D4On = false;
+                        MessageBox.Show("Computer 2 has 3 dice remaining");
+                    }
+                    else if (computer2.DiceCountLeft == 3)
+                    {
+                        computer2.DiceCountLeft = 2;
+                        computer2.D3On = false;
+                        MessageBox.Show("Computer 2 has 2 dice remaining");
+                    }
+                    else if (computer2.DiceCountLeft == 2)
+                    {
+                        computer2.DiceCountLeft = 1;
+                        computer2.D2On = false;
+                        MessageBox.Show("Computer 2 has 1 die remaining");
+                    }
+                    else if (computer2.DiceCountLeft == 1)
+                    {
+                        computer2.DiceCountLeft = 0;
+                        computer2.D1On = false;
+                        MessageBox.Show("Computer 2 is out of dice");
+                        //remove player from game
+                    }
                 }
-                else if (computer3.DiceCountLeft == 4)
-                {
-                    computer3.DiceCountLeft = 3;
-                    computer3.D4On = false;
-                    MessageBox.Show("Computer 3 has 3 dice remaining");
-                }
-                else if (computer3.DiceCountLeft == 3)
-                {
-                    computer3.DiceCountLeft = 2;
-                    computer3.D3On = false;
-                    MessageBox.Show("Computer 3 has 2 dice remaining");
-                }
-                else if (computer3.DiceCountLeft == 2)
-                {
-                    computer3.DiceCountLeft = 1;
-                    computer3.D2On = false;
-                    MessageBox.Show("Computer 3 has 1 die remaining");
-                }
-                else if (computer3.DiceCountLeft == 1)
-                {
-                    computer3.DiceCountLeft = 0;
-                    computer3.D1On = false;
-                    MessageBox.Show("Computer 3 is out of dice");
-                }
-            }
-            else
+                DiceRollAll();
+                previousDiceAmount = 0;
+                previousDiceValue = 0;
+            }//end if
+            //value for 2
+            else if(previousDiceValue == 2)
             {
-                MessageBox.Show("Computer 2 has lost the challenge!");
-                if (computer2.DiceCountLeft == 6)
+                MessageBox.Show("Computer 3 challenged Computer 2");
+                if (previousDiceAmount <= totNumD2)
                 {
-                    computer2.DiceCountLeft = 5;
-                    computer2.D6On = false;
-                    MessageBox.Show("Computer 2 has 5 dice remaining");
+                    MessageBox.Show("Computer 3 lost the challenge!");
+                    if (computer3.DiceCountLeft == 6)
+                    {
+                        computer3.DiceCountLeft = 5;
+                        computer3.D6On = false;
+                        MessageBox.Show("Computer 3 has 5 dice remaining");
+                    }
+                    else if (computer3.DiceCountLeft == 5)
+                    {
+                        computer3.DiceCountLeft = 4;
+                        computer3.D5On = false;
+                        MessageBox.Show("Computer 3 has 4 dice remaining");
+                    }
+                    else if (computer3.DiceCountLeft == 4)
+                    {
+                        computer3.DiceCountLeft = 3;
+                        computer3.D4On = false;
+                        MessageBox.Show("Computer 3 has 3 dice remaining");
+                    }
+                    else if (computer3.DiceCountLeft == 3)
+                    {
+                        computer3.DiceCountLeft = 2;
+                        computer3.D3On = false;
+                        MessageBox.Show("Computer 3 has 2 dice remaining");
+                    }
+                    else if (computer3.DiceCountLeft == 2)
+                    {
+                        computer3.DiceCountLeft = 1;
+                        computer3.D2On = false;
+                        MessageBox.Show("Computer 3 has 1 die remaining");
+                    }
+                    else if (computer3.DiceCountLeft == 1)
+                    {
+                        computer3.DiceCountLeft = 0;
+                        computer3.D1On = false;
+                        MessageBox.Show("Computer 3 is out of dice");
+                    }
                 }
-                else if (computer2.DiceCountLeft == 5)
+                else
                 {
-                    computer2.DiceCountLeft = 4;
-                    computer2.D5On = false;
-                    MessageBox.Show("Computer 2 has 4 dice remaining");
+                    MessageBox.Show("Computer 2 has lost the challenge!");
+                    if (computer2.DiceCountLeft == 6)
+                    {
+                        computer2.DiceCountLeft = 5;
+                        computer2.D6On = false;
+                        MessageBox.Show("Computer 2 has 5 dice remaining");
+                    }
+                    else if (computer2.DiceCountLeft == 5)
+                    {
+                        computer2.DiceCountLeft = 4;
+                        computer2.D5On = false;
+                        MessageBox.Show("Computer 2 has 4 dice remaining");
+                    }
+                    else if (computer2.DiceCountLeft == 4)
+                    {
+                        computer2.DiceCountLeft = 3;
+                        computer2.D4On = false;
+                        MessageBox.Show("Computer 2 has 3 dice remaining");
+                    }
+                    else if (computer2.DiceCountLeft == 3)
+                    {
+                        computer2.DiceCountLeft = 2;
+                        computer2.D3On = false;
+                        MessageBox.Show("Computer 2 has 2 dice remaining");
+                    }
+                    else if (computer2.DiceCountLeft == 2)
+                    {
+                        computer2.DiceCountLeft = 1;
+                        computer2.D2On = false;
+                        MessageBox.Show("Computer 2 has 1 die remaining");
+                    }
+                    else if (computer2.DiceCountLeft == 1)
+                    {
+                        computer2.DiceCountLeft = 0;
+                        computer2.D1On = false;
+                        MessageBox.Show("Computer 2 is out of dice");
+                        //remove player from game
+                    }
                 }
-                else if (computer2.DiceCountLeft == 4)
+                DiceRollAll();
+                previousDiceAmount = 0;
+            }//end else if
+            //value for 3
+            else if(previousDiceValue == 3)
+            {
+                MessageBox.Show("Computer 3 challenged Computer 2");
+                if (previousDiceAmount <= totNumD3)
                 {
-                    computer2.DiceCountLeft = 3;
-                    computer2.D4On = false;
-                    MessageBox.Show("Computer 2 has 3 dice remaining");
+                    MessageBox.Show("Computer 3 lost the challenge!");
+                    if (computer3.DiceCountLeft == 6)
+                    {
+                        computer3.DiceCountLeft = 5;
+                        computer3.D6On = false;
+                        MessageBox.Show("Computer 3 has 5 dice remaining");
+                    }
+                    else if (computer3.DiceCountLeft == 5)
+                    {
+                        computer3.DiceCountLeft = 4;
+                        computer3.D5On = false;
+                        MessageBox.Show("Computer 3 has 4 dice remaining");
+                    }
+                    else if (computer3.DiceCountLeft == 4)
+                    {
+                        computer3.DiceCountLeft = 3;
+                        computer3.D4On = false;
+                        MessageBox.Show("Computer 3 has 3 dice remaining");
+                    }
+                    else if (computer3.DiceCountLeft == 3)
+                    {
+                        computer3.DiceCountLeft = 2;
+                        computer3.D3On = false;
+                        MessageBox.Show("Computer 3 has 2 dice remaining");
+                    }
+                    else if (computer3.DiceCountLeft == 2)
+                    {
+                        computer3.DiceCountLeft = 1;
+                        computer3.D2On = false;
+                        MessageBox.Show("Computer 3 has 1 die remaining");
+                    }
+                    else if (computer3.DiceCountLeft == 1)
+                    {
+                        computer3.DiceCountLeft = 0;
+                        computer3.D1On = false;
+                        MessageBox.Show("Computer 3 is out of dice");
+                    }
                 }
-                else if (computer2.DiceCountLeft == 3)
+                else
                 {
-                    computer2.DiceCountLeft = 2;
-                    computer2.D3On = false;
-                    MessageBox.Show("Computer 2 has 2 dice remaining");
+                    MessageBox.Show("Computer 2 has lost the challenge!");
+                    if (computer2.DiceCountLeft == 6)
+                    {
+                        computer2.DiceCountLeft = 5;
+                        computer2.D6On = false;
+                        MessageBox.Show("Computer 2 has 5 dice remaining");
+                    }
+                    else if (computer2.DiceCountLeft == 5)
+                    {
+                        computer2.DiceCountLeft = 4;
+                        computer2.D5On = false;
+                        MessageBox.Show("Computer 2 has 4 dice remaining");
+                    }
+                    else if (computer2.DiceCountLeft == 4)
+                    {
+                        computer2.DiceCountLeft = 3;
+                        computer2.D4On = false;
+                        MessageBox.Show("Computer 2 has 3 dice remaining");
+                    }
+                    else if (computer2.DiceCountLeft == 3)
+                    {
+                        computer2.DiceCountLeft = 2;
+                        computer2.D3On = false;
+                        MessageBox.Show("Computer 2 has 2 dice remaining");
+                    }
+                    else if (computer2.DiceCountLeft == 2)
+                    {
+                        computer2.DiceCountLeft = 1;
+                        computer2.D2On = false;
+                        MessageBox.Show("Computer 2 has 1 die remaining");
+                    }
+                    else if (computer2.DiceCountLeft == 1)
+                    {
+                        computer2.DiceCountLeft = 0;
+                        computer2.D1On = false;
+                        MessageBox.Show("Computer 2 is out of dice");
+                        //remove player from game
+                    }
                 }
-                else if (computer2.DiceCountLeft == 2)
+                DiceRollAll();
+                previousDiceAmount = 0;
+            }//end else if
+            //value for 4
+            else if(previousDiceValue == 4)
+            {
+                MessageBox.Show("Computer 3 challenged Computer 2");
+                if (previousDiceAmount <= totNumD4)
                 {
-                    computer2.DiceCountLeft = 1;
-                    computer2.D2On = false;
-                    MessageBox.Show("Computer 2 has 1 die remaining");
+                    MessageBox.Show("Computer 3 lost the challenge!");
+                    if (computer3.DiceCountLeft == 6)
+                    {
+                        computer3.DiceCountLeft = 5;
+                        computer3.D6On = false;
+                        MessageBox.Show("Computer 3 has 5 dice remaining");
+                    }
+                    else if (computer3.DiceCountLeft == 5)
+                    {
+                        computer3.DiceCountLeft = 4;
+                        computer3.D5On = false;
+                        MessageBox.Show("Computer 3 has 4 dice remaining");
+                    }
+                    else if (computer3.DiceCountLeft == 4)
+                    {
+                        computer3.DiceCountLeft = 3;
+                        computer3.D4On = false;
+                        MessageBox.Show("Computer 3 has 3 dice remaining");
+                    }
+                    else if (computer3.DiceCountLeft == 3)
+                    {
+                        computer3.DiceCountLeft = 2;
+                        computer3.D3On = false;
+                        MessageBox.Show("Computer 3 has 2 dice remaining");
+                    }
+                    else if (computer3.DiceCountLeft == 2)
+                    {
+                        computer3.DiceCountLeft = 1;
+                        computer3.D2On = false;
+                        MessageBox.Show("Computer 3 has 1 die remaining");
+                    }
+                    else if (computer3.DiceCountLeft == 1)
+                    {
+                        computer3.DiceCountLeft = 0;
+                        computer3.D1On = false;
+                        MessageBox.Show("Computer 3 is out of dice");
+                    }
                 }
-                else if (computer2.DiceCountLeft == 1)
+                else
                 {
-                    computer2.DiceCountLeft = 0;
-                    computer2.D1On = false;
-                    MessageBox.Show("Computer 2 is out of dice");
-                    //remove player from game
+                    MessageBox.Show("Computer 2 has lost the challenge!");
+                    if (computer2.DiceCountLeft == 6)
+                    {
+                        computer2.DiceCountLeft = 5;
+                        computer2.D6On = false;
+                        MessageBox.Show("Computer 2 has 5 dice remaining");
+                    }
+                    else if (computer2.DiceCountLeft == 5)
+                    {
+                        computer2.DiceCountLeft = 4;
+                        computer2.D5On = false;
+                        MessageBox.Show("Computer 2 has 4 dice remaining");
+                    }
+                    else if (computer2.DiceCountLeft == 4)
+                    {
+                        computer2.DiceCountLeft = 3;
+                        computer2.D4On = false;
+                        MessageBox.Show("Computer 2 has 3 dice remaining");
+                    }
+                    else if (computer2.DiceCountLeft == 3)
+                    {
+                        computer2.DiceCountLeft = 2;
+                        computer2.D3On = false;
+                        MessageBox.Show("Computer 2 has 2 dice remaining");
+                    }
+                    else if (computer2.DiceCountLeft == 2)
+                    {
+                        computer2.DiceCountLeft = 1;
+                        computer2.D2On = false;
+                        MessageBox.Show("Computer 2 has 1 die remaining");
+                    }
+                    else if (computer2.DiceCountLeft == 1)
+                    {
+                        computer2.DiceCountLeft = 0;
+                        computer2.D1On = false;
+                        MessageBox.Show("Computer 2 is out of dice");
+                        //remove player from game
+                    }
                 }
-            }
-            DiceRollAll();
-            previousDiceAmount = 0;
-            previousDiceValue = 0;
+                DiceRollAll();
+                previousDiceAmount = 0;
+            }//end else if
+            //value for 5
+            else if(previousDiceValue == 5)
+            {
+                MessageBox.Show("Computer 3 challenged Computer 2");
+                if (previousDiceAmount <= totNumD5)
+                {
+                    MessageBox.Show("Computer 3 lost the challenge!");
+                    if (computer3.DiceCountLeft == 6)
+                    {
+                        computer3.DiceCountLeft = 5;
+                        computer3.D6On = false;
+                        MessageBox.Show("Computer 3 has 5 dice remaining");
+                    }
+                    else if (computer3.DiceCountLeft == 5)
+                    {
+                        computer3.DiceCountLeft = 4;
+                        computer3.D5On = false;
+                        MessageBox.Show("Computer 3 has 4 dice remaining");
+                    }
+                    else if (computer3.DiceCountLeft == 4)
+                    {
+                        computer3.DiceCountLeft = 3;
+                        computer3.D4On = false;
+                        MessageBox.Show("Computer 3 has 3 dice remaining");
+                    }
+                    else if (computer3.DiceCountLeft == 3)
+                    {
+                        computer3.DiceCountLeft = 2;
+                        computer3.D3On = false;
+                        MessageBox.Show("Computer 3 has 2 dice remaining");
+                    }
+                    else if (computer3.DiceCountLeft == 2)
+                    {
+                        computer3.DiceCountLeft = 1;
+                        computer3.D2On = false;
+                        MessageBox.Show("Computer 3 has 1 die remaining");
+                    }
+                    else if (computer3.DiceCountLeft == 1)
+                    {
+                        computer3.DiceCountLeft = 0;
+                        computer3.D1On = false;
+                        MessageBox.Show("Computer 3 is out of dice");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Computer 2 has lost the challenge!");
+                    if (computer2.DiceCountLeft == 6)
+                    {
+                        computer2.DiceCountLeft = 5;
+                        computer2.D6On = false;
+                        MessageBox.Show("Computer 2 has 5 dice remaining");
+                    }
+                    else if (computer2.DiceCountLeft == 5)
+                    {
+                        computer2.DiceCountLeft = 4;
+                        computer2.D5On = false;
+                        MessageBox.Show("Computer 2 has 4 dice remaining");
+                    }
+                    else if (computer2.DiceCountLeft == 4)
+                    {
+                        computer2.DiceCountLeft = 3;
+                        computer2.D4On = false;
+                        MessageBox.Show("Computer 2 has 3 dice remaining");
+                    }
+                    else if (computer2.DiceCountLeft == 3)
+                    {
+                        computer2.DiceCountLeft = 2;
+                        computer2.D3On = false;
+                        MessageBox.Show("Computer 2 has 2 dice remaining");
+                    }
+                    else if (computer2.DiceCountLeft == 2)
+                    {
+                        computer2.DiceCountLeft = 1;
+                        computer2.D2On = false;
+                        MessageBox.Show("Computer 2 has 1 die remaining");
+                    }
+                    else if (computer2.DiceCountLeft == 1)
+                    {
+                        computer2.DiceCountLeft = 0;
+                        computer2.D1On = false;
+                        MessageBox.Show("Computer 2 is out of dice");
+                        //remove player from game
+                    }
+                }
+                DiceRollAll();
+                previousDiceAmount = 0;
+            }//end else if
+            //value for 6
+            else if(previousDiceValue == 6)
+            {
+                MessageBox.Show("Computer 3 challenged Computer 2");
+                if (previousDiceAmount <= totNumD6)
+                {
+                    MessageBox.Show("Computer 3 lost the challenge!");
+                    if (computer3.DiceCountLeft == 6)
+                    {
+                        computer3.DiceCountLeft = 5;
+                        computer3.D6On = false;
+                        MessageBox.Show("Computer 3 has 5 dice remaining");
+                    }
+                    else if (computer3.DiceCountLeft == 5)
+                    {
+                        computer3.DiceCountLeft = 4;
+                        computer3.D5On = false;
+                        MessageBox.Show("Computer 3 has 4 dice remaining");
+                    }
+                    else if (computer3.DiceCountLeft == 4)
+                    {
+                        computer3.DiceCountLeft = 3;
+                        computer3.D4On = false;
+                        MessageBox.Show("Computer 3 has 3 dice remaining");
+                    }
+                    else if (computer3.DiceCountLeft == 3)
+                    {
+                        computer3.DiceCountLeft = 2;
+                        computer3.D3On = false;
+                        MessageBox.Show("Computer 3 has 2 dice remaining");
+                    }
+                    else if (computer3.DiceCountLeft == 2)
+                    {
+                        computer3.DiceCountLeft = 1;
+                        computer3.D2On = false;
+                        MessageBox.Show("Computer 3 has 1 die remaining");
+                    }
+                    else if (computer3.DiceCountLeft == 1)
+                    {
+                        computer3.DiceCountLeft = 0;
+                        computer3.D1On = false;
+                        MessageBox.Show("Computer 3 is out of dice");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Computer 2 has lost the challenge!");
+                    if (computer2.DiceCountLeft == 6)
+                    {
+                        computer2.DiceCountLeft = 5;
+                        computer2.D6On = false;
+                        MessageBox.Show("Computer 2 has 5 dice remaining");
+                    }
+                    else if (computer2.DiceCountLeft == 5)
+                    {
+                        computer2.DiceCountLeft = 4;
+                        computer2.D5On = false;
+                        MessageBox.Show("Computer 2 has 4 dice remaining");
+                    }
+                    else if (computer2.DiceCountLeft == 4)
+                    {
+                        computer2.DiceCountLeft = 3;
+                        computer2.D4On = false;
+                        MessageBox.Show("Computer 2 has 3 dice remaining");
+                    }
+                    else if (computer2.DiceCountLeft == 3)
+                    {
+                        computer2.DiceCountLeft = 2;
+                        computer2.D3On = false;
+                        MessageBox.Show("Computer 2 has 2 dice remaining");
+                    }
+                    else if (computer2.DiceCountLeft == 2)
+                    {
+                        computer2.DiceCountLeft = 1;
+                        computer2.D2On = false;
+                        MessageBox.Show("Computer 2 has 1 die remaining");
+                    }
+                    else if (computer2.DiceCountLeft == 1)
+                    {
+                        computer2.DiceCountLeft = 0;
+                        computer2.D1On = false;
+                        MessageBox.Show("Computer 2 is out of dice");
+                        //remove player from game
+                    }
+                }
+                DiceRollAll();
+                previousDiceAmount = 0;
+            }//end else if
         }
-        private int GenerateChoice(/*ref Player com*/)
+        private void btnPlayer1Challenge_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Player1 challenged Computer 3");
+            //value for 1
+            if(previousDiceValue == 1)
+            {
+                if (previousDiceAmount <= totNumD1)
+                {
+                    MessageBox.Show("You lost the challenge!");
+                    if (player1.DiceCountLeft == 6)
+                    {
+                        player1.DiceCountLeft = 5;
+                        player1.D6On = false;
+                        MessageBox.Show("You have 5 dice remaining");
+                    }
+                    else if (player1.DiceCountLeft == 5)
+                    {
+                        player1.DiceCountLeft = 4;
+                        player1.D5On = false;
+                        MessageBox.Show("You have 4 dice remaining");
+                    }
+                    else if (player1.DiceCountLeft == 4)
+                    {
+                        player1.DiceCountLeft = 3;
+                        player1.D4On = false;
+                        MessageBox.Show("You have 3 dice remaining");
+                    }
+                    else if (player1.DiceCountLeft == 3)
+                    {
+                        player1.DiceCountLeft = 2;
+                        player1.D3On = false;
+                        MessageBox.Show("You have 2 dice remaining");
+                    }
+                    else if (player1.DiceCountLeft == 2)
+                    {
+                        player1.DiceCountLeft = 1;
+                        player1.D2On = false;
+                        MessageBox.Show("You have 1 die remaining");
+                    }
+                    else if (player1.DiceCountLeft == 1)
+                    {
+                        player1.DiceCountLeft = 0;
+                        player1.D1On = false;
+                        MessageBox.Show("You are out of dice");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Computer 3 lost the challenge!");
+                    if (computer3.DiceCountLeft == 6)
+                    {
+                        computer3.DiceCountLeft = 5;
+                        computer3.D6On = false;
+                        MessageBox.Show("Computer 3 has 5 dice remaining");
+                    }
+                    else if (computer3.DiceCountLeft == 5)
+                    {
+                        computer3.DiceCountLeft = 4;
+                        computer3.D5On = false;
+                        MessageBox.Show("Computer 3 has 4 dice remaining");
+                    }
+                    else if (computer3.DiceCountLeft == 4)
+                    {
+                        computer3.DiceCountLeft = 3;
+                        computer3.D4On = false;
+                        MessageBox.Show("Computer 3 has 3 dice remaining");
+                    }
+                    else if (computer3.DiceCountLeft == 3)
+                    {
+                        computer3.DiceCountLeft = 2;
+                        computer3.D3On = false;
+                        MessageBox.Show("Computer 3 has 2 dice remaining");
+                    }
+                    else if (computer3.DiceCountLeft == 2)
+                    {
+                        computer3.DiceCountLeft = 1;
+                        computer3.D2On = false;
+                        MessageBox.Show("Computer 3 has 1 die remaining");
+                    }
+                    else if (computer3.DiceCountLeft == 1)
+                    {
+                        computer3.DiceCountLeft = 0;
+                        computer3.D1On = false;
+                        MessageBox.Show("Computer 3 is out of dice");
+                    }
+                }
+                DiceRollAll();
+                previousDiceAmount = 0;
+                previousDiceValue = 0;
+            }//end if
+            //value for 2
+            else if(previousDiceValue == 2)
+            {
+                if (previousDiceAmount <= totNumD2)
+                {
+                    MessageBox.Show("You lost the challenge!");
+                    if (player1.DiceCountLeft == 6)
+                    {
+                        player1.DiceCountLeft = 5;
+                        player1.D6On = false;
+                        MessageBox.Show("You have 5 dice remaining");
+                    }
+                    else if (player1.DiceCountLeft == 5)
+                    {
+                        player1.DiceCountLeft = 4;
+                        player1.D5On = false;
+                        MessageBox.Show("You have 4 dice remaining");
+                    }
+                    else if (player1.DiceCountLeft == 4)
+                    {
+                        player1.DiceCountLeft = 3;
+                        player1.D4On = false;
+                        MessageBox.Show("You have 3 dice remaining");
+                    }
+                    else if (player1.DiceCountLeft == 3)
+                    {
+                        player1.DiceCountLeft = 2;
+                        player1.D3On = false;
+                        MessageBox.Show("You have 2 dice remaining");
+                    }
+                    else if (player1.DiceCountLeft == 2)
+                    {
+                        player1.DiceCountLeft = 1;
+                        player1.D2On = false;
+                        MessageBox.Show("You have 1 die remaining");
+                    }
+                    else if (player1.DiceCountLeft == 1)
+                    {
+                        player1.DiceCountLeft = 0;
+                        player1.D1On = false;
+                        MessageBox.Show("You are out of dice");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Computer 3 lost the challenge!");
+                    if (computer3.DiceCountLeft == 6)
+                    {
+                        computer3.DiceCountLeft = 5;
+                        computer3.D6On = false;
+                        MessageBox.Show("Computer 3 has 5 dice remaining");
+                    }
+                    else if (computer3.DiceCountLeft == 5)
+                    {
+                        computer3.DiceCountLeft = 4;
+                        computer3.D5On = false;
+                        MessageBox.Show("Computer 3 has 4 dice remaining");
+                    }
+                    else if (computer3.DiceCountLeft == 4)
+                    {
+                        computer3.DiceCountLeft = 3;
+                        computer3.D4On = false;
+                        MessageBox.Show("Computer 3 has 3 dice remaining");
+                    }
+                    else if (computer3.DiceCountLeft == 3)
+                    {
+                        computer3.DiceCountLeft = 2;
+                        computer3.D3On = false;
+                        MessageBox.Show("Computer 3 has 2 dice remaining");
+                    }
+                    else if (computer3.DiceCountLeft == 2)
+                    {
+                        computer3.DiceCountLeft = 1;
+                        computer3.D2On = false;
+                        MessageBox.Show("Computer 3 has 1 die remaining");
+                    }
+                    else if (computer3.DiceCountLeft == 1)
+                    {
+                        computer3.DiceCountLeft = 0;
+                        computer3.D1On = false;
+                        MessageBox.Show("Computer 3 is out of dice");
+                    }
+                }
+                DiceRollAll();
+                previousDiceAmount = 0;
+                previousDiceValue = 0;
+            }//end else if
+            //value for 3
+            else if(previousDiceValue == 3)
+            {
+                if (previousDiceAmount <= totNumD3)
+                {
+                    MessageBox.Show("You lost the challenge!");
+                    if (player1.DiceCountLeft == 6)
+                    {
+                        player1.DiceCountLeft = 5;
+                        player1.D6On = false;
+                        MessageBox.Show("You have 5 dice remaining");
+                    }
+                    else if (player1.DiceCountLeft == 5)
+                    {
+                        player1.DiceCountLeft = 4;
+                        player1.D5On = false;
+                        MessageBox.Show("You have 4 dice remaining");
+                    }
+                    else if (player1.DiceCountLeft == 4)
+                    {
+                        player1.DiceCountLeft = 3;
+                        player1.D4On = false;
+                        MessageBox.Show("You have 3 dice remaining");
+                    }
+                    else if (player1.DiceCountLeft == 3)
+                    {
+                        player1.DiceCountLeft = 2;
+                        player1.D3On = false;
+                        MessageBox.Show("You have 2 dice remaining");
+                    }
+                    else if (player1.DiceCountLeft == 2)
+                    {
+                        player1.DiceCountLeft = 1;
+                        player1.D2On = false;
+                        MessageBox.Show("You have 1 die remaining");
+                    }
+                    else if (player1.DiceCountLeft == 1)
+                    {
+                        player1.DiceCountLeft = 0;
+                        player1.D1On = false;
+                        MessageBox.Show("You are out of dice");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Computer 3 lost the challenge!");
+                    if (computer3.DiceCountLeft == 6)
+                    {
+                        computer3.DiceCountLeft = 5;
+                        computer3.D6On = false;
+                        MessageBox.Show("Computer 3 has 5 dice remaining");
+                    }
+                    else if (computer3.DiceCountLeft == 5)
+                    {
+                        computer3.DiceCountLeft = 4;
+                        computer3.D5On = false;
+                        MessageBox.Show("Computer 3 has 4 dice remaining");
+                    }
+                    else if (computer3.DiceCountLeft == 4)
+                    {
+                        computer3.DiceCountLeft = 3;
+                        computer3.D4On = false;
+                        MessageBox.Show("Computer 3 has 3 dice remaining");
+                    }
+                    else if (computer3.DiceCountLeft == 3)
+                    {
+                        computer3.DiceCountLeft = 2;
+                        computer3.D3On = false;
+                        MessageBox.Show("Computer 3 has 2 dice remaining");
+                    }
+                    else if (computer3.DiceCountLeft == 2)
+                    {
+                        computer3.DiceCountLeft = 1;
+                        computer3.D2On = false;
+                        MessageBox.Show("Computer 3 has 1 die remaining");
+                    }
+                    else if (computer3.DiceCountLeft == 1)
+                    {
+                        computer3.DiceCountLeft = 0;
+                        computer3.D1On = false;
+                        MessageBox.Show("Computer 3 is out of dice");
+                    }
+                }
+                DiceRollAll();
+                previousDiceAmount = 0;
+                previousDiceValue = 0;
+            }//end else if
+            //value for 4
+            else if(previousDiceValue == 4)
+            {
+                if (previousDiceAmount <= totNumD4)
+                {
+                    MessageBox.Show("You lost the challenge!");
+                    if (player1.DiceCountLeft == 6)
+                    {
+                        player1.DiceCountLeft = 5;
+                        player1.D6On = false;
+                        MessageBox.Show("You have 5 dice remaining");
+                    }
+                    else if (player1.DiceCountLeft == 5)
+                    {
+                        player1.DiceCountLeft = 4;
+                        player1.D5On = false;
+                        MessageBox.Show("You have 4 dice remaining");
+                    }
+                    else if (player1.DiceCountLeft == 4)
+                    {
+                        player1.DiceCountLeft = 3;
+                        player1.D4On = false;
+                        MessageBox.Show("You have 3 dice remaining");
+                    }
+                    else if (player1.DiceCountLeft == 3)
+                    {
+                        player1.DiceCountLeft = 2;
+                        player1.D3On = false;
+                        MessageBox.Show("You have 2 dice remaining");
+                    }
+                    else if (player1.DiceCountLeft == 2)
+                    {
+                        player1.DiceCountLeft = 1;
+                        player1.D2On = false;
+                        MessageBox.Show("You have 1 die remaining");
+                    }
+                    else if (player1.DiceCountLeft == 1)
+                    {
+                        player1.DiceCountLeft = 0;
+                        player1.D1On = false;
+                        MessageBox.Show("You are out of dice");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Computer 3 lost the challenge!");
+                    if (computer3.DiceCountLeft == 6)
+                    {
+                        computer3.DiceCountLeft = 5;
+                        computer3.D6On = false;
+                        MessageBox.Show("Computer 3 has 5 dice remaining");
+                    }
+                    else if (computer3.DiceCountLeft == 5)
+                    {
+                        computer3.DiceCountLeft = 4;
+                        computer3.D5On = false;
+                        MessageBox.Show("Computer 3 has 4 dice remaining");
+                    }
+                    else if (computer3.DiceCountLeft == 4)
+                    {
+                        computer3.DiceCountLeft = 3;
+                        computer3.D4On = false;
+                        MessageBox.Show("Computer 3 has 3 dice remaining");
+                    }
+                    else if (computer3.DiceCountLeft == 3)
+                    {
+                        computer3.DiceCountLeft = 2;
+                        computer3.D3On = false;
+                        MessageBox.Show("Computer 3 has 2 dice remaining");
+                    }
+                    else if (computer3.DiceCountLeft == 2)
+                    {
+                        computer3.DiceCountLeft = 1;
+                        computer3.D2On = false;
+                        MessageBox.Show("Computer 3 has 1 die remaining");
+                    }
+                    else if (computer3.DiceCountLeft == 1)
+                    {
+                        computer3.DiceCountLeft = 0;
+                        computer3.D1On = false;
+                        MessageBox.Show("Computer 3 is out of dice");
+                    }
+                }
+                DiceRollAll();
+                previousDiceAmount = 0;
+                previousDiceValue = 0;
+            }//end else if
+            //value for 5
+            else if(previousDiceValue == 5)
+            {
+                if (previousDiceAmount <= totNumD5)
+                {
+                    MessageBox.Show("You lost the challenge!");
+                    if (player1.DiceCountLeft == 6)
+                    {
+                        player1.DiceCountLeft = 5;
+                        player1.D6On = false;
+                        MessageBox.Show("You have 5 dice remaining");
+                    }
+                    else if (player1.DiceCountLeft == 5)
+                    {
+                        player1.DiceCountLeft = 4;
+                        player1.D5On = false;
+                        MessageBox.Show("You have 4 dice remaining");
+                    }
+                    else if (player1.DiceCountLeft == 4)
+                    {
+                        player1.DiceCountLeft = 3;
+                        player1.D4On = false;
+                        MessageBox.Show("You have 3 dice remaining");
+                    }
+                    else if (player1.DiceCountLeft == 3)
+                    {
+                        player1.DiceCountLeft = 2;
+                        player1.D3On = false;
+                        MessageBox.Show("You have 2 dice remaining");
+                    }
+                    else if (player1.DiceCountLeft == 2)
+                    {
+                        player1.DiceCountLeft = 1;
+                        player1.D2On = false;
+                        MessageBox.Show("You have 1 die remaining");
+                    }
+                    else if (player1.DiceCountLeft == 1)
+                    {
+                        player1.DiceCountLeft = 0;
+                        player1.D1On = false;
+                        MessageBox.Show("You are out of dice");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Computer 3 lost the challenge!");
+                    if (computer3.DiceCountLeft == 6)
+                    {
+                        computer3.DiceCountLeft = 5;
+                        computer3.D6On = false;
+                        MessageBox.Show("Computer 3 has 5 dice remaining");
+                    }
+                    else if (computer3.DiceCountLeft == 5)
+                    {
+                        computer3.DiceCountLeft = 4;
+                        computer3.D5On = false;
+                        MessageBox.Show("Computer 3 has 4 dice remaining");
+                    }
+                    else if (computer3.DiceCountLeft == 4)
+                    {
+                        computer3.DiceCountLeft = 3;
+                        computer3.D4On = false;
+                        MessageBox.Show("Computer 3 has 3 dice remaining");
+                    }
+                    else if (computer3.DiceCountLeft == 3)
+                    {
+                        computer3.DiceCountLeft = 2;
+                        computer3.D3On = false;
+                        MessageBox.Show("Computer 3 has 2 dice remaining");
+                    }
+                    else if (computer3.DiceCountLeft == 2)
+                    {
+                        computer3.DiceCountLeft = 1;
+                        computer3.D2On = false;
+                        MessageBox.Show("Computer 3 has 1 die remaining");
+                    }
+                    else if (computer3.DiceCountLeft == 1)
+                    {
+                        computer3.DiceCountLeft = 0;
+                        computer3.D1On = false;
+                        MessageBox.Show("Computer 3 is out of dice");
+                    }
+                }
+                DiceRollAll();
+                previousDiceAmount = 0;
+                previousDiceValue = 0;
+            }//end else if
+            //value for 6
+            else if(previousDiceValue == 6)
+            {
+                if (previousDiceAmount <= totNumD6)
+                {
+                    MessageBox.Show("You lost the challenge!");
+                    if (player1.DiceCountLeft == 6)
+                    {
+                        player1.DiceCountLeft = 5;
+                        player1.D6On = false;
+                        MessageBox.Show("You have 5 dice remaining");
+                    }
+                    else if (player1.DiceCountLeft == 5)
+                    {
+                        player1.DiceCountLeft = 4;
+                        player1.D5On = false;
+                        MessageBox.Show("You have 4 dice remaining");
+                    }
+                    else if (player1.DiceCountLeft == 4)
+                    {
+                        player1.DiceCountLeft = 3;
+                        player1.D4On = false;
+                        MessageBox.Show("You have 3 dice remaining");
+                    }
+                    else if (player1.DiceCountLeft == 3)
+                    {
+                        player1.DiceCountLeft = 2;
+                        player1.D3On = false;
+                        MessageBox.Show("You have 2 dice remaining");
+                    }
+                    else if (player1.DiceCountLeft == 2)
+                    {
+                        player1.DiceCountLeft = 1;
+                        player1.D2On = false;
+                        MessageBox.Show("You have 1 die remaining");
+                    }
+                    else if (player1.DiceCountLeft == 1)
+                    {
+                        player1.DiceCountLeft = 0;
+                        player1.D1On = false;
+                        MessageBox.Show("You are out of dice");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Computer 3 lost the challenge!");
+                    if (computer3.DiceCountLeft == 6)
+                    {
+                        computer3.DiceCountLeft = 5;
+                        computer3.D6On = false;
+                        MessageBox.Show("Computer 3 has 5 dice remaining");
+                    }
+                    else if (computer3.DiceCountLeft == 5)
+                    {
+                        computer3.DiceCountLeft = 4;
+                        computer3.D5On = false;
+                        MessageBox.Show("Computer 3 has 4 dice remaining");
+                    }
+                    else if (computer3.DiceCountLeft == 4)
+                    {
+                        computer3.DiceCountLeft = 3;
+                        computer3.D4On = false;
+                        MessageBox.Show("Computer 3 has 3 dice remaining");
+                    }
+                    else if (computer3.DiceCountLeft == 3)
+                    {
+                        computer3.DiceCountLeft = 2;
+                        computer3.D3On = false;
+                        MessageBox.Show("Computer 3 has 2 dice remaining");
+                    }
+                    else if (computer3.DiceCountLeft == 2)
+                    {
+                        computer3.DiceCountLeft = 1;
+                        computer3.D2On = false;
+                        MessageBox.Show("Computer 3 has 1 die remaining");
+                    }
+                    else if (computer3.DiceCountLeft == 1)
+                    {
+                        computer3.DiceCountLeft = 0;
+                        computer3.D1On = false;
+                        MessageBox.Show("Computer 3 is out of dice");
+                    }
+                }
+                DiceRollAll();
+                previousDiceAmount = 0;
+                previousDiceValue = 0;
+            }//end else if
+            lblComputer1BetNum.Text = "X";
+            lblComputer1BetValue.Text = "X";
+            lblComputer2BetNum.Text = "X";
+            lblComputer2BetValue.Text = "X";
+            lblComputer3BetNum.Text = "X";
+            lblComputer3BetValue.Text = "X";
+        }
+        private int GenerateChoice()
         {
             Random rand = new Random();
             choice = rand.Next(1,2);
@@ -1246,71 +4418,401 @@ namespace LiarDice_grpProjCS
 
             //ACCOUNT FOR PLAYERS THAT HAVE LOST DICE
             //roll player 1 dice
-            player1.D1 = rand.Next(6) + 1;
-            player1.D2 = rand.Next(6) + 1;
-            player1.D3 = rand.Next(6) + 1;
-            player1.D4 = rand.Next(6) + 1;
-            player1.D5 = rand.Next(6) + 1;
-            player1.D6 = rand.Next(6) + 1;
+            if (player1.D1On == true && player1.D2On == true && player1.D3On == true && player1.D4On == true && player1.D5On == true && player1.D6On == true)
+            {
+                player1.D1 = rand.Next(6) + 1;
+                player1.D2 = rand.Next(6) + 1;
+                player1.D3 = rand.Next(6) + 1;
+                player1.D4 = rand.Next(6) + 1;
+                player1.D5 = rand.Next(6) + 1;
+                player1.D6 = rand.Next(6) + 1;
+                lblDie1Out.Text = player1.D1.ToString();
+                lblDie2Out.Text = player1.D2.ToString();
+                lblDie3Out.Text = player1.D3.ToString();
+                lblDie4Out.Text = player1.D4.ToString();
+                lblDie5Out.Text = player1.D5.ToString();
+                lblDie6Out.Text = player1.D6.ToString();
+            }
+            else if(player1.D1On == true && player1.D2On == true && player1.D3On == true && player1.D4On == true && player1.D5On == true)
+            {
+                player1.D1 = rand.Next(6) + 1;
+                player1.D2 = rand.Next(6) + 1;
+                player1.D3 = rand.Next(6) + 1;
+                player1.D4 = rand.Next(6) + 1;
+                player1.D5 = rand.Next(6) + 1;
+                lblDie1Out.Text = player1.D1.ToString();
+                lblDie2Out.Text = player1.D2.ToString();
+                lblDie3Out.Text = player1.D3.ToString();
+                lblDie4Out.Text = player1.D4.ToString();
+                lblDie5Out.Text = player1.D5.ToString();
+                lblDie6Out.Text = "X";
+            }
+            else if (player1.D1On == true && player1.D2On == true && player1.D3On == true && player1.D4On == true)
+            {
+                player1.D1 = rand.Next(6) + 1;
+                player1.D2 = rand.Next(6) + 1;
+                player1.D3 = rand.Next(6) + 1;
+                player1.D4 = rand.Next(6) + 1;
+                lblDie1Out.Text = player1.D1.ToString();
+                lblDie2Out.Text = player1.D2.ToString();
+                lblDie3Out.Text = player1.D3.ToString();
+                lblDie4Out.Text = player1.D4.ToString();
+                lblDie5Out.Text = "X";
+                lblDie6Out.Text = "X";
+            }
+            else if (player1.D1On == true && player1.D2On == true && player1.D3On == true)
+            {
+                player1.D1 = rand.Next(6) + 1;
+                player1.D2 = rand.Next(6) + 1;
+                player1.D3 = rand.Next(6) + 1;
+                lblDie1Out.Text = player1.D1.ToString();
+                lblDie2Out.Text = player1.D2.ToString();
+                lblDie3Out.Text = player1.D3.ToString();
+                lblDie4Out.Text = "X";
+                lblDie5Out.Text = "X";
+                lblDie6Out.Text = "X";
+            }
+            else if (player1.D1On == true && player1.D2On == true)
+            {
+                player1.D1 = rand.Next(6) + 1;
+                player1.D2 = rand.Next(6) + 1;
+                lblDie1Out.Text = player1.D1.ToString();
+                lblDie2Out.Text = player1.D2.ToString();
+                lblDie3Out.Text = "X";
+                lblDie4Out.Text = "X";
+                lblDie5Out.Text = "X";
+                lblDie6Out.Text = "X";
+
+            }
+            else if (player1.D1On == true)
+            {
+                player1.D1 = rand.Next(6) + 1;
+                lblDie1Out.Text = player1.D1.ToString();
+                lblDie2Out.Text = "X";
+                lblDie3Out.Text = "X";
+                lblDie4Out.Text = "X";
+                lblDie5Out.Text = "X";
+                lblDie6Out.Text = "X";
+            }
+            else if(player1.D1On == false && player1.D2On == false && player1.D3On == false && player1.D4On == false && player1.D5On == false && player1.D6On == false)
+            {
+                MessageBox.Show("Player 1 is out of dice. Player 1 has lost");
+                player1.Lost = true;
+                lblDie1Out.Text = "X";
+                lblDie2Out.Text = "X";
+                lblDie3Out.Text = "X";
+                lblDie4Out.Text = "X";
+                lblDie5Out.Text = "X";
+                lblDie6Out.Text = "X";
+            }
+
             //roll computer 1 dice
-            computer1.D1 = rand.Next(6) + 1;
-            computer1.D2 = rand.Next(6) + 1;
-            computer1.D3 = rand.Next(6) + 1;
-            computer1.D4 = rand.Next(6) + 1;
-            computer1.D5 = rand.Next(6) + 1;
-            computer1.D6 = rand.Next(6) + 1;
+            if (computer1.D1On == true && computer1.D2On == true && computer1.D3On == true && computer1.D4On == true && computer1.D5On == true && computer1.D6On == true)
+            {
+                computer1.D1 = rand.Next(6) + 1;
+                computer1.D2 = rand.Next(6) + 1;
+                computer1.D3 = rand.Next(6) + 1;
+                computer1.D4 = rand.Next(6) + 1;
+                computer1.D5 = rand.Next(6) + 1;
+                computer1.D6 = rand.Next(6) + 1;
+                lblComputer1D1.Text = computer1.D1.ToString();
+                lblComputer1D2.Text = computer1.D2.ToString();
+                lblComputer1D3.Text = computer1.D3.ToString();
+                lblComputer1D4.Text = computer1.D4.ToString();
+                lblComputer1D5.Text = computer1.D5.ToString();
+                lblComputer1D6.Text = computer1.D6.ToString();
+            }
+            else if (computer1.D1On == true && computer1.D2On == true && computer1.D3On == true && computer1.D4On == true && computer1.D5On == true)
+            {
+                computer1.D1 = rand.Next(6) + 1;
+                computer1.D2 = rand.Next(6) + 1;
+                computer1.D3 = rand.Next(6) + 1;
+                computer1.D4 = rand.Next(6) + 1;
+                computer1.D5 = rand.Next(6) + 1;
+                lblComputer1D1.Text = computer1.D1.ToString();
+                lblComputer1D2.Text = computer1.D2.ToString();
+                lblComputer1D3.Text = computer1.D3.ToString();
+                lblComputer1D4.Text = computer1.D4.ToString();
+                lblComputer1D5.Text = computer1.D5.ToString();
+                lblComputer1D6.Text = "X";
+            }
+            else if (computer1.D1On == true && computer1.D2On == true && computer1.D3On == true && computer1.D4On == true)
+            {
+                computer1.D1 = rand.Next(6) + 1;
+                computer1.D2 = rand.Next(6) + 1;
+                computer1.D3 = rand.Next(6) + 1;
+                computer1.D4 = rand.Next(6) + 1;
+                lblComputer1D1.Text = computer1.D1.ToString();
+                lblComputer1D2.Text = computer1.D2.ToString();
+                lblComputer1D3.Text = computer1.D3.ToString();
+                lblComputer1D4.Text = computer1.D4.ToString();
+                lblComputer1D5.Text = "X";
+                lblComputer1D6.Text = "X";
+            }
+            else if (computer1.D1On == true && computer1.D2On == true && computer1.D3On == true)
+            {
+                computer1.D1 = rand.Next(6) + 1;
+                computer1.D2 = rand.Next(6) + 1;
+                computer1.D3 = rand.Next(6) + 1;
+                lblComputer1D1.Text = computer1.D1.ToString();
+                lblComputer1D2.Text = computer1.D2.ToString();
+                lblComputer1D3.Text = computer1.D3.ToString();
+                lblComputer1D4.Text = "X";
+                lblComputer1D5.Text = "X";
+                lblComputer1D6.Text = "X";
+            }
+            else if (computer1.D1On == true && computer1.D2On == true)
+            {
+                computer1.D1 = rand.Next(6) + 1;
+                computer1.D2 = rand.Next(6) + 1;
+                lblComputer1D1.Text = computer1.D1.ToString();
+                lblComputer1D2.Text = computer1.D2.ToString();
+                lblComputer1D3.Text = "X";
+                lblComputer1D4.Text = "X";
+                lblComputer1D5.Text = "X";
+                lblComputer1D6.Text = "X";
+            }
+            else if (computer1.D1On == true)
+            {
+                computer1.D1 = rand.Next(6) + 1;
+                lblComputer1D1.Text = computer1.D1.ToString();
+                lblComputer1D2.Text = "X";
+                lblComputer1D3.Text = "X";
+                lblComputer1D4.Text = "X";
+                lblComputer1D5.Text = "X";
+                lblComputer1D6.Text = "X";
+            }
+            else if (computer1.D1On == false && computer1.D2On == false && computer1.D3On == false && computer1.D4On == false && computer1.D5On == false && computer1.D6On == false)
+            {
+                MessageBox.Show("Computer 1 is out of dice. Computer 1 has lost");
+                computer1.Lost = true;
+                lblComputer1D1.Text = "X";
+                lblComputer1D2.Text = "X";
+                lblComputer1D3.Text = "X";
+                lblComputer1D4.Text = "X";
+                lblComputer1D5.Text = "X";
+                lblComputer1D6.Text = "X";
+            }
+
             //roll computer 2 dice
-            computer2.D1 = rand.Next(6) + 1;
-            computer2.D2 = rand.Next(6) + 1;
-            computer2.D3 = rand.Next(6) + 1;
-            computer2.D4 = rand.Next(6) + 1;
-            computer2.D5 = rand.Next(6) + 1;
-            computer2.D6 = rand.Next(6) + 1;
+            if (computer2.D1On == true && computer2.D2On == true && computer2.D3On == true && computer2.D4On == true && computer2.D5On == true && computer2.D6On == true)
+            {
+                computer2.D1 = rand.Next(6) + 1;
+                computer2.D2 = rand.Next(6) + 1;
+                computer2.D3 = rand.Next(6) + 1;
+                computer2.D4 = rand.Next(6) + 1;
+                computer2.D5 = rand.Next(6) + 1;
+                computer2.D6 = rand.Next(6) + 1;
+                lblComputer2D1.Text = computer2.D1.ToString();
+                lblComputer2D2.Text = computer2.D2.ToString();
+                lblComputer2D3.Text = computer2.D3.ToString();
+                lblComputer2D4.Text = computer2.D4.ToString();
+                lblComputer2D5.Text = computer2.D5.ToString();
+                lblComputer2D6.Text = computer2.D6.ToString();
+            }
+            else if (computer2.D1On == true && computer2.D2On == true && computer2.D3On == true && computer2.D4On == true && computer2.D5On == true)
+            {
+                computer2.D1 = rand.Next(6) + 1;
+                computer2.D2 = rand.Next(6) + 1;
+                computer2.D3 = rand.Next(6) + 1;
+                computer2.D4 = rand.Next(6) + 1;
+                computer2.D5 = rand.Next(6) + 1;
+                lblComputer2D1.Text = computer2.D1.ToString();
+                lblComputer2D2.Text = computer2.D2.ToString();
+                lblComputer2D3.Text = computer2.D3.ToString();
+                lblComputer2D4.Text = computer2.D4.ToString();
+                lblComputer2D5.Text = computer2.D5.ToString();
+                lblComputer2D6.Text = "X";
+            }
+            else if (computer2.D1On == true && computer2.D2On == true && computer2.D3On == true && computer2.D4On == true)
+            {
+                computer2.D1 = rand.Next(6) + 1;
+                computer2.D2 = rand.Next(6) + 1;
+                computer2.D3 = rand.Next(6) + 1;
+                computer2.D4 = rand.Next(6) + 1;
+                lblComputer2D1.Text = computer2.D1.ToString();
+                lblComputer2D2.Text = computer2.D2.ToString();
+                lblComputer2D3.Text = computer2.D3.ToString();
+                lblComputer2D4.Text = computer2.D4.ToString();
+                lblComputer2D5.Text = "X";
+                lblComputer2D6.Text = "X";
+            }
+            else if (computer2.D1On == true && computer2.D2On == true && computer2.D3On == true)
+            {
+                computer2.D1 = rand.Next(6) + 1;
+                computer2.D2 = rand.Next(6) + 1;
+                computer2.D3 = rand.Next(6) + 1;
+                lblComputer2D1.Text = computer2.D1.ToString();
+                lblComputer2D2.Text = computer2.D2.ToString();
+                lblComputer2D3.Text = computer2.D3.ToString();
+                lblComputer2D4.Text = "X";
+                lblComputer2D5.Text = "X";
+                lblComputer2D6.Text = "X";
+            }
+            else if (computer2.D1On == true && computer2.D2On == true)
+            {
+                computer2.D1 = rand.Next(6) + 1;
+                computer2.D2 = rand.Next(6) + 1;
+                lblComputer2D1.Text = computer2.D1.ToString();
+                lblComputer2D2.Text = computer2.D2.ToString();
+                lblComputer2D3.Text = "X";
+                lblComputer2D4.Text = "X";
+                lblComputer2D5.Text = "X";
+                lblComputer2D6.Text = "X";
+            }
+            else if (computer2.D1On == true)
+            {
+                computer2.D1 = rand.Next(6) + 1;
+                lblComputer2D1.Text = computer2.D1.ToString();
+                lblComputer2D2.Text = "X";
+                lblComputer2D3.Text = "X";
+                lblComputer2D4.Text = "X";
+                lblComputer2D5.Text = "X";
+                lblComputer2D6.Text = "X";
+            }
+            else if (computer2.D1On == false && computer2.D2On == false && computer2.D3On == false && computer2.D4On == false && computer2.D5On == false && computer2.D6On == false)
+            {
+                MessageBox.Show("Computer 2 is out of dice. Computer 2 has lost");
+                computer2.Lost = true;
+                lblComputer2D1.Text = "X";
+                lblComputer2D2.Text = "X";
+                lblComputer2D3.Text = "X";
+                lblComputer2D4.Text = "X";
+                lblComputer2D5.Text = "X";
+                lblComputer2D6.Text = "X";
+            }
+
             //roll computer 3 dice
-            computer3.D1 = rand.Next(6) + 1;
-            computer3.D2 = rand.Next(6) + 1;
-            computer3.D3 = rand.Next(6) + 1;
-            computer3.D4 = rand.Next(6) + 1;
-            computer3.D5 = rand.Next(6) + 1;
-            computer3.D6 = rand.Next(6) + 1;
+            if (computer3.D1On == true && computer3.D2On == true && computer3.D3On == true && computer3.D4On == true && computer3.D5On == true && computer3.D6On == true)
+            {
+                computer3.D1 = rand.Next(6) + 1;
+                computer3.D2 = rand.Next(6) + 1;
+                computer3.D3 = rand.Next(6) + 1;
+                computer3.D4 = rand.Next(6) + 1;
+                computer3.D5 = rand.Next(6) + 1;
+                computer3.D6 = rand.Next(6) + 1;
+                lblComputer3D1.Text = computer2.D1.ToString();
+                lblComputer3D2.Text = computer2.D2.ToString();
+                lblComputer3D3.Text = computer2.D3.ToString();
+                lblComputer3D4.Text = computer2.D4.ToString();
+                lblComputer3D5.Text = computer2.D5.ToString();
+                lblComputer3D6.Text = computer2.D6.ToString();
+            }
+            else if (computer3.D1On == true && computer3.D2On == true && computer3.D3On == true && computer3.D4On == true && computer3.D5On == true)
+            {
+                computer3.D1 = rand.Next(6) + 1;
+                computer3.D2 = rand.Next(6) + 1;
+                computer3.D3 = rand.Next(6) + 1;
+                computer3.D4 = rand.Next(6) + 1;
+                computer3.D5 = rand.Next(6) + 1;
+                lblComputer3D1.Text = computer2.D1.ToString();
+                lblComputer3D2.Text = computer2.D2.ToString();
+                lblComputer3D3.Text = computer2.D3.ToString();
+                lblComputer3D4.Text = computer2.D4.ToString();
+                lblComputer3D5.Text = computer2.D5.ToString();
+                lblComputer3D6.Text = "X";
+            }
+            else if (computer3.D1On == true && computer3.D2On == true && computer3.D3On == true && computer3.D4On == true)
+            {
+                computer3.D1 = rand.Next(6) + 1;
+                computer3.D2 = rand.Next(6) + 1;
+                computer3.D3 = rand.Next(6) + 1;
+                computer3.D4 = rand.Next(6) + 1;
+                lblComputer3D1.Text = computer2.D1.ToString();
+                lblComputer3D2.Text = computer2.D2.ToString();
+                lblComputer3D3.Text = computer2.D3.ToString();
+                lblComputer3D4.Text = computer2.D4.ToString();
+                lblComputer3D5.Text = "X";
+                lblComputer3D6.Text = "X";
+            }
+            else if (computer3.D1On == true && computer3.D2On == true && computer3.D3On == true)
+            {
+                computer3.D1 = rand.Next(6) + 1;
+                computer3.D2 = rand.Next(6) + 1;
+                computer3.D3 = rand.Next(6) + 1;
+                lblComputer3D1.Text = computer2.D1.ToString();
+                lblComputer3D2.Text = computer2.D2.ToString();
+                lblComputer3D3.Text = computer2.D3.ToString();
+                lblComputer3D4.Text = "X";
+                lblComputer3D5.Text = "X";
+                lblComputer3D6.Text = "X";
+            }
+            else if (computer3.D1On == true && computer3.D2On == true)
+            {
+                computer3.D1 = rand.Next(6) + 1;
+                computer3.D2 = rand.Next(6) + 1;
+                lblComputer3D1.Text = computer2.D1.ToString();
+                lblComputer3D2.Text = computer2.D2.ToString();
+                lblComputer3D3.Text = "X";
+                lblComputer3D4.Text = "X";
+                lblComputer3D5.Text = "X";
+                lblComputer3D6.Text = "X";
+            }
+            else if (computer3.D1On == true)
+            {
+                computer3.D1 = rand.Next(6) + 1;
+                lblComputer3D1.Text = computer2.D1.ToString();
+                lblComputer3D2.Text = "X";
+                lblComputer3D3.Text = "X";
+                lblComputer3D4.Text = "X";
+                lblComputer3D5.Text = "X";
+                lblComputer3D6.Text = "X";
+            }
+            else if (computer3.D1On == false && computer3.D2On == false && computer3.D3On == false && computer3.D4On == false && computer3.D5On == false && computer3.D6On == false)
+            {
+                MessageBox.Show("Computer 3 is out of dice. Computer 3 has lost");
+                computer3.Lost = true;
+                lblComputer3D1.Text = "X";
+                lblComputer3D2.Text = "X";
+                lblComputer3D3.Text = "X";
+                lblComputer3D4.Text = "X";
+                lblComputer3D5.Text = "X";
+                lblComputer3D6.Text = "X";
+            }
 
             CountDice();
             MessageBox.Show("All dice have been rolled");
         }
+
+
+
+
+
+
+
+        //button used to check stuff
         private void btnRoll_Click(object sender, EventArgs e)
         {
             //DiceRollAll();
             //Display All Dice again
             //player1
-            lblDie1Out.Text = player1.D1.ToString();
-            lblDie2Out.Text = player1.D2.ToString();
-            lblDie3Out.Text = player1.D3.ToString();
-            lblDie4Out.Text = player1.D4.ToString();
-            lblDie5Out.Text = player1.D5.ToString();
-            lblDie6Out.Text = player1.D6.ToString();
+            //lblDie1Out.Text = player1.D1.ToString();
+            //lblDie2Out.Text = player1.D2.ToString();
+            //lblDie3Out.Text = player1.D3.ToString();
+            //lblDie4Out.Text = player1.D4.ToString();
+            //lblDie5Out.Text = player1.D5.ToString();
+            //lblDie6Out.Text = player1.D6.ToString();
             //computer1
-            lblComputer1D1.Text = computer1.D1.ToString();
-            lblComputer1D2.Text = computer1.D2.ToString();
-            lblComputer1D3.Text = computer1.D3.ToString();
-            lblComputer1D4.Text = computer1.D4.ToString();
-            lblComputer1D5.Text = computer1.D5.ToString();
-            lblComputer1D6.Text = computer1.D6.ToString();
+            //lblComputer1D1.Text = computer1.D1.ToString();
+            //lblComputer1D2.Text = computer1.D2.ToString();
+            //lblComputer1D3.Text = computer1.D3.ToString();
+            //lblComputer1D4.Text = computer1.D4.ToString();
+            //lblComputer1D5.Text = computer1.D5.ToString();
+            //lblComputer1D6.Text = computer1.D6.ToString();
             //computer2
-            lblComputer2D1.Text = computer2.D1.ToString();
-            lblComputer2D2.Text = computer2.D2.ToString();
-            lblComputer2D3.Text = computer2.D3.ToString();
-            lblComputer2D4.Text = computer2.D4.ToString();
-            lblComputer2D5.Text = computer2.D5.ToString();
-            lblComputer2D6.Text = computer2.D6.ToString();
+            //lblComputer2D1.Text = computer2.D1.ToString();
+            //lblComputer2D2.Text = computer2.D2.ToString();
+            //lblComputer2D3.Text = computer2.D3.ToString();
+            //lblComputer2D4.Text = computer2.D4.ToString();
+            //lblComputer2D5.Text = computer2.D5.ToString();
+            //lblComputer2D6.Text = computer2.D6.ToString();
             //computer3
-            lblComputer3D1.Text = computer3.D1.ToString();
-            lblComputer3D2.Text = computer3.D2.ToString();
-            lblComputer3D3.Text = computer3.D3.ToString();
-            lblComputer3D4.Text = computer3.D4.ToString();
-            lblComputer3D5.Text = computer3.D5.ToString();
-            lblComputer3D6.Text = computer3.D6.ToString();
+            //lblComputer3D1.Text = computer3.D1.ToString();
+            //lblComputer3D2.Text = computer3.D2.ToString();
+            //lblComputer3D3.Text = computer3.D3.ToString();
+            //lblComputer3D4.Text = computer3.D4.ToString();
+            //lblComputer3D5.Text = computer3.D5.ToString();
+            //lblComputer3D6.Text = computer3.D6.ToString();
         }
-
-        
     }
 }
