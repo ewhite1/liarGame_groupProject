@@ -30,6 +30,81 @@ namespace LiarDice_grpProjCS
         public frmGame()
         {
             InitializeComponent();
+            //hide things based upon level
+            gameSettings(frmMain.Settings);
+        }
+
+        private void gameSettings(string setting)
+        {
+            //making this inline, instead of a class
+            
+            if (setting == "medium")
+            {
+                //computer one hand hidden
+                lblComputer1D1.Visible = false;
+                lblComputer1D2.Visible = false;
+                lblComputer1D3.Visible = false;
+                lblComputer1D4.Visible = false;
+                lblComputer1D5.Visible = false;
+                lblComputer1D6.Visible = false;
+                lblComputer1BetValue.Visible = false;
+                //computer two items hiddden
+                lblComputer2D1.Visible = false;
+                lblComputer2D2.Visible = false;
+                lblComputer2D3.Visible = false;
+                lblComputer2D4.Visible = false;
+                lblComputer2D5.Visible = false;
+                lblComputer2D6.Visible = false;
+                lblComputer2BetValue.Visible = false;
+                //computer three items hidden
+                lblComputer3D1.Visible = false;
+                lblComputer3D2.Visible = false;
+                lblComputer3D3.Visible = false;
+                lblComputer3D4.Visible = false;
+                lblComputer3D5.Visible = false;
+                lblComputer3D6.Visible = false;
+                lblComputer3BetValue.Visible = false;
+            }
+
+            else if (setting == "hard")
+            {
+                //computer one hand hidden
+                lblComputer1D1.Visible = false;
+                lblComputer1D2.Visible = false;
+                lblComputer1D3.Visible = false;
+                lblComputer1D4.Visible = false;
+                lblComputer1D5.Visible = false;
+                lblComputer1D6.Visible = false;
+                lblComputer1BetValue.Visible = false;
+                //computer two items hiddden
+                lblComputer2D1.Visible = false;
+                lblComputer2D2.Visible = false;
+                lblComputer2D3.Visible = false;
+                lblComputer2D4.Visible = false;
+                lblComputer2D5.Visible = false;
+                lblComputer2D6.Visible = false;
+                lblComputer2BetValue.Visible = false;
+                //computer three items hidden
+                lblComputer3D1.Visible = false;
+                lblComputer3D2.Visible = false;
+                lblComputer3D3.Visible = false;
+                lblComputer3D4.Visible = false;
+                lblComputer3D5.Visible = false;
+                lblComputer3D6.Visible = false;
+                lblComputer3BetValue.Visible = false;
+
+                //all counts invisble
+                lblDie1Count.Visible = false;
+                lblDie2Count.Visible = false;
+                lblDie3Count.Visible = false;
+                lblDie4Count.Visible = false;
+                lblDie5Count.Visible = false;
+                lblDie6Count.Visible = false;
+            }
+            else
+            {
+                // do nothing
+            }
         }
         private void frmGame_Load(object sender, EventArgs e)
         {
@@ -221,14 +296,28 @@ namespace LiarDice_grpProjCS
 
         private void titleToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmMain titleForm = new frmMain();
-            titleForm.Show();
-            this.Hide();
+            //confirm before exiting
+            DialogResult resultAnswer = MessageBox.Show("Exiting back to the main Screen Will Cancel your current Game",
+                "Do you really wish to quit?", MessageBoxButtons.YesNo);
+            if (resultAnswer == DialogResult.Yes)
+            {
+                frmMain titleForm = new frmMain();
+                titleForm.Show();
+                this.Close();
+            }
+                
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            //confirm before exiting
+            DialogResult resultAnswer = MessageBox.Show("Exiting now Will Cancel your current Game",
+                "Do you really wish to quit?", MessageBoxButtons.YesNo);
+            if (resultAnswer == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+            
         }
 
         private void highScoresToolStripMenuItem_Click(object sender, EventArgs e)

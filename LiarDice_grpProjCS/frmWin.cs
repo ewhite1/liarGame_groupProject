@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace LiarDice_grpProjCS
 {
@@ -15,16 +16,34 @@ namespace LiarDice_grpProjCS
         public frmWin()
         {
             InitializeComponent();
+            showWinningCount();
         }
 
-        private void backToGameToolStripMenuItem_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void backToolStripMenuItem_Click(object sender, EventArgs e)
+        private void showWinningCount()
         {
-            this.Close();
+            //read from score.txt and ouput the results
+            int winnings;
+            // attempt to read the current scores
+            try
+            {
+                StreamReader fileIn;
+                fileIn = File.OpenText("score.txt");
+                //read the current score
+                winnings = int.Parse(fileIn.ReadLine());
+                fileIn.Close();
+                //show the results
+                lblResult.Text = winnings.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                throw;
+            }
         }
     }
 }

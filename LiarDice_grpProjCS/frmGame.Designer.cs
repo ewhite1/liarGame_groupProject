@@ -88,6 +88,10 @@
             this.lblCpu2Hand = new System.Windows.Forms.Label();
             this.lblCpu3Hand = new System.Windows.Forms.Label();
             this.lblDiceCountsR = new System.Windows.Forms.Label();
+            this.lblBet1 = new System.Windows.Forms.Label();
+            this.lblBet2 = new System.Windows.Forms.Label();
+            this.LblBet3 = new System.Windows.Forms.Label();
+            this.lblYourBet = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxDie6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxDie5)).BeginInit();
@@ -152,14 +156,14 @@
             // instructionsToolStripMenuItem
             // 
             this.instructionsToolStripMenuItem.Name = "instructionsToolStripMenuItem";
-            this.instructionsToolStripMenuItem.Size = new System.Drawing.Size(252, 30);
+            this.instructionsToolStripMenuItem.Size = new System.Drawing.Size(188, 30);
             this.instructionsToolStripMenuItem.Text = "&Instructions";
             this.instructionsToolStripMenuItem.Click += new System.EventHandler(this.instructionsToolStripMenuItem_Click);
             // 
             // Label1
             // 
             this.Label1.AutoSize = true;
-            this.Label1.Location = new System.Drawing.Point(681, 889);
+            this.Label1.Location = new System.Drawing.Point(675, 810);
             this.Label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label1.Name = "Label1";
             this.Label1.Size = new System.Drawing.Size(322, 40);
@@ -193,20 +197,21 @@
             "18",
             "19",
             "20"});
-            this.lstDiceBetNum.Location = new System.Drawing.Point(381, 912);
+            this.lstDiceBetNum.Location = new System.Drawing.Point(375, 833);
             this.lstDiceBetNum.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.lstDiceBetNum.Name = "lstDiceBetNum";
             this.lstDiceBetNum.ScrollAlwaysVisible = true;
             this.lstDiceBetNum.Size = new System.Drawing.Size(115, 144);
-            this.lstDiceBetNum.TabIndex = 13;
+            this.lstDiceBetNum.TabIndex = 0;
             // 
             // btnBet
             // 
-            this.btnBet.Location = new System.Drawing.Point(693, 1045);
+            this.btnBet.Font = new System.Drawing.Font("Broadway", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBet.Location = new System.Drawing.Point(687, 966);
             this.btnBet.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnBet.Name = "btnBet";
-            this.btnBet.Size = new System.Drawing.Size(134, 75);
-            this.btnBet.TabIndex = 14;
+            this.btnBet.Size = new System.Drawing.Size(134, 95);
+            this.btnBet.TabIndex = 1;
             this.btnBet.Text = "&Bet";
             this.btnBet.UseVisualStyleBackColor = true;
             this.btnBet.Click += new System.EventHandler(this.btnBet_Click);
@@ -214,7 +219,7 @@
             // pbxDie6
             // 
             this.pbxDie6.Image = global::LiarDice_grpProjCS.Properties.Resources.Die6;
-            this.pbxDie6.Location = new System.Drawing.Point(1100, 934);
+            this.pbxDie6.Location = new System.Drawing.Point(1094, 855);
             this.pbxDie6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pbxDie6.Name = "pbxDie6";
             this.pbxDie6.Size = new System.Drawing.Size(82, 85);
@@ -226,7 +231,7 @@
             // pbxDie5
             // 
             this.pbxDie5.Image = global::LiarDice_grpProjCS.Properties.Resources.Die5;
-            this.pbxDie5.Location = new System.Drawing.Point(981, 934);
+            this.pbxDie5.Location = new System.Drawing.Point(975, 855);
             this.pbxDie5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pbxDie5.Name = "pbxDie5";
             this.pbxDie5.Size = new System.Drawing.Size(82, 85);
@@ -238,7 +243,7 @@
             // pbxDie3
             // 
             this.pbxDie3.Image = global::LiarDice_grpProjCS.Properties.Resources.Die3;
-            this.pbxDie3.Location = new System.Drawing.Point(744, 934);
+            this.pbxDie3.Location = new System.Drawing.Point(738, 855);
             this.pbxDie3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pbxDie3.Name = "pbxDie3";
             this.pbxDie3.Size = new System.Drawing.Size(82, 85);
@@ -250,7 +255,7 @@
             // pbxDie4
             // 
             this.pbxDie4.Image = global::LiarDice_grpProjCS.Properties.Resources.Die4;
-            this.pbxDie4.Location = new System.Drawing.Point(862, 934);
+            this.pbxDie4.Location = new System.Drawing.Point(856, 855);
             this.pbxDie4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pbxDie4.Name = "pbxDie4";
             this.pbxDie4.Size = new System.Drawing.Size(82, 85);
@@ -262,7 +267,7 @@
             // pbxDie2
             // 
             this.pbxDie2.Image = global::LiarDice_grpProjCS.Properties.Resources.Die2;
-            this.pbxDie2.Location = new System.Drawing.Point(626, 934);
+            this.pbxDie2.Location = new System.Drawing.Point(620, 855);
             this.pbxDie2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pbxDie2.Name = "pbxDie2";
             this.pbxDie2.Size = new System.Drawing.Size(82, 85);
@@ -274,7 +279,7 @@
             // pbxDie1
             // 
             this.pbxDie1.Image = ((System.Drawing.Image)(resources.GetObject("pbxDie1.Image")));
-            this.pbxDie1.Location = new System.Drawing.Point(507, 934);
+            this.pbxDie1.Location = new System.Drawing.Point(501, 855);
             this.pbxDie1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pbxDie1.Name = "pbxDie1";
             this.pbxDie1.Size = new System.Drawing.Size(82, 85);
@@ -287,66 +292,66 @@
             // 
             this.lblDie1Out.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.lblDie1Out.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblDie1Out.Location = new System.Drawing.Point(579, 840);
+            this.lblDie1Out.Location = new System.Drawing.Point(573, 761);
             this.lblDie1Out.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDie1Out.Name = "lblDie1Out";
             this.lblDie1Out.Size = new System.Drawing.Size(81, 35);
-            this.lblDie1Out.TabIndex = 15;
+            this.lblDie1Out.TabIndex = 3;
             this.lblDie1Out.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblDie2Out
             // 
             this.lblDie2Out.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.lblDie2Out.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblDie2Out.Location = new System.Drawing.Point(669, 840);
+            this.lblDie2Out.Location = new System.Drawing.Point(663, 761);
             this.lblDie2Out.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDie2Out.Name = "lblDie2Out";
             this.lblDie2Out.Size = new System.Drawing.Size(81, 35);
-            this.lblDie2Out.TabIndex = 16;
+            this.lblDie2Out.TabIndex = 4;
             this.lblDie2Out.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblDie3Out
             // 
             this.lblDie3Out.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.lblDie3Out.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblDie3Out.Location = new System.Drawing.Point(759, 840);
+            this.lblDie3Out.Location = new System.Drawing.Point(753, 761);
             this.lblDie3Out.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDie3Out.Name = "lblDie3Out";
             this.lblDie3Out.Size = new System.Drawing.Size(81, 35);
-            this.lblDie3Out.TabIndex = 17;
+            this.lblDie3Out.TabIndex = 5;
             this.lblDie3Out.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblDie4Out
             // 
             this.lblDie4Out.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.lblDie4Out.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblDie4Out.Location = new System.Drawing.Point(849, 840);
+            this.lblDie4Out.Location = new System.Drawing.Point(843, 761);
             this.lblDie4Out.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDie4Out.Name = "lblDie4Out";
             this.lblDie4Out.Size = new System.Drawing.Size(81, 35);
-            this.lblDie4Out.TabIndex = 18;
+            this.lblDie4Out.TabIndex = 6;
             this.lblDie4Out.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblDie5Out
             // 
             this.lblDie5Out.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.lblDie5Out.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblDie5Out.Location = new System.Drawing.Point(939, 840);
+            this.lblDie5Out.Location = new System.Drawing.Point(933, 761);
             this.lblDie5Out.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDie5Out.Name = "lblDie5Out";
             this.lblDie5Out.Size = new System.Drawing.Size(81, 35);
-            this.lblDie5Out.TabIndex = 19;
+            this.lblDie5Out.TabIndex = 7;
             this.lblDie5Out.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblDie6Out
             // 
             this.lblDie6Out.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.lblDie6Out.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblDie6Out.Location = new System.Drawing.Point(1029, 840);
+            this.lblDie6Out.Location = new System.Drawing.Point(1023, 761);
             this.lblDie6Out.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDie6Out.Name = "lblDie6Out";
             this.lblDie6Out.Size = new System.Drawing.Size(81, 35);
-            this.lblDie6Out.TabIndex = 20;
+            this.lblDie6Out.TabIndex = 8;
             this.lblDie6Out.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnRoll
@@ -384,7 +389,7 @@
             // lblComputer2BetNum
             // 
             this.lblComputer2BetNum.AutoSize = true;
-            this.lblComputer2BetNum.Location = new System.Drawing.Point(722, 211);
+            this.lblComputer2BetNum.Location = new System.Drawing.Point(719, 238);
             this.lblComputer2BetNum.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblComputer2BetNum.Name = "lblComputer2BetNum";
             this.lblComputer2BetNum.Size = new System.Drawing.Size(146, 20);
@@ -394,7 +399,7 @@
             // lblComputer2BetValue
             // 
             this.lblComputer2BetValue.AutoSize = true;
-            this.lblComputer2BetValue.Location = new System.Drawing.Point(876, 211);
+            this.lblComputer2BetValue.Location = new System.Drawing.Point(873, 238);
             this.lblComputer2BetValue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblComputer2BetValue.Name = "lblComputer2BetValue";
             this.lblComputer2BetValue.Size = new System.Drawing.Size(136, 20);
@@ -663,11 +668,12 @@
             // 
             // btnPlayer1Challenge
             // 
-            this.btnPlayer1Challenge.Location = new System.Drawing.Point(862, 1045);
+            this.btnPlayer1Challenge.Font = new System.Drawing.Font("Broadway", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPlayer1Challenge.Location = new System.Drawing.Point(856, 966);
             this.btnPlayer1Challenge.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnPlayer1Challenge.Name = "btnPlayer1Challenge";
-            this.btnPlayer1Challenge.Size = new System.Drawing.Size(134, 75);
-            this.btnPlayer1Challenge.TabIndex = 52;
+            this.btnPlayer1Challenge.Size = new System.Drawing.Size(134, 95);
+            this.btnPlayer1Challenge.TabIndex = 2;
             this.btnPlayer1Challenge.Text = "&Challenge Previous Bet";
             this.btnPlayer1Challenge.UseVisualStyleBackColor = true;
             this.btnPlayer1Challenge.Click += new System.EventHandler(this.btnPlayer1Challenge_Click);
@@ -678,7 +684,7 @@
             this.lblPlayerDice.BackColor = System.Drawing.Color.Transparent;
             this.lblPlayerDice.Font = new System.Drawing.Font("Broadway", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPlayerDice.ForeColor = System.Drawing.Color.White;
-            this.lblPlayerDice.Location = new System.Drawing.Point(770, 789);
+            this.lblPlayerDice.Location = new System.Drawing.Point(764, 710);
             this.lblPlayerDice.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPlayerDice.Name = "lblPlayerDice";
             this.lblPlayerDice.Size = new System.Drawing.Size(160, 32);
@@ -703,7 +709,7 @@
             this.lblCpu2Hand.BackColor = System.Drawing.Color.Transparent;
             this.lblCpu2Hand.Font = new System.Drawing.Font("Broadway", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCpu2Hand.ForeColor = System.Drawing.Color.White;
-            this.lblCpu2Hand.Location = new System.Drawing.Point(753, 257);
+            this.lblCpu2Hand.Location = new System.Drawing.Point(753, 293);
             this.lblCpu2Hand.Name = "lblCpu2Hand";
             this.lblCpu2Hand.Size = new System.Drawing.Size(208, 32);
             this.lblCpu2Hand.TabIndex = 55;
@@ -734,6 +740,54 @@
             this.lblDiceCountsR.TabIndex = 57;
             this.lblDiceCountsR.Text = "Dice Counts:";
             // 
+            // lblBet1
+            // 
+            this.lblBet1.AutoSize = true;
+            this.lblBet1.BackColor = System.Drawing.Color.Transparent;
+            this.lblBet1.Font = new System.Drawing.Font("Broadway", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBet1.ForeColor = System.Drawing.Color.White;
+            this.lblBet1.Location = new System.Drawing.Point(448, 432);
+            this.lblBet1.Name = "lblBet1";
+            this.lblBet1.Size = new System.Drawing.Size(64, 32);
+            this.lblBet1.TabIndex = 58;
+            this.lblBet1.Text = "Bet";
+            // 
+            // lblBet2
+            // 
+            this.lblBet2.AutoSize = true;
+            this.lblBet2.BackColor = System.Drawing.Color.Transparent;
+            this.lblBet2.Font = new System.Drawing.Font("Broadway", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBet2.ForeColor = System.Drawing.Color.White;
+            this.lblBet2.Location = new System.Drawing.Point(753, 193);
+            this.lblBet2.Name = "lblBet2";
+            this.lblBet2.Size = new System.Drawing.Size(64, 32);
+            this.lblBet2.TabIndex = 59;
+            this.lblBet2.Text = "Bet";
+            // 
+            // LblBet3
+            // 
+            this.LblBet3.AutoSize = true;
+            this.LblBet3.BackColor = System.Drawing.Color.Transparent;
+            this.LblBet3.Font = new System.Drawing.Font("Broadway", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblBet3.ForeColor = System.Drawing.Color.White;
+            this.LblBet3.Location = new System.Drawing.Point(1079, 432);
+            this.LblBet3.Name = "LblBet3";
+            this.LblBet3.Size = new System.Drawing.Size(64, 32);
+            this.LblBet3.TabIndex = 60;
+            this.LblBet3.Text = "Bet";
+            // 
+            // lblYourBet
+            // 
+            this.lblYourBet.AutoSize = true;
+            this.lblYourBet.BackColor = System.Drawing.Color.Transparent;
+            this.lblYourBet.Font = new System.Drawing.Font("Broadway", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblYourBet.ForeColor = System.Drawing.Color.White;
+            this.lblYourBet.Location = new System.Drawing.Point(397, 785);
+            this.lblYourBet.Name = "lblYourBet";
+            this.lblYourBet.Size = new System.Drawing.Size(64, 32);
+            this.lblYourBet.TabIndex = 61;
+            this.lblYourBet.Text = "Bet";
+            // 
             // frmGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -741,6 +795,10 @@
             this.BackColor = System.Drawing.Color.Goldenrod;
             this.BackgroundImage = global::LiarDice_grpProjCS.Properties.Resources.q02th;
             this.ClientSize = new System.Drawing.Size(1689, 1158);
+            this.Controls.Add(this.lblYourBet);
+            this.Controls.Add(this.LblBet3);
+            this.Controls.Add(this.lblBet2);
+            this.Controls.Add(this.lblBet1);
             this.Controls.Add(this.lblDiceCountsR);
             this.Controls.Add(this.lblCpu3Hand);
             this.Controls.Add(this.lblCpu2Hand);
@@ -873,5 +931,9 @@
         private System.Windows.Forms.Label lblCpu2Hand;
         private System.Windows.Forms.Label lblCpu3Hand;
         private System.Windows.Forms.Label lblDiceCountsR;
+        private System.Windows.Forms.Label lblBet1;
+        private System.Windows.Forms.Label lblBet2;
+        private System.Windows.Forms.Label LblBet3;
+        private System.Windows.Forms.Label lblYourBet;
     }
 }

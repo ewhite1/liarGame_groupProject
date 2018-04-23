@@ -21,5 +21,10 @@ namespace LiarDice_grpProjCS
         {
             this.Close();
         }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
