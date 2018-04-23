@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -342,7 +343,7 @@ namespace LiarDice_grpProjCS
             previousDiceAmount = computer3.BetNumOfDice;
             previousDiceValue = computer3.BetDieValue;
         }
-        private void CountDice()
+        private bool CountDice()
         {
             //reset totals
             totNumD1 = 0;
@@ -2264,7 +2265,9 @@ namespace LiarDice_grpProjCS
             lblDie4Count.Text = totNumD4.ToString();
             lblDie5Count.Text = totNumD5.ToString();
             lblDie6Count.Text = totNumD6.ToString();
+            return true;
         }
+        
         //challenges
         private void Computer1Challenge()
         {
@@ -4770,13 +4773,60 @@ namespace LiarDice_grpProjCS
                 lblComputer3D6.Text = "X";
             }
 
-            CountDice();
-            MessageBox.Show("All dice have been rolled");
+            if (CountDice() == true)
+            {
+                //to fix the issue with this showing on launch.
+                MessageBox.Show("All dice have been rolled");
+            }
+
+            
+
+           // to add the winnings
+            if (computer1.Lost == true || computer2.Lost == true || computer3.Lost == true)
+            {
+                //add you wins up
+               GameWin();
+                //prompt user to start a new game
+               MessageBox.Show("You won! Close the window to start a new game");
+
+            }
         }
 
 
 
-
+        private void GameWin()
+        {
+            int winnings = 0;
+            // attempt to read the current scores
+            try
+            {
+                StreamReader fileIn;
+                fileIn = File.OpenText("score.txt");
+                //read the current score
+                winnings = int.Parse(fileIn.ReadLine());
+                winnings += 1;
+                fileIn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                throw;
+            }
+            
+            // now attempt to write the score back to the file
+            try
+            {
+                StreamWriter fileOut;
+                fileOut = File.CreateText("score.txt");
+                fileOut.WriteLine(winnings);
+                fileOut.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                throw;
+            }
+        }
 
 
 
